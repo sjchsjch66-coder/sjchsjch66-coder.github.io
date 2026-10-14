@@ -1,28 +1,59 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>七色パレットゲームズ</title><style>
-:root{--ink:#3b3552;--muted:#7d7594;--line:#ece2d6;--bg:#fbf6ee;--pink:#e8557a;--panel:#fff}
-@media (prefers-color-scheme:dark){:root{--ink:#f1ecfb;--muted:#b3aac8;--line:#3d3756;--bg:#211d2e;--pink:#ff8fae;--panel:#2c2740}}
+<title>七色パレットゲームズ</title>
+<meta name="description" content="ドット絵のスマホゲームを作る個人スタジオ「七色パレットゲームズ」。いろどり村のぽこ・ぽこのいろどりマルシェなど、いろどり村の世界でつながるゲームを作っています。">
+<style>
+:root{--ink:#3b3552;--muted:#7d7594;--line:#ece2d6;--bg:#fbf6ee;--pink:#e8557a;--panel:#fff;
+--on:#2f9e6a;--pre:#e8557a;--soon:#d9822b;--wip:#7a62c9;--badge-ink:#fff}
+@media (prefers-color-scheme:dark){:root{--ink:#f1ecfb;--muted:#b3aac8;--line:#3d3756;--bg:#211d2e;--pink:#ff8fae;--panel:#2c2740;
+--on:#5ccf98;--pre:#ff8fae;--soon:#f2a95c;--wip:#a994f0;--badge-ink:#211d2e}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;line-height:1.75}
-main{max-width:720px;margin:0 auto;padding:24px 16px 48px}
-header{margin:8px 0 20px}header a{color:var(--pink);text-decoration:none;font-weight:700}
-h1{font-size:1.5rem;margin:.2em 0 .6em}h2{font-size:1.1rem;margin:1.6em 0 .4em}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-dl{margin:0}dt{color:var(--muted);font-size:.85rem;margin-top:12px}dt:first-child{margin-top:0}dd{margin:2px 0 0}
-a{color:var(--pink)}ul{padding-left:1.2em}.muted{color:var(--muted);font-size:.9rem}
-.hero{text-align:center;padding:12px 0 4px}.hero img{width:128px;height:128px;border-radius:28px;image-rendering:pixelated;box-shadow:0 6px 0 var(--line)}
-.hero .sub{color:var(--pink);font-weight:800;letter-spacing:.2em;font-size:.9rem;margin:14px 0 0}.hero h1{font-size:2rem;margin:.1em 0 .3em}
-.soon{display:inline-block;background:var(--pink);color:#fff;font-weight:800;border-radius:99px;padding:6px 18px;font-size:.9rem;text-decoration:none}
-.feat{padding-left:0;list-style:none}.feat li{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:8px 0}
-.feat b{color:var(--pink)}
-nav ul{list-style:none;padding:0}nav li{margin:10px 0}nav a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px;text-decoration:none;color:var(--ink);font-weight:700}
-.game{display:flex;gap:14px;align-items:center}.game img{width:72px;height:72px;border-radius:16px;image-rendering:pixelated;flex:none}
+main{max-width:760px;margin:0 auto;padding:24px 16px 48px}
+a{color:var(--pink)}.muted{color:var(--muted);font-size:.9rem}
+.rainbow{display:flex;height:8px;border-radius:99px;overflow:hidden;max-width:224px;margin:0 auto}
+.rainbow i{flex:1}
+.hero{text-align:center;padding:20px 0 8px}
+.hero .sub{color:var(--pink);font-weight:800;letter-spacing:.2em;font-size:.85rem;margin:16px 0 0}
+.hero h1{font-size:2rem;margin:.1em 0 .4em;line-height:1.3}
+.hero p{margin:.4em 0}
+.world{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:20px 0 8px}
+.world b{color:var(--pink)}
+h2{font-size:1.1rem;margin:1.8em 0 .6em}
+.games{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.games li{background:var(--panel);border:1px solid var(--line);border-radius:16px;display:flex;flex-direction:column}
+.games a.card{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:16px 12px 14px;text-decoration:none;color:var(--ink);flex:1}
+.games img{width:128px;height:128px;border-radius:28px;image-rendering:pixelated;box-shadow:0 5px 0 var(--line);flex:none}
+.games .name{font-weight:800;line-height:1.45;margin-top:8px;text-wrap:balance;word-break:auto-phrase}
+.games .say{color:var(--muted);font-size:.85rem;line-height:1.6;text-wrap:balance;word-break:auto-phrase}
+.badge{display:inline-block;border-radius:99px;padding:2px 12px;font-size:.8rem;font-weight:800;color:var(--badge-ink);margin-top:auto}
+.b-on{background:var(--on)}.b-pre{background:var(--pre)}.b-soon{background:var(--soon)}.b-wip{background:var(--wip)}
+.nb{display:inline-block}.date{font-size:.8rem;color:var(--muted);font-weight:700}
+.store{display:block;text-align:center;border-top:1px solid var(--line);padding:8px;font-size:.85rem;font-weight:700;text-decoration:none}
+footer{margin-top:36px;text-align:center}
 </style></head>
-<body><main><h1>七色パレットゲームズ</h1>
-<p>ドット絵のスマホゲームを作っている、個人のゲーム制作です。</p>
-<nav><ul>
-<li><a href="irodori-poko/"><span class="game"><img src="images/irodori.png" alt=""><span>いろどり村のぽこ<br><span class="muted">ドットのいろぬりパズル・iPhone版 配信中</span></span></span></a></li>
-<li><a href="marche/"><span class="game"><img src="images/marche.png" alt=""><span>ぽこのいろどりマルシェ<br><span class="muted">マージ×カフェ経営・iPhone版 近日公開</span></span></span></a></li>
-</ul></nav>
-<p class="muted">お問い合わせ: <a href="mailto:sjch.sjch@icloud.com">sjch.sjch@icloud.com</a></p></main></body></html>
+<body><main>
+<div class="hero">
+<div class="rainbow" aria-hidden="true"><i style="background:#ff6b6b"></i><i style="background:#ffa94d"></i><i style="background:#ffd43b"></i><i style="background:#69db7c"></i><i style="background:#4dabf7"></i><i style="background:#748ffc"></i><i style="background:#da77f2"></i></div>
+<p class="sub">NANAIRO PALETTE GAMES</p>
+<h1>七色パレットゲームズ</h1>
+<p>ドット絵のスマホゲームを作っている、個人のゲームスタジオです。</p>
+</div>
+
+<div class="world"><b>どのゲームも「いろどり村の世界」でつながっています。</b><br>色のしずくの妖精「ぽこ」と、いろどり村のなかまたち。ゲームごとに、なかまが店員になったり、パン屋さんを開いたり、冒険に出たり。ひとつ遊ぶと、ほかのゲームで知っている顔に会えます。</div>
+
+<h2>ゲーム</h2>
+<ul class="games">
+<li><a class="card" href="irodori-poko/"><img src="images/irodori.png" alt=""><span class="name">いろどり村のぽこ</span><span class="say">ドットのいろぬりパズル。灰色の村に色をとりもどそう</span><span class="badge b-on">配信中</span></a><a class="store" href="https://apps.apple.com/jp/app/id6817697203">App Store で見る</a></li>
+<li><a class="card" href="marche/"><img src="marche/images/icon.png" alt=""><span class="name">ぽこのいろどりマルシェ</span><span class="say">いろどり村のなかまが店員に。マージ×カフェ経営</span><span class="badge b-pre">予約受付中</span><span class="date">11月6日配信</span></a></li>
+<li><a class="card" href="machigai/"><img src="machigai/images/icon.png" alt=""><span class="name">ぽこと<span class="nb">まちがいさがし</span></span><span class="say">2まいのドット絵をくらべる、かわいい脳トレ</span><span class="badge b-soon">近日公開</span></a></li>
+<li><a class="card" href="nurie/"><img src="nurie/images/icon.png" alt=""><span class="name">のんびりぽこと数字ぬりえ</span><span class="say">番号どおりにぬるだけ。考えない、のんびりぬりえ</span><span class="badge b-soon">近日公開</span></a></li>
+<li><a class="card" href="panya/"><img src="panya/images/icon.png" alt=""><span class="name">パン屋さん放置ゲーム ミミのいろどりベーカリー</span><span class="say">タップと放置で、ミミのパン屋台を町いちばんに</span><span class="badge b-soon">近日公開</span></a></li>
+<li><a class="card" href="game3/"><img src="game3/images/icon.png" alt=""><span class="name">ぽこと黒の王国</span><span class="say">色をうばわれた王国を旅する、ドット絵RPG</span><span class="badge b-wip">制作中</span><span class="date">12月下旬 配信予定</span></a></li>
+</ul>
+
+<footer>
+<p class="muted">お問い合わせ: <a href="mailto:sjch.sjch@icloud.com">sjch.sjch@icloud.com</a></p>
+<p class="muted">© 2026 七色パレットゲームズ</p>
+</footer>
+</main></body></html>
