@@ -1,26 +1,162 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ことのと おでかけ大作戦</title><style>
-:root{--ink:#3b3552;--muted:#7d7594;--line:#ece2d6;--bg:#fbf6ee;--pink:#e8557a;--panel:#fff}
-@media (prefers-color-scheme:dark){:root{--ink:#f1ecfb;--muted:#b3aac8;--line:#3d3756;--bg:#211d2e;--pink:#ff8fae;--panel:#2c2740}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;line-height:1.75}
-main{max-width:720px;margin:0 auto;padding:24px 16px 48px}
-header{margin:8px 0 20px}header a{color:var(--pink);text-decoration:none;font-weight:700}
-h1{font-size:1.5rem;margin:.2em 0 .6em}h2{font-size:1.1rem;margin:1.6em 0 .4em}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-dl{margin:0}dt{color:var(--muted);font-size:.85rem;margin-top:12px}dt:first-child{margin-top:0}dd{margin:2px 0 0}
-a{color:var(--pink)}ul{padding-left:1.2em}.muted{color:var(--muted);font-size:.9rem}
-.hero{text-align:center;padding:12px 0 4px}.hero img{width:128px;height:128px;border-radius:28px;image-rendering:pixelated;box-shadow:0 6px 0 var(--line)}
-.hero .sub{color:var(--pink);font-weight:800;letter-spacing:.2em;font-size:.9rem;margin:14px 0 0}.hero h1{font-size:2rem;margin:.1em 0 .3em}
-.soon{display:inline-block;background:var(--pink);color:#fff;font-weight:800;border-radius:99px;padding:6px 18px;font-size:.9rem;text-decoration:none}
-.feat{padding-left:0;list-style:none}.feat li{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:8px 0}
-nav ul{list-style:none;padding:0}nav li{margin:10px 0}nav a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px;text-decoration:none;color:var(--ink);font-weight:700}
-.shots{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:16px 16px 10px;margin:0 -16px}
-.shots img{width:min(402px,calc(100vw - 56px));height:auto;flex:none;border-radius:18px;scroll-snap-align:center;box-shadow:0 4px 0 var(--line)}
+<title>脱出ゲーム ことのと おでかけ大作戦|無料・こわくない謎解き(iPhone)</title>
+<meta name="description" content="からくり好きの女の子・ことのと、自分の部屋・レトロな電車・友だちのカフェの3つの場所から脱出する、無料の謎解きゲーム。明るい水彩の絵で、こわい演出はありません。ヒントは3段階、手がかりは手帳に自動でのこります。">
+<link rel="canonical" href="https://sjchsjch66-coder.github.io/kotono/">
+<meta name="theme-color" content="#cf4566">
+<meta property="og:type" content="website"><meta property="og:site_name" content="七色パレットゲームズ">
+<meta property="og:title" content="脱出ゲーム ことのと おでかけ大作戦"><meta property="og:description" content="からくり好きの女の子と、お部屋・電車・カフェの3つの場所から脱出。明るい水彩の絵の、こわくない謎解きゲームです。">
+<meta property="og:url" content="https://sjchsjch66-coder.github.io/kotono/"><meta property="og:image" content="https://sjchsjch66-coder.github.io/kotono/images/ogp.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ことのと猫のだいず、夕方の駅の電車、開店前のカフェの絵">
+<meta property="og:locale" content="ja_JP"><meta name="twitter:card" content="summary_large_image">
+<link rel="apple-touch-icon" href="images/icon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "ことのと おでかけ大作戦", "operatingSystem": "iOS 15.0 以上", "applicationCategory": "GameApplication", "genre": "脱出ゲーム", "inLanguage": "ja", "url": "https://sjchsjch66-coder.github.io/kotono/", "image": "https://sjchsjch66-coder.github.io/kotono/images/ogp.jpg", "description": "からくり好きの女の子・ことのと、自分の部屋・レトロな電車・友だちのカフェの3つの場所から脱出する、無料の謎解きゲーム。明るい水彩の絵で、こわい演出はありません。ヒントは3段階、手がかりは手帳に自動でのこります。", "author": {"@type": "Organization", "name": "七色パレットゲームズ", "url": "https://sjchsjch66-coder.github.io/"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "installUrl": "https://apps.apple.com/jp/app/id6824518808"}</script>
+<style>
+:root{--ink:#3b3552;--muted:#6f6787;--line:#ece2d6;--bg:#fbf6ee;--panel:#fff;--soft:#f5ede2;
+--accent:#cf4566;--accent-ink:#fff;--accent-soft:#fde8ea}
+@media (prefers-color-scheme:dark){:root{--ink:#f1ecfb;--muted:#b9b0cc;--line:#3d3756;--bg:#1f1b2b;--panel:#2a2540;--soft:#262139;
+--accent:#ff9bb0;--accent-ink:#1f1b2b;--accent-soft:#332c4a}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;line-height:1.8;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.top{padding-top:14px;padding-bottom:14px}.top a{font-weight:700;text-decoration:none;font-size:.9rem}
+h1,h2,h3{line-height:1.4;word-break:keep-all;overflow-wrap:anywhere}
+h2{font-size:1.45rem;margin:0 0 .3em}
+.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.18em;font-size:.78rem;margin:0}
+section{padding:44px 0}
+section.alt{background:var(--soft)}
+.lead{color:var(--muted);margin:.2em 0 1.2em}
+
+/* ヒーロー */
+.hero{display:grid;gap:22px;align-items:center;padding-top:4px;padding-bottom:36px}
+.hero .art{border-radius:22px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;background:var(--soft)}
+.hero .art img{width:100%;height:100%;object-fit:cover;object-position:50% 62%}
+.hero h1{font-size:2rem;margin:.15em 0 .3em}
+.hero .one{font-size:1.08rem;margin:0 0 1.1em}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);font-weight:800;text-decoration:none;border-radius:99px;padding:13px 26px;font-size:1.02rem}
+.btn small{font-weight:700;opacity:.9;font-size:.8rem}
+.btn.wait{background:var(--panel);color:var(--accent);border:2px solid var(--accent)}
+.facts{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:6px 8px}
+.facts li{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:2px 12px;font-size:.82rem;color:var(--muted)}
+.icon{width:64px;height:64px;border-radius:15px;border:1px solid var(--line)}
+.titlerow{display:flex;gap:14px;align-items:center}
+
+/* こんなゲーム */
+.story{display:grid;gap:22px;align-items:center}
+.story .scene{border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+.story p{margin:0 0 .8em}
+.shots{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 16px 14px;margin:18px -16px 0;-webkit-overflow-scrolling:touch}
+.shots figure{margin:0;flex:none;width:62%;max-width:240px;scroll-snap-align:center}
+.shots img{width:100%;height:auto;border-radius:18px;border:1px solid var(--line);background:var(--panel)}
+.shots figcaption{font-size:.85rem;color:var(--muted);text-align:center;margin-top:8px;line-height:1.5}
+
+/* 特長・遊び方 */
+.cards{display:grid;gap:12px;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
+.cards li{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.cards b{display:block;font-size:1.02rem;margin-bottom:2px}
+.cards span{color:var(--muted);font-size:.93rem}
+.steps{counter-reset:s}
+.steps li{position:relative;padding-left:62px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:800;display:grid;place-items:center}
+
+/* ヒントと広告 */
+.money{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:6px 18px;margin:0}
+.money div{display:grid;grid-template-columns:4.5em 1fr;gap:10px;padding:12px 0;border-top:1px dashed var(--line)}
+.money div:first-child{border-top:0}
+.money dt{font-weight:800}.money dd{margin:0;color:var(--muted)}
+
+/* よくある質問 */
+.faq details{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:0 0 10px;padding:0 18px}
+.faq summary{cursor:pointer;font-weight:800;padding:14px 0;list-style:none;display:flex;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";color:var(--accent);font-weight:900;flex:none}
+.faq details p{margin:0 0 14px;color:var(--muted)}
+
+/* シリーズ */
+.series{display:grid;gap:12px;grid-template-columns:1fr;list-style:none;padding:0;margin:0}
+.series a{display:flex;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px 14px;text-decoration:none;color:var(--ink)}
+.series a.here{border:2px solid var(--accent)}
+.series img{width:64px;height:64px;border-radius:15px;flex:none}
+.series b{display:block;line-height:1.45}
+.series span{font-size:.85rem;color:var(--muted);line-height:1.5;display:block}
+.series em{font-style:normal;font-size:.75rem;font-weight:800;color:var(--accent)}
+
+/* 最後 */
+.end{text-align:center}
+.end .art{max-width:520px;margin:0 auto 22px;border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+footer{padding-top:28px;padding-bottom:40px;text-align:center;font-size:.88rem;color:var(--muted)}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;margin-bottom:8px}
+
+@media (min-width:820px){
+ .hero{grid-template-columns:1.05fr .95fr;gap:48px;padding-top:16px;padding-bottom:56px}
+ .hero .art{order:2;aspect-ratio:4/5;max-height:640px}
+ .hero h1{font-size:2.6rem}
+ section{padding:64px 0}
+ h2{font-size:1.75rem}
+ .story{grid-template-columns:1fr 1fr;gap:40px}
+ .shots{overflow:visible;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(var(--n),1fr)}
+ .shots figure{width:auto;max-width:none}
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .steps{grid-template-columns:repeat(3,1fr)}
+ .series{grid-template-columns:repeat(3,1fr)}
+ .faq details{max-width:860px}
+}
 </style></head>
-<body><main><header><a href="../">← 七色パレットゲームズ</a></header><div class="hero"><img src="images/icon.png" alt="アプリアイコン" style="image-rendering:auto"><p class="sub">脱出ゲーム</p><h1>ことのと おでかけ大作戦</h1><a class="soon" href="https://apps.apple.com/jp/app/id6824518808">App Store で配信中</a></div><div class="shots"><img src="images/01_title.png" alt="スクリーンショット" loading="lazy"><img src="images/02_room1.png" alt="スクリーンショット" loading="lazy"><img src="images/03_room2.png" alt="スクリーンショット" loading="lazy"><img src="images/04_room3.png" alt="スクリーンショット" loading="lazy"><img src="images/05_notebook.png" alt="スクリーンショット" loading="lazy"><img src="images/06_puzzle.png" alt="スクリーンショット" loading="lazy"></div>
-<ul class="feat"><li>からくり好きの女の子・ことのと、自分の部屋 → レトロな電車 → 友だちのカフェの 3部屋を脱出</li><li>ひらめきの謎がいっぱい。いくつもの手がかりが1つの答えにまとまる「集まる謎」も</li><li>見た手がかりは手帳に自動でのこる。じゆうメモも書ける</li><li>明るくてかわいい絵。こわい演出はありません</li><li>ヒントは3段階。動画を見ると見られます</li></ul>
-<nav><ul>
-<li><a href="support.html">サポート・お問い合わせ</a></li>
-<li><a href="privacy.html">プライバシーポリシー</a></li>
-</ul></nav></main></body></html>
+<body>
+<div class="wrap top"><a href="../">← 七色パレットゲームズ</a></div>
+<main>
+<div class="wrap hero">
+ <div class="art"><img src="images/lp_hero.webp" alt="床に座って猫のだいずをだっこする、ことの" width="780" height="1397" fetchpriority="high"></div>
+ <div>
+  <p class="eyebrow">無料の脱出ゲーム</p>
+  <div class="titlerow"><img class="icon" src="images/icon.png" alt="ことのと おでかけ大作戦のアイコン" width="64" height="64"><h1>ことのと <wbr>おでかけ大作戦</h1></div>
+  <p class="one">今日は友だちのカフェがオープンする日。なのに、自分で作った「おでかけ計画ロック」が開かない。お部屋から、電車、カフェへ。ことのといっしょに出かけよう。</p>
+  <a class="btn" href="https://apps.apple.com/jp/app/id6824518808">App Store で入手 <small>無料</small></a>
+  <ul class="facts"><li>iPhone(iOS 15 以上)</li><li>無料・課金なし</li><li>3つの場所</li><li>こわい演出なし</li></ul>
+ </div>
+</div>
+
+<section class="alt"><div class="wrap">
+ <div class="story">
+  <div><p class="eyebrow">STORY</p><h2>からくり好きの<wbr>女の子の、<wbr>ちこくできない朝</h2><p>からくり作りが大好きな女の子、ことの。ちこくぐせを直すために、部屋のドアに「おでかけ計画ロック」をつけました。</p><p>ところが、その計画をぜんぶ謎にしてかくしてしまって……。お部屋のしかけを解いて、レトロな電車「からくり号」に乗って、開店前のカフェまで。</p><p>絵はやわらかい水彩。こわい場面や、急におどろかせる演出はありません。</p></div>
+  <div class="scene"><img src="images/lp_scene.webp" alt="夕方の駅で、オレンジ色の電車を見つけてよろこぶことの" loading="lazy" width="780" height="605"></div>
+ </div>
+ <div class="shots" style="--n:4"><figure><img src="images/lp_screen1.webp" alt="ことのの部屋の窓のかべ。ベッドと猫のだいずがいる" loading="lazy" width="480" height="1030"><figcaption>はじまりは、ことのの部屋</figcaption></figure><figure><img src="images/lp_screen2.webp" alt="レトロな電車の中。木の座席と運転席のドア" loading="lazy" width="480" height="1030"><figcaption>レトロな電車「からくり号」</figcaption></figure><figure><img src="images/lp_screen3.webp" alt="夕方の駅前にある、開店前のカフェの入口" loading="lazy" width="480" height="1030"><figcaption>友だちのカフェの前で</figcaption></figure><figure><img src="images/lp_screen4.webp" alt="手がかりの名前がならんだ手帳の画面" loading="lazy" width="480" height="1030"><figcaption>見た手がかりは手帳にのこる</figcaption></figure></div>
+</div></section>
+
+<section><div class="wrap">
+ <p class="eyebrow">POINT</p><h2>身近なものが、<wbr>ぜんぶ手がかり</h2><p class="lead">カレンダー、時刻表、楽譜。見慣れたものの中に、答えへの道がかくれています。</p>
+ <ul class="cards"><li><b>3つの場所で、<wbr>ひとつのおでかけ</b><span>自分の部屋、からくり号、開店前のカフェ。部屋を出るたびに、お話が先へ進みます。</span></li><li><b>手がかりが集まって、<wbr>1つの答えに</b><span>あちこちで見つけた手がかりを合わせて解く「集まる謎」が、どの部屋にもあります。</span></li><li><b>手帳に自動でメモ</b><span>一度見た手がかりは手帳にのこります。気づいたことは「じゆうメモ」に書けます。</span></li><li><b>自分の記録がのこる</b><span>部屋ごとのクリア時間とヒントの回数が出ます。進み具合は自動でセーブ。</span></li></ul>
+</div></section>
+
+<section class="alt"><div class="wrap">
+ <p class="eyebrow">HOW TO PLAY</p><h2>遊び方は<wbr>3つだけ</h2><p class="lead">はじめての脱出ゲームでも、すぐに遊べます。</p>
+ <ol class="cards steps"><li><b>しらべる</b><span>気になるところをタップ。左右の矢印で、部屋のべつのかべへ。</span></li><li><b>つかう</b><span>手に入れた持ち物をえらんで、使いたいところをタップ。</span></li><li><b>とく</b><span>数字や合言葉がわかったら、錠に入れてみよう。</span></li></ol>
+</div></section>
+
+<section><div class="wrap">
+ <p class="eyebrow">HINT &amp; PRICE</p><h2>ヒントと<wbr>広告のこと</h2><p class="lead">遊ぶ前に知っておきたいことを、正直に書いておきます。</p>
+ <dl class="money"><div><dt>値段</dt><dd>無料です。アプリ内課金はありません。</dd></div><div><dt>ヒント</dt><dd>右上の「ヒント」から3段階(どこを見るか・どう考えるか・答え)。動画広告を最後まで見ると、1つずつ見られます。</dd></div><div><dt>広告</dt><dd>部屋を1つクリアするごとに、全画面の広告が1回出ます。謎を解いている最中には出ません。バナー広告はありません。</dd></div></dl>
+</div></section>
+
+<section class="alt"><div class="wrap faq">
+ <p class="eyebrow">Q&amp;A</p><h2>よくある質問</h2><p class="lead">ほかに困ったことは<a href="support.html">サポート</a>へどうぞ。</p>
+ <details><summary>無料で遊べますか?</summary><p>はい、無料です。アプリ内課金はありません。部屋をクリアしたときの全画面広告と、ヒントを見るときの動画広告があります。</p></details><details><summary>どれくらいの長さですか?</summary><p>部屋は3つです。部屋ごとに区切りがあり、進み具合は自動でセーブされるので、1部屋ずつ遊んでも大丈夫です。タイトルの「つづきから」で続きを遊べます。</p></details><details><summary>むずかしいですか?</summary><p>カレンダーや時刻表など、身近なものを手がかりに解く謎です。いくつかの手がかりを合わせて1つの答えを出す謎も、どの部屋にもあります。困ったときはヒントがあります。</p></details><details><summary>詰まって先へ進めません</summary><p>右上の「ヒント」から、3段階のヒントを見られます。3つめは答えなので、先へ進めなくなることはありません。動画は最後まで見て閉じると、ヒントが1つ出ます。電波の弱いところでは、動画を読みこめないことがあります。</p></details><details><summary>こわい場面はありますか?</summary><p>ありません。明るい水彩の絵で、急におどろかせる場面もありません。</p></details><details><summary>前に見た手がかりを忘れました</summary><p>左上の「手帳」に、見た手がかりが自動でのこっています。気づいたことは「じゆうメモ」に書いておけます。</p></details><details><summary>機種変更でデータを引き継げますか?</summary><p>ゲームのデータは端末の中にだけ保存されるため、引き継ぎはできません。アプリを削除すると、データも消えます。</p></details><details><summary>シリーズはどの順番で遊べばいいですか?</summary><p>「ルピナと星の塔」とは、主人公もお話も別々です。どちらから遊んでも大丈夫です。</p></details><details><summary>Android でも遊べますか?</summary><p>いまは iPhone 版だけです(iOS 15 以上)。</p></details>
+</div></section>
+
+<section><div class="wrap">
+ <p class="eyebrow">SERIES</p><h2>七色パレットゲームズの<wbr> ほかのゲーム</h2><p class="lead">脱出ゲームは、1作ごとに主人公もお話も別々です。どこからでもどうぞ。</p>
+ <ul class="series"><li><a class="here" href="../kotono/"><img src="../kotono/images/icon.png" alt="ことのと おでかけ大作戦のアイコン" loading="lazy" width="64" height="64"><div><b>ことのと おでかけ大作戦</b><span>からくり好きの女の子と、おでかけ前の3部屋</span><em>このページ</em></div></a></li><li><a href="../lupina/"><img src="../lupina/images/icon.png" alt="ルピナと星の塔のアイコン" loading="lazy" width="64" height="64"><div><b>ルピナと星の塔</b><span>見習い魔女の進級試験は、塔からの脱出</span><em>10月30日 配信</em></div></a></li><li><a href="../panya/"><img src="../panya/images/icon.png" alt="パン屋さん経営ゲーム ミミの世界のパンのアイコン" loading="lazy" width="64" height="64"><div><b>パン屋さん経営ゲーム ミミの世界のパン</b><span>ミミが世界のパンをめぐる、のんびりパン屋さん</span><em>配信中</em></div></a></li></ul>
+</div></section>
+
+<section class="alt end"><div class="wrap">
+ <div class="art"><img src="images/lp_end.webp" alt="夕焼けの駅前にある、しましまの屋根のカフェ" loading="lazy" width="780" height="543"></div>
+ <h2>カフェのオープンに、<wbr>まにあうかな</h2><p class="lead">ことのといっしょに、おでかけの謎を解いてみてください。</p>
+ <a class="btn" href="https://apps.apple.com/jp/app/id6824518808">App Store で入手 <small>無料</small></a>
+</div></section>
+</main>
+<footer class="wrap"><nav><a href="support.html">サポート・お問い合わせ</a><a href="privacy.html">プライバシーポリシー</a><a href="../">七色パレットゲームズのトップ</a></nav>七色パレットゲームズ</footer>
+</body></html>
