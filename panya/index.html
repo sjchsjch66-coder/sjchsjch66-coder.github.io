@@ -1,27 +1,228 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>パン屋さん経営ゲーム ミミの世界のパン</title><style>
-:root{--ink:#3b3552;--muted:#7d7594;--line:#ece2d6;--bg:#fbf6ee;--pink:#e8557a;--panel:#fff}
-@media (prefers-color-scheme:dark){:root{--ink:#f1ecfb;--muted:#b3aac8;--line:#3d3756;--bg:#211d2e;--pink:#ff8fae;--panel:#2c2740}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;line-height:1.75}
-main{max-width:720px;margin:0 auto;padding:24px 16px 48px}
-header{margin:8px 0 20px}header a{color:var(--pink);text-decoration:none;font-weight:700}
-h1{font-size:1.5rem;margin:.2em 0 .6em}h2{font-size:1.1rem;margin:1.6em 0 .4em}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-dl{margin:0}dt{color:var(--muted);font-size:.85rem;margin-top:12px}dt:first-child{margin-top:0}dd{margin:2px 0 0}
-a{color:var(--pink)}ul{padding-left:1.2em}.muted{color:var(--muted);font-size:.9rem}
-.hero{text-align:center;padding:12px 0 4px}.hero img{width:128px;height:128px;border-radius:28px;image-rendering:pixelated;box-shadow:0 6px 0 var(--line)}
-.hero .sub{color:var(--pink);font-weight:800;letter-spacing:.2em;font-size:.9rem;margin:14px 0 0}.hero h1{font-size:2rem;margin:.1em 0 .3em}
-.soon{display:inline-block;background:var(--pink);color:#fff;font-weight:800;border-radius:99px;padding:6px 18px;font-size:.9rem;text-decoration:none}
-.feat{padding-left:0;list-style:none}.feat li{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:8px 0}
-nav ul{list-style:none;padding:0}nav li{margin:10px 0}nav a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px;text-decoration:none;color:var(--ink);font-weight:700}
-.shots{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:16px 16px 10px;margin:0 -16px}
-.shots img{width:min(402px,calc(100vw - 56px));height:auto;flex:none;border-radius:18px;scroll-snap-align:center;box-shadow:0 4px 0 var(--line)}
+<title>パン屋さん経営ゲーム ミミの世界のパン|タップと放置で世界のパンをめぐる(iPhone・無料)</title>
+<meta name="description" content="いろどり村のミミが、自分の小さなパン屋を開いて世界のパンをめぐる旅へ。タップと放置でパンを焼いて、日本からフランスまで10の国へ。実在する世界のパン120種をドット絵の図鑑に集める、のんびりパン屋さん経営ゲームです。勝手に出る広告はありません。">
+<link rel="canonical" href="https://sjchsjch66-coder.github.io/panya/">
+<meta name="theme-color" content="#c05f1f">
+<meta property="og:type" content="website"><meta property="og:site_name" content="七色パレットゲームズ">
+<meta property="og:title" content="パン屋さん経営ゲーム ミミの世界のパン"><meta property="og:description" content="タップと放置でパンを焼いて、日本からフランスまで10の国へ。世界のパン120種を集める、ドット絵のパン屋さん経営ゲーム。">
+<meta property="og:url" content="https://sjchsjch66-coder.github.io/panya/"><meta property="og:image" content="https://sjchsjch66-coder.github.io/panya/images/ogp.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="日本とフランスの、ドット絵のミミのパン屋">
+<meta property="og:locale" content="ja_JP"><meta name="twitter:card" content="summary_large_image">
+<link rel="apple-touch-icon" href="images/icon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "パン屋さん経営ゲーム ミミの世界のパン", "operatingSystem": "iOS 15.0 以上", "applicationCategory": "GameApplication", "genre": "シミュレーション", "inLanguage": "ja", "url": "https://sjchsjch66-coder.github.io/panya/", "image": "https://sjchsjch66-coder.github.io/panya/images/ogp.jpg", "description": "いろどり村のミミが、自分の小さなパン屋を開いて世界のパンをめぐる旅へ。タップと放置でパンを焼いて、日本からフランスまで10の国へ。実在する世界のパン120種をドット絵の図鑑に集める、のんびりパン屋さん経営ゲームです。勝手に出る広告はありません。", "author": {"@type": "Organization", "name": "七色パレットゲームズ", "url": "https://sjchsjch66-coder.github.io/"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "installUrl": "https://apps.apple.com/jp/app/id6824826333"}</script>
+<style>
+:root{--ink:#3b3552;--muted:#6f6787;--line:#ece2d6;--bg:#fbf6ee;--panel:#fff;--soft:#f5ede2;
+--accent:#c05f1f;--accent-ink:#fff;--accent-soft:#fdebd8}
+@media (prefers-color-scheme:dark){:root{--ink:#f1ecfb;--muted:#b9b0cc;--line:#3d3756;--bg:#1f1b2b;--panel:#2a2540;--soft:#262139;
+--accent:#f6ad6b;--accent-ink:#1f1b2b;--accent-soft:#332c4a}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;line-height:1.8;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.top{padding-top:14px;padding-bottom:14px}.top a{font-weight:700;text-decoration:none;font-size:.9rem}
+h1,h2,h3{line-height:1.4;word-break:keep-all;overflow-wrap:anywhere}
+h2{font-size:1.45rem;margin:0 0 .3em}
+.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.18em;font-size:.78rem;margin:0}
+section{padding:44px 0}
+section.alt{background:var(--soft)}
+.lead{color:var(--muted);margin:.2em 0 1.2em}
+
+/* ヒーロー */
+.hero{display:grid;gap:22px;align-items:center;padding-top:4px;padding-bottom:36px}
+.hero .art{border-radius:22px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;background:var(--soft)}
+.hero .art img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.hero h1{font-size:2rem;margin:.15em 0 .3em}
+.hero .one{font-size:1.08rem;margin:0 0 1.1em}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);font-weight:800;text-decoration:none;border-radius:99px;padding:13px 26px;font-size:1.02rem}
+.btn small{font-weight:700;opacity:.9;font-size:.8rem}
+.btn.wait{background:var(--panel);color:var(--accent);border:2px solid var(--accent)}
+.facts{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:6px 8px}
+.facts li{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:2px 12px;font-size:.82rem;color:var(--muted)}
+.icon{width:64px;height:64px;border-radius:15px;border:1px solid var(--line)}
+.titlerow{display:flex;gap:14px;align-items:center}
+
+/* こんなゲーム */
+.story{display:grid;gap:22px;align-items:center}
+.story .scene{border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+.story p{margin:0 0 .8em}
+.shots{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 16px 14px;margin:18px -16px 0;-webkit-overflow-scrolling:touch}
+.shots figure{margin:0;flex:none;width:62%;max-width:240px;scroll-snap-align:center}
+.shots img{width:100%;height:auto;border-radius:18px;border:1px solid var(--line);background:var(--panel)}
+.shots figcaption{font-size:.85rem;color:var(--muted);text-align:center;margin-top:8px;line-height:1.5}
+
+/* 特長・遊び方 */
+.cards{display:grid;gap:12px;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
+.cards li{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.cards b{display:block;font-size:1.02rem;margin-bottom:2px}
+.cards span{color:var(--muted);font-size:.93rem}
+.steps{counter-reset:s}
+.steps li{position:relative;padding-left:62px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:800;display:grid;place-items:center}
+
+/* ヒントと広告 */
+.money{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:6px 18px;margin:0}
+.money div{display:grid;grid-template-columns:4.5em 1fr;gap:10px;padding:12px 0;border-top:1px dashed var(--line)}
+.money div:first-child{border-top:0}
+.money dt{font-weight:800}.money dd{margin:0;color:var(--muted)}
+
+/* よくある質問 */
+.faq details{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:0 0 10px;padding:0 18px}
+.faq summary{cursor:pointer;font-weight:800;padding:14px 0;list-style:none;display:flex;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";color:var(--accent);font-weight:900;flex:none}
+.faq details p{margin:0 0 14px;color:var(--muted)}
+/* ご要望箱(よくある質問のすぐ下・Google フォームを 新しいタブで) */
+.req{max-width:860px;margin:22px 0 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.req h3{margin:0 0 .2em;font-size:1.08rem}
+.req p{margin:0 0 .8em;color:var(--muted);font-size:.92rem}
+.req .btn{padding:10px 22px;font-size:.95rem}
+
+/* シリーズ */
+.series{display:grid;gap:12px;grid-template-columns:1fr;list-style:none;padding:0;margin:0}
+.series a{display:flex;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px 14px;text-decoration:none;color:var(--ink)}
+.series a.here{border:2px solid var(--accent)}
+.series img{width:64px;height:64px;border-radius:15px;flex:none}
+.series b{display:block;line-height:1.45}
+.series span{font-size:.85rem;color:var(--muted);line-height:1.5;display:block}
+.series em{font-style:normal;font-size:.75rem;font-weight:800;color:var(--accent)}
+
+/* 最後 */
+.end{text-align:center}
+.end .ea{max-width:520px;margin:0 auto 26px}.end .art{border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+footer{padding-top:28px;padding-bottom:40px;text-align:center;font-size:.88rem;color:var(--muted)}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;margin-bottom:8px}
+
+/* かざり(ゲームの絵から切りぬいた小物)。文字にかさならない所にだけ置く・押せない */
+.hs{position:relative}
+section{position:relative}
+.dm{position:absolute;--w:min(120px, calc((100% - 1080px) / 2 - 24px));--m:calc((100% - 1080px) / 2 - var(--w) * var(--s,1));width:calc(var(--w) * var(--s,1));height:auto;pointer-events:none;display:none;z-index:0}
+.db{position:absolute;top:-36px;height:68px;width:auto;max-width:86px;object-fit:contain;pointer-events:none;z-index:1}
+.db.l{left:12px}.db.r{right:12px}.db.sm{height:50px;top:-26px}
+.hd{display:flex;align-items:center;gap:12px}.hd>div{flex:1;min-width:0}
+.df{flex:none;width:76px;height:auto;pointer-events:none}.df.l{order:-1}.df.r{order:1}
+.cw{position:relative}
+.cn{position:absolute;width:86px;height:auto;pointer-events:none;z-index:1}
+.cn.c0{left:-4px;bottom:-20px}.cn.c1{right:-2px;top:-28px}.cn.c2{right:-2px;bottom:-22px}
+main{overflow-x:clip}
+.sway{transform:rotate(var(--r,0deg));transform-origin:50% 85%;animation:sway var(--t,4s) ease-in-out infinite;animation-delay:var(--d,0s)}
+@keyframes sway{0%,100%{transform:rotate(calc(var(--r,0deg) - 8deg)) translateY(0)}25%{transform:rotate(var(--r,0deg)) translateY(-7px)}50%{transform:rotate(calc(var(--r,0deg) + 8deg)) translateY(0)}75%{transform:rotate(var(--r,0deg)) translateY(-7px)}}
+@media (prefers-reduced-motion:reduce){.sway{animation:none}}
+@media (min-width:1240px){.dm{display:block}.df,.db{display:none}.cn{width:112px}
+ .dm{--g:calc(var(--w) * .18)}.dm.l{left:calc(var(--g) + max(0px, var(--m) - 2 * var(--g)) / 2 * (1 + var(--j,0)))}.dm.r{right:calc(var(--g) + max(0px, var(--m) - 2 * var(--g)) / 2 * (1 + var(--j,0)))}}
+
+@media (min-width:820px){
+ .hero{grid-template-columns:1.05fr .95fr;gap:48px;padding-top:16px;padding-bottom:56px}
+ .hero .ha{order:2}.hero .art{aspect-ratio:4/5;max-height:640px}
+ .hero h1{font-size:2.6rem}
+ section{padding:64px 0}
+ h2{font-size:1.75rem}
+ .story{grid-template-columns:1fr 1fr;gap:40px}
+ .shots{overflow:visible;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(var(--n),1fr)}
+ .shots figure{width:auto;max-width:none}
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .steps{grid-template-columns:repeat(3,1fr)}
+ .series{grid-template-columns:repeat(3,1fr)}
+ .faq details{max-width:860px}
+}
+
+/* ドット絵(1ドット=1px のファイルを 整数倍で)。--w/--h=元の大きさ・--k=倍率(スマホ --kp / パソコン --kd) */
+.px{--k:var(--kp,2);image-rendering:pixelated;image-rendering:crisp-edges;width:calc(var(--w) * var(--k) * 1px);height:calc(var(--h) * var(--k) * 1px);max-width:none;flex:none;display:block}
+@media (min-width:1100px){.px{--k:var(--kd,3)}}  /* 820〜1099px(2列でも せまい)は スマホの倍率のまま */
+.pxa{display:flex;justify-content:center;align-items:flex-start;overflow:hidden;border-radius:22px;border:1px solid var(--line);background:var(--sky,#bfe3f7)}
+.hero .art.pxa{aspect-ratio:auto;max-height:none;width:fit-content;max-width:100%;margin:0 auto}
+.story .scene.pxa,.end .art.pxa{width:fit-content;max-width:100%;margin:0 auto}
+.hero .art.pxa img,.story .scene.pxa img{object-fit:fill;height:calc(var(--h) * var(--k) * 1px);width:calc(var(--w) * var(--k) * 1px)}
+.story .scene.pxa{border-radius:20px}
+.hero>*,.story>*,.cw{min-width:0}  /* ドット絵が広くても 文の列を押しひろげない(はみ出た絵は まん中を見せて切る) */
+.px.hd2{display:none}@media (min-width:1100px){.px.hm{display:none}.px.hd2{display:block}}
+.cap{font-size:.85rem;color:var(--muted);text-align:center;margin-top:8px;line-height:1.5}
+/* ドット絵の帯(育つお店・国のお店)。スマホは横に流す・パソコンはならべる */
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 16px 14px;margin:18px -16px 0;-webkit-overflow-scrolling:touch}
+.strip figure{margin:0;flex:none;scroll-snap-align:center}
+.strip .pxa{border-radius:16px}
+.strip b{display:block;font-size:.95rem;color:var(--ink)}
+.swipe{font-size:.8rem;color:var(--muted);margin:6px 0 0}
+@media (min-width:820px){.strip{overflow:visible;flex-wrap:wrap;justify-content:center;margin:24px 0 0;padding:0;gap:18px}.swipe{display:none}}
+/* ストアの画面(スマホで 1:1 になる 201px) */
+.shots2{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 16px 14px;margin:18px -16px 0;-webkit-overflow-scrolling:touch}
+.shots2 figure{margin:0;flex:none;width:201px;scroll-snap-align:center}
+.shots2 img{width:201px;height:auto;border-radius:16px;border:1px solid var(--line);background:var(--panel)}
+.shots2 figcaption{font-size:.85rem;color:var(--muted);text-align:center;margin-top:8px;line-height:1.5}
+@media (min-width:820px){.shots2{overflow:visible;flex-wrap:wrap;justify-content:center;margin:24px 0 0;padding:0;gap:9px}}
+/* 値段の札 */
+.money dd b{color:var(--ink)}
+.btn.pre small{font-weight:800}
+.note{font-size:.85rem;color:var(--muted);margin:10px 0 0}
+/* かざり(ゲームのドット絵の小物)。回さない・ぴょこっとはねる。押せない・文字にかさねない */
+.pk{position:absolute;pointer-events:none;z-index:0;display:none;--kp:2;--kd:2}
+.pk.l{left:calc((100% - 1080px) / 4 - var(--w) * var(--k) * .5px)}
+.pk.r{right:calc((100% - 1080px) / 4 - var(--w) * var(--k) * .5px)}
+.pf{flex:none;pointer-events:none;--kp:2;--kd:2}
+.hd .pf.l{order:-1}.hd .pf.r{order:1}
+.hop{animation:hop var(--t,3.2s) steps(1,end) infinite;animation-delay:var(--d,0s)}
+@keyframes hop{0%,58%,100%{transform:translateY(0)}64%{transform:translateY(-6px)}70%{transform:translateY(-9px)}76%{transform:translateY(-6px)}82%{transform:translateY(0)}88%{transform:translateY(-3px)}94%{transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){.hop{animation:none}}
+@media (min-width:1240px){.pk{display:block}.pf{display:none}}
+@media (min-width:1420px){.pk.big{--kd:3}}
 </style></head>
-<body><main><header><a href="../">← 七色パレットゲームズ</a></header><div class="hero"><img src="images/icon.png" alt="アプリアイコン"><p class="sub">シミュレーション</p><h1>パン屋さん経営ゲーム ミミの世界のパン</h1><a class="soon" href="https://apps.apple.com/jp/app/id6824826333">App Store で配信中</a></div><div class="shots"><img src="images/01_world.png" alt="スクリーンショット" loading="lazy"><img src="images/02_pan.png" alt="スクリーンショット" loading="lazy"><img src="images/03_bake.png" alt="スクリーンショット" loading="lazy"><img src="images/04_artisan.png" alt="スクリーンショット" loading="lazy"><img src="images/05_zukan.png" alt="スクリーンショット" loading="lazy"><img src="images/06_away.png" alt="スクリーンショット" loading="lazy"><img src="images/07_staff.png" alt="スクリーンショット" loading="lazy"></div>
-<ul class="feat"><li>いろどり村のミミが自分のパン屋を開いて、世界のパンをめぐる旅へ。日本からフランスまで10の国</li><li>タップと放置でパンを焼いて売る。新しいパンは温度のゲージのまん中で焼くと「最高の焼き上がり」</li><li>実在する世界のパン120種を、由来の一言つきの図鑑に集めよう。勝手に出る広告なし・動画は見たいときだけ</li></ul>
-<nav><ul>
-<li><a href="support.html">サポート・お問い合わせ</a></li>
-<li><a href="privacy.html">プライバシーポリシー</a></li>
-<li><a href="tokusho.html">特定商取引法に基づく表記</a></li>
-</ul></nav></main></body></html>
+<body>
+<div class="wrap top"><a href="../">← 七色パレットゲームズ</a></div>
+<main>
+<div class="hs"><img class="px pk hop l big" src="images/deco_anpan_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:10%;--t:2.60s;--d:-0.0s"><img class="px pk hop l" src="images/deco_mimi_happy_chef.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:66%;--t:2.97s;--d:-0.9s"><img class="px pk hop r" src="images/deco_baguette_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:18%;--t:3.34s;--d:-1.8s"><img class="px pk hop r big" src="images/deco_melonpan_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:60%;--t:3.71s;--d:-2.7s"><div class="wrap hero">
+ <div class="cw ha"><div class="art pxa" style="--sky:#bfe6ff"><img class="px hm" src="images/hero.png" alt="日本のミミのパン屋。瓦屋根の建物に桜の木、ならんだパンの前に コック帽のミミとなかまたち" width="700" height="600" style="--w:350;--h:300;--kp:1;--kd:2" fetchpriority="high"><img class="px hd2" src="images/hero_d.png" alt="日本のミミのパン屋。瓦屋根の建物に桜の木、ならんだパンの前に コック帽のミミとなかまたち" width="474" height="600" style="--w:237;--h:300;--kp:2;--kd:2" fetchpriority="high"></div></div>
+ <div>
+  <p class="eyebrow">パン屋さん経営ゲーム</p>
+  <div class="titlerow"><img class="icon" src="images/icon.png" alt="パン屋さん経営ゲーム ミミの世界のパンのアイコン" width="64" height="64"><h1>ミミの<wbr>世界のパン</h1></div>
+  <p class="one">いろどり村のミミが、自分の小さなパン屋を開きました。タップと放置でパンを焼いて、日本からフランスまで10の国へ。世界のパンをめぐる旅に出かけよう。</p>
+  <a class="btn" href="https://apps.apple.com/jp/app/id6824826333">App Store で入手 <small>無料</small></a>
+  <ul class="facts"><li>iPhone(iOS 15 以上)</li><li>基本無料・買い切りアイテムあり</li><li>10の国</li><li>世界のパン120種</li></ul>
+ </div>
+</div>
+</div>
+
+<section class="alt"><img class="px pk hop l big" src="images/deco_pretzel_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:30%;--t:4.08s;--d:-0.6s"><img class="px pk hop r" src="images/deco_ruka_happy_chef.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:16%;--t:2.65s;--d:-1.5s"><img class="px pk hop r big" src="images/deco_croissant_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:72%;--t:3.02s;--d:-2.4s"><div class="wrap">
+ <div class="story">
+  <div><div class="hd"><img class="px pf hop r" src="images/deco_pretzel_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:3.3s"><div><p class="eyebrow">STORY</p><h2>旅の人からの手紙で、<wbr>世界のパンの旅へ</h2></div></div><p>いろどり村に色が戻ったあと。パン屋の看板むすめ・ミミが、自分の小さなパン屋を開きました。</p><p>旅の人がくれた手紙には「わたしの国のパンも、焼いてみませんか?」。屋台から町いちばんのベーカリーへ。そして、世界のパンをめぐる旅へ。</p><p>国ごとに、町の景色・お店の見た目・お客さんの服・曲が変わります。着いた国では、その国のパン職人がむかえてくれます。</p></div>
+  <div class="cw"><div class="scene pxa" style="--sky:#bcdcf2"><img class="px" src="images/scene.png" alt="フランスのミミのパン屋10号店。パリの町並みとエッフェル塔" width="350" height="300" loading="lazy" style="--w:350;--h:300;--kp:1;--kd:1"></div><p class="cap">フランスのお店(ミミのパン屋 10号店)</p></div>
+ </div>
+ <h3 style="margin:34px 0 0;font-size:1.15rem">国ごとに、<wbr>お店が変わる</h3><p class="lead" style="margin-bottom:0">日本 → 中国・アジア → 東南アジア → インド・中東 → 中南米 → アメリカ → イギリス → ドイツ → イタリア → フランス。</p>
+ <div class="strip"><figure><div class="pxa" style="--sky:#f6d9a8"><img class="px" src="images/strip1.png" alt="赤いちょうちんと緑の屋根の、中国・アジアのお店" width="330" height="300" loading="lazy" style="--w:330;--h:300;--kp:1;--kd:1"></div><figcaption class="cap"><b>中国・アジア</b>ミミのパン屋 2号店</figcaption></figure><figure><div class="pxa" style="--sky:#f7b465"><img class="px" src="images/strip2.png" alt="夕焼けの空とアーチの窓の、インド・中東のお店" width="330" height="300" loading="lazy" style="--w:330;--h:300;--kp:1;--kd:1"></div><figcaption class="cap"><b>インド・中東</b>ミミのパン屋 4号店</figcaption></figure><figure><div class="pxa" style="--sky:#8fd0f5"><img class="px" src="images/strip3.png" alt="色とりどりの旗とピンクのかべの、中南米のお店" width="330" height="300" loading="lazy" style="--w:330;--h:300;--kp:1;--kd:1"></div><figcaption class="cap"><b>中南米</b>ミミのパン屋 5号店</figcaption></figure><figure><div class="pxa" style="--sky:#8fc4ef"><img class="px" src="images/strip4.png" alt="ビルの町の、アメリカのお店" width="330" height="300" loading="lazy" style="--w:330;--h:300;--kp:1;--kd:1"></div><figcaption class="cap"><b>アメリカ</b>ミミのパン屋 6号店</figcaption></figure><figure><div class="pxa" style="--sky:#c9d3dc"><img class="px" src="images/strip5.png" alt="レンガの建物と時計塔の、イギリスのお店" width="330" height="300" loading="lazy" style="--w:330;--h:300;--kp:1;--kd:1"></div><figcaption class="cap"><b>イギリス</b>ミミのパン屋 7号店</figcaption></figure><figure><div class="pxa" style="--sky:#bfe0f5"><img class="px" src="images/strip6.png" alt="木組みの家の、ドイツのお店" width="330" height="300" loading="lazy" style="--w:330;--h:300;--kp:1;--kd:1"></div><figcaption class="cap"><b>ドイツ</b>ミミのパン屋 8号店</figcaption></figure></div><p class="swipe">← よこにスクロールできます →</p>
+ <div class="shots2"><figure><img src="images/screen1.webp" alt="日本のお店の画面。パンのレベルを上げるボタンがならぶ" loading="lazy" width="603" height="1311"><figcaption>タップと放置で育てる</figcaption></figure><figure><img src="images/screen2.webp" alt="オーブンで新しいパンを焼く画面。温度のゲージ" loading="lazy" width="603" height="1311"><figcaption>まん中で、最高の焼き上がり</figcaption></figure><figure><img src="images/screen3.webp" alt="インド・中東のパン職人があいさつする画面" loading="lazy" width="603" height="1311"><figcaption>旅先のパン職人</figcaption></figure><figure><img src="images/screen4.webp" alt="世界のパン図鑑の画面" loading="lazy" width="603" height="1311"><figcaption>世界のパン120種の図鑑</figcaption></figure><figure><img src="images/screen5.webp" alt="おかえりなさいの画面。閉じていたあいだの売上" loading="lazy" width="603" height="1311"><figcaption>閉じていてもお留守番</figcaption></figure></div>
+</div></section>
+
+<section><img class="px pk hop l" src="images/deco_banhmi_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:20%;--t:3.39s;--d:-0.3s"><img class="px pk hop l big" src="images/deco_pineapplebun_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:70%;--t:3.76s;--d:-1.2s"><img class="px pk hop r big" src="images/deco_mint_happy_chef.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:44%;--t:4.13s;--d:-2.1s"><div class="wrap">
+ <div class="hd"><img class="px pf hop l" src="images/deco_banhmi_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:3.6s"><div><p class="eyebrow">POINT</p><h2>世界のパンを、<wbr>1つずつ焼いて集める</h2></div></div><p class="lead">1回1〜5分。すきま時間に、のんびり遊べます。</p>
+ <ul class="cards"><li><b>日本からフランスまで、<wbr>10の国</b><span>国をめぐるたびに、新しいパンと新しいお店。世界をひとまわりする、パンの旅です。</span></li><li><b>実在する世界のパン<wbr>120種</b><span>あんぱん、パイナップルパン、バインミー、ナン、ブレッツェル、バゲット…。焼いたパンは、由来のひとことつきの図鑑に集まります。</span></li><li><b>まん中で焼けば、<wbr>最高の焼き上がり</b><span>新しいパンはオーブンで。温度のゲージのまん中でタップすると「最高の焼き上がり」。そのパンがしばらく2倍売れます。</span></li><li><b>お店は<wbr>6段階</b><span>パン屋台から、いろどりベーカリー本店まで。大きくなるたびに建物が変わり、売上も2倍に。</span></li><li><b>なかま8人が<wbr>おてつだい</b><span>ルカ・ソラ・ミント・ノノ・ツムギ・ココ・コハク・スズ。いろどり村のなかまが、お店をてつだってくれます。</span></li><li><b>閉じていても<wbr>お留守番</b><span>アプリを閉じているあいだも、お留守番で売れます。1日に何回か開いて、まとめて受け取れます。</span></li></ul>
+</div></section>
+
+<section class="alt"><img class="px pk hop l big" src="images/deco_naan_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:46%;--t:2.70s;--d:-0.0s"><img class="px pk hop r" src="images/deco_donut_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:22%;--t:3.07s;--d:-0.9s"><div class="wrap">
+ <div class="hd"><img class="px pf hop r" src="images/deco_naan_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:3.9s"><div><p class="eyebrow">HOW TO PLAY</p><h2>遊び方は<wbr>3つだけ</h2></div></div><p class="lead">むずかしい操作はありません。</p>
+ <ol class="cards steps"><li><b>焼いて売る</b><span>パンは焼けると自動で売れます。お店の絵をタップしても売れます。</span></li><li><b>お店を育てる</b><span>コインでパンのレベルを上げたり、新しいパンをならべたり。なかまをやとって、お店を大きくしよう。</span></li><li><b>次の国へ</b><span>お店が育って条件がそろったら、次の国へ。新しい国では、また屋台から始まります。</span></li></ol>
+</div></section>
+
+<section><img class="px pk hop l" src="images/deco_anpan_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:18%;--t:3.44s;--d:-1.8s"><img class="px pk hop r big" src="images/deco_mimi_happy_chef.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:50%;--t:3.81s;--d:-2.7s"><div class="wrap">
+ <div class="hd"><img class="px pf hop l" src="images/deco_mimi_happy_chef.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:4.2s"><div><p class="eyebrow">PRICE &amp; ADS</p><h2>無料・課金・<wbr>広告のこと</h2></div></div><p class="lead">遊ぶ前に知っておきたいことを、正直に書いておきます。</p>
+ <dl class="money"><div><dt>値段</dt><dd>基本無料です。月ごとの支払い(サブスクリプション)はありません。</dd></div><div><dt>広告</dt><dd>勝手に出る広告(全画面の広告・バナー)はありません。動画は見たいときだけ。見ると売上が4時間2倍になります(12時間までためられます・1日20回まで)。</dd></div><div><dt>買い切り</dt><dd>広告なしパック 500円・繁盛パック 800円・お留守番のばし 400円・ミミの制服 各100円(4つのセット 300円)。どれも1回買えばずっと有効で、「購入を復元」でもどせます。</dd></div><div><dt>未成年</dt><dd>未成年の方は、1か月に買える金額に上限があります(15歳以下は5,000円・16〜19歳は10,000円まで)。</dd></div></dl>
+</div></section>
+
+<section class="alt"><img class="px pk hop l big" src="images/deco_baguette_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:12%;--t:4.18s;--d:-0.6s"><img class="px pk hop l" src="images/deco_melonpan_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:62%;--t:2.75s;--d:-1.5s"><img class="px pk hop r big" src="images/deco_pretzel_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:34%;--t:3.12s;--d:-2.4s"><div class="wrap faq">
+ <div class="hd"><img class="px pf hop r" src="images/deco_pretzel_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:4.5s"><div><p class="eyebrow">Q&amp;A</p><h2>よくある質問</h2></div></div><p class="lead">ほかに困ったことは<a href="support.html">サポート</a>へどうぞ。</p>
+ <details><summary>無料で遊べますか?</summary><p>基本無料です。買い切りのアイテムと、見たいときだけの動画があります。</p></details><details><summary>広告は勝手に出ますか?</summary><p>出ません。全画面の広告やバナーはなく、動画は自分で「動画で売上2倍」を押したときだけです。</p></details><details><summary>広告なしパックと繁盛パックのちがいは?</summary><p>広告なしパックは、動画を見なくても売上がずっと2倍になります。繁盛パックは、売上がずっと2倍(タップ・お留守番の売上も)。両方あると、売上はずっと4倍です。</p></details><details><summary>機種変更でデータを引き継げますか?</summary><p>ゲームのデータは iCloud にも保存されます。同じ Apple Account なら、新しい iPhone でもデータが戻ります。買ったものは「せってい」の「ショップ・購入を復元」からもどせます。</p></details><details><summary>「ぽこのいろどりマルシェ」とのつながりは?</summary><p>どちらも、いろどり村の世界のゲームです。ミミとぽこの物語は『ぽこのいろどりマルシェ』へつづきますが、どちらから遊んでも楽しめます。</p></details><details><summary>Android でも遊べますか?</summary><p>いまは iPhone 版だけです(iOS 15 以上)。</p></details><div class="req" id="request"><h3>ご要望箱</h3><p>つぎに遊びたいもの・ご要望を教えてください。お名前や連絡先は要りません。</p><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfaiI7u2lbt9bwFeZUt-tbgXndUIYVX700rq2caZ3NdWFW9uA/viewform?usp=pp_url&amp;entry.1550498070=%E3%83%9F%E3%83%9F%E3%81%AE%E3%83%91%E3%83%B3%E5%B1%8B%E3%81%95%E3%82%93" target="_blank" rel="noopener">ご要望箱をひらく</a></div>
+</div></section>
+
+<section><img class="px pk hop l" src="images/deco_ruka_happy_chef.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:56%;--t:3.49s;--d:-0.3s"><img class="px pk hop r big" src="images/deco_croissant_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:10%;--t:3.86s;--d:-1.2s"><div class="wrap">
+ <div class="hd"><img class="px pf hop l" src="images/deco_banhmi_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:4.8s"><div><p class="eyebrow">GAMES</p><h2>七色パレットゲームズの<wbr> ほかのゲーム</h2></div></div><p class="lead">どのゲームも「いろどり村の世界」でつながっています。どこからでもどうぞ。</p>
+ <ul class="series"><li><a href="../irodori-poko/"><img src="../images/irodori.png" alt="いろどり村のぽこのアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>いろどり村のぽこ</b><span>ドットのいろぬりパズル。灰色の村に色をとりもどそう</span><em>配信中</em></div></a></li><li><a href="../marche/"><img src="../marche/images/icon.png" alt="ぽこのいろどりマルシェのアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>ぽこのいろどりマルシェ</b><span>いろどり村のなかまが店員に。マージ×カフェ経営</span><em>予約受付中</em></div></a></li><li><a class="here" href="../panya/"><img src="../panya/images/icon.png" alt="パン屋さん経営ゲーム ミミの世界のパンのアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>パン屋さん経営ゲーム ミミの世界のパン</b><span>ミミが世界のパンをめぐる、タップと放置のパン屋さん</span><em>このページ</em></div></a></li><li><a href="../machigai/"><img src="../machigai/images/icon.png" alt="ぽことまちがいさがしのアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>ぽことまちがいさがし</b><span>2まいのドット絵をくらべる、かわいい脳トレ</span><em>配信中</em></div></a></li><li><a href="../nurie/"><img src="../nurie/images/icon.png" alt="のんびりぽこと数字ぬりえのアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>のんびりぽこと数字ぬりえ</b><span>番号どおりにぬるだけ。のんびりぬりえ</span><em>配信中</em></div></a></li><li><a href="../kotono/"><img src="../kotono/images/icon.png" alt="ことのと おでかけ大作戦のアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>ことのと おでかけ大作戦</b><span>からくり好きの女の子と、3つの場所からの脱出</span><em>配信中</em></div></a></li><li><a href="../lupina/"><img src="../lupina/images/icon.png" alt="ルピナと星の塔のアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>ルピナと星の塔</b><span>見習い魔女の進級試験は、塔からの脱出</span><em>10月30日 配信</em></div></a></li></ul>
+</div></section>
+
+<section class="alt end"><img class="px pk hop l big" src="images/deco_banhmi_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:40%;--t:4.23s;--d:-2.1s"><img class="px pk hop r" src="images/deco_pineapplebun_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:20%;--t:2.80s;--d:-0.0s"><img class="px pk hop r big" src="images/deco_mint_happy_chef.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:64%;--t:3.17s;--d:-0.9s"><div class="wrap">
+ <div class="cw ea"><div class="art pxa" style="--sky:#bfe0f5"><img class="px" src="images/end.png" alt="イタリアのミミのパン屋9号店。ぶどうの飾りと黄色いかべ" width="350" height="300" loading="lazy" style="--w:350;--h:300;--kp:1;--kd:1"></div></div>
+ <h2>世界のパンを、<wbr>焼きにいこう</h2><p class="lead">ミミといっしょに、のんびり世界のパン屋さんをめぐってみてください。</p>
+ <a class="btn" href="https://apps.apple.com/jp/app/id6824826333">App Store で入手 <small>無料</small></a>
+</div></section>
+</main>
+<footer class="wrap"><nav><a href="support.html">サポート・お問い合わせ</a><a href="privacy.html">プライバシーポリシー</a><a href="tokusho.html">特定商取引法に基づく表記</a><a href="../">七色パレットゲームズのトップ</a></nav>七色パレットゲームズ</footer>
+</body></html>
