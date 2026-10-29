@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>七色パレット ライフ|くらしの小さなアプリ</title>
+<meta name="description" content="七色パレットの、くらしのアプリ。水やり帳・おくりもの帳・保証書ばこ。毎日のちょっとした「忘れてた」に手が届く、iPhone のアプリをじゅんびしています。">
+<link rel="canonical" href="https://sjchsjch66-coder.github.io/life/">
+<meta name="theme-color" content="#f7f5f0">
+<meta property="og:type" content="website"><meta property="og:site_name" content="七色パレットゲームズ">
+<meta property="og:title" content="七色パレット ライフ|くらしの小さなアプリ">
+<meta property="og:description" content="水やり帳・おくりもの帳・保証書ばこ。毎日のちょっとした「忘れてた」に手が届く、iPhone のアプリをじゅんびしています。">
+<meta property="og:url" content="https://sjchsjch66-coder.github.io/life/">
+<meta property="og:locale" content="ja_JP">
+<style>
+:root{--bg:#f7f5f0;--panel:#ffffff;--ink:#33343a;--muted:#6b6d75;--line:#e6e2d9;--soft:#efece5;
+--green:#4f8a6a;--green-soft:#e6f0ea;--rose:#b5677a;--rose-soft:#f6e9ec;--wood:#9a7347;--wood-soft:#f3ece2;
+--soon:#8a7a5c;--soon-soft:#f1ebdf}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1e22;--panel:#26282d;--ink:#ecebe7;--muted:#a9aab1;--line:#383a41;--soft:#222429;
+--green:#8cc4a4;--green-soft:#2a3630;--rose:#e0a3b2;--rose-soft:#372b30;--wood:#d6b48a;--wood-soft:#352f27;--soon:#d3c3a2;--soon-soft:#332f27}}
+:root[data-theme="dark"]{--bg:#1d1e22;--panel:#26282d;--ink:#ecebe7;--muted:#a9aab1;--line:#383a41;--soft:#222429;
+--green:#8cc4a4;--green-soft:#2a3630;--rose:#e0a3b2;--rose-soft:#372b30;--wood:#d6b48a;--wood-soft:#352f27;--soon:#d3c3a2;--soon-soft:#332f27}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;line-height:1.85;font-size:16px;overflow-x:hidden}
+a{color:var(--green)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.top{padding-top:16px;font-size:.9rem}.top a{text-decoration:none;font-weight:600}
+h1,h2,h3{line-height:1.45;word-break:keep-all;overflow-wrap:anywhere;font-weight:700}
+.px{image-rendering:pixelated;display:block}
+
+.hero{padding:40px 0 36px;text-align:center}
+.hero .en{letter-spacing:.24em;font-size:.75rem;color:var(--muted);margin:0}
+.hero h1{font-size:2rem;margin:.2em 0 .3em;letter-spacing:.04em}
+.hero .lead{margin:0 auto;max-width:34em;color:var(--muted);text-wrap:balance;word-break:auto-phrase}
+.hero .lead span{display:inline-block}
+.hero .row{display:flex;justify-content:center;align-items:flex-end;gap:22px;margin:26px 0 0}
+.hero .row img{width:64px;height:60px}
+.line7{display:flex;height:3px;max-width:120px;margin:22px auto 0;border-radius:2px;overflow:hidden;opacity:.7}
+.line7 i{flex:1}
+
+.apps{display:grid;gap:20px;padding:8px 0 12px}
+.app{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px 20px;display:grid;gap:18px}
+.app .side{display:grid;gap:14px}
+.app .head{display:flex;gap:16px;align-items:center}
+.app .mark{flex:none;width:76px;height:76px;border-radius:18px;display:grid;place-items:center}
+.app .mark img{width:64px;height:60px}
+.app h2{font-size:1.35rem;margin:0}
+.app .one{margin:.1em 0 0;text-wrap:pretty;color:var(--muted);font-size:.95rem;line-height:1.7}
+.badge{display:inline-block;font-size:.75rem;font-weight:700;border-radius:99px;padding:1px 10px;background:var(--soon-soft);color:var(--soon);margin-left:6px;vertical-align:3px;white-space:nowrap}
+.itch{border-radius:12px;padding:12px 14px;font-weight:700;line-height:1.7}
+.itch small{display:block;font-weight:400;color:var(--muted);font-size:.85rem;margin-top:2px}
+.points{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.points li{position:relative;padding-left:20px;font-size:.95rem;line-height:1.7}
+.points li::before{content:"";position:absolute;left:4px;top:.65em;width:7px;height:7px;border-radius:2px;background:var(--c)}
+.price{font-size:.88rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px;margin:0}
+.price b{color:var(--ink);font-weight:700}
+
+.mizu{--c:var(--green)}.mizu .mark,.mizu .itch{background:var(--green-soft)}
+.okuri{--c:var(--rose)}.okuri .mark,.okuri .itch{background:var(--rose-soft)}
+.hosho{--c:var(--wood)}.hosho .mark,.hosho .itch{background:var(--wood-soft)}
+
+.wilt{display:flex;align-items:flex-end;gap:6px;margin:10px 0 2px;flex-wrap:wrap}
+.wilt figure{margin:0;text-align:center;min-width:58px}
+.wilt img{width:48px;height:45px;margin:0 auto}
+.wilt figcaption{font-size:.72rem;color:var(--muted);font-weight:400;line-height:1.4;margin-top:2px}
+
+.promise{background:var(--soft);border-radius:18px;padding:26px 20px;margin:24px 0 0}
+.promise h2{font-size:1.15rem;margin:0 0 14px;text-align:center}
+.promise ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:1fr}
+.promise li{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;line-height:1.65}
+.promise li b{display:block}
+.promise li span{color:var(--muted);font-size:.88rem}
+.note{color:var(--muted);font-size:.82rem;text-align:center;margin:18px 0 0}
+
+footer{text-align:center;padding:36px 0 48px;color:var(--muted);font-size:.85rem}
+footer p{margin:.3em 0}
+
+@media (min-width:760px){
+ .hero{padding:64px 0 48px}.hero h1{font-size:2.5rem}
+ .hero .row img{width:80px;height:75px}
+ .app{grid-template-columns:minmax(0,5fr) minmax(0,6fr);padding:30px 32px;gap:28px;align-items:start}
+ .promise{padding:32px}
+ .promise ul{grid-template-columns:repeat(4,1fr)}
+}
+</style></head>
+<body>
+<div class="wrap top"><a href="../">← 七色パレットゲームズ</a></div>
+
+<header class="wrap hero">
+<p class="en">NANAIRO PALETTE LIFE</p>
+<h1>七色パレット ライフ</h1>
+<p class="lead"><span>ゲームを作っている七色パレットの、</span><span>くらしのアプリです。</span><br><span>毎日の「あ、忘れてた」に、</span><span>そっと手が届くものを作っています。</span></p>
+<div class="row" aria-hidden="true"><img class="px" src="images/pothos_pot_d0.png" alt=""><img class="px" src="images/gift.png" alt=""><img class="px" src="images/box.png" alt=""></div>
+<div class="line7" aria-hidden="true"><i style="background:#ff6b6b"></i><i style="background:#ffa94d"></i><i style="background:#ffd43b"></i><i style="background:#69db7c"></i><i style="background:#4dabf7"></i><i style="background:#748ffc"></i><i style="background:#da77f2"></i></div>
+</header>
+
+<main class="wrap">
+<div class="apps">
+
+<section class="app mizu" id="mizuyari">
+ <div class="side">
+  <div class="head"><div class="mark"><img class="px" src="images/pothos_pot_d0.png" alt=""></div>
+  <div><h2>水やり帳<span class="badge">近日公開</span></h2><p class="one">鉢を棚に並べておくと、水やりの目安の日にお知らせ。</p></div></div>
+  <div class="itch">水やりが遅れると、棚の鉢がだんだんしおれていく。ひと目で「この子だ」とわかります。
+   <div class="wilt" aria-label="鉢の絵が4段階でしおれていく見本">
+    <figure><img class="px" src="images/pothos_pot_d0.png" alt="元気な鉢"><figcaption>元気</figcaption></figure>
+    <figure><img class="px" src="images/pothos_pot_d1.png" alt="少ししおれた鉢"><figcaption>目安の日</figcaption></figure>
+    <figure><img class="px" src="images/pothos_pot_d2.png" alt="しおれた鉢"><figcaption>すぎた</figcaption></figure>
+    <figure><img class="px" src="images/pothos_pot_d3.png" alt="とてもしおれた鉢"><figcaption>だいぶすぎた</figcaption></figure>
+   </div>
+  </div>
+ </div>
+ <div class="side">
+  <ul class="points">
+   <li>観葉植物・多肉・ハーブなど38種から選べて、季節ごとに目安の日数が変わります。</li>
+   <li>ボタン1つで今日の水やりを記録。「きのうあげた」もあとから入れられます。</li>
+   <li>土がまだしめっていたら「まだかわいていない」で1日のばせます。</li>
+   <li>葉水・肥料・植え替えも、同じ鉢の記録にのこせます。</li>
+   <li>日数はあくまで目安。毎回「土をさわって確かめてね」とひとこと添えます。</li>
+  </ul>
+  <p class="price"><b>6鉢まで無料。</b>ふやすときは買い切り(サブスクなし)。画面の下に小さな広告が出ます(何か1つ買うと消えます)。</p>
+ </div>
+</section>
+
+<section class="app okuri" id="okurimono">
+ <div class="side">
+  <div class="head"><div class="mark"><img class="px" src="images/gift.png" alt=""></div>
+  <div><h2>おくりもの帳<span class="badge">近日公開</span></h2><p class="one">もらった・あげたを記録して、お返しがまだの物を忘れない帳面。</p></div></div>
+  <div class="itch">記録が消えないことを、いちばん大事に作りました。<small>保存のたびの控えと毎日の控えを iPhone の中に。あなたの iCloud にも残り、ファイルに書き出しておくこともできます。</small></div>
+ </div>
+ <div class="side">
+  <ul class="points">
+   <li>「お返しがまだのもの」が一覧に出て、お知らせでも教えてくれます。</li>
+   <li>出産・結婚の内祝い、香典返しから、おみやげ・差し入れ・誕生日まで。</li>
+   <li>記録ごとに、お返しの一般的な目安(金額のはばと時期)を見られます。</li>
+   <li>連名でもらったものも、人ごとにまとめて見られます。</li>
+   <li>ログインなし。記録は七色パレットには送られません。</li>
+  </ul>
+  <p class="price"><b>30件まで無料。</b>ふやすときは買い切り(サブスクなし)。広告はありません。</p>
+ </div>
+</section>
+
+<section class="app hosho" id="hoshousho">
+ <div class="side">
+  <div class="head"><div class="mark"><img class="px" src="images/box.png" alt=""></div>
+  <div><h2>保証書ばこ<span class="badge">近日公開</span></h2><p class="one">家電や住まいの設備を写真でしまって、保証が切れる前にお知らせ。</p></div></div>
+  <div class="itch">型番は写真から読みとり、かならずあなたが確かめてから保存します。<small>読んだ字は「候補」として写真と並べて見せ、「これで合っていますか？」で「はい」を押したときだけ記録します。写真の文字は iPhone の中だけで読みます。</small></div>
+ </div>
+ <div class="side">
+  <ul class="points">
+   <li>部屋をえらんで、よくある物をタップ。写真3枚(本体・保証書・レシート)で登録できます。</li>
+   <li>保証が切れる前(何日前かえらべます)と当日にお知らせ。ふだんは開かなくて大丈夫。</li>
+   <li>こわれたときは、型番・買った日・保証書の写真がひとつの場所にそろっています。</li>
+   <li>写真ごとファイルに書き出して、バックアップできます。</li>
+  </ul>
+  <p class="price"><b>5点まで無料。</b>ふやすときは買い切り(サブスクなし)。広告はありません。</p>
+ </div>
+</section>
+
+</div>
+
+<section class="promise" aria-labelledby="promise-h">
+<h2 id="promise-h">3つのアプリで、そろえていること</h2>
+<ul>
+ <li><b>サブスクなし</b><span>ふやすときは買い切り。毎月のお支払いはありません。</span></li>
+ <li><b>ログインなし</b><span>アカウントを作らずに、すぐ使えます。</span></li>
+ <li><b>記録はあなたの手もとに</b><span>iPhone の中と、あなたの iCloud やファイルに。</span></li>
+ <li><b>全部日本語</b><span>ボタンも説明も、日本語で読めます。</span></li>
+</ul>
+</section>
+
+<p class="note">どれも iPhone 向けに、配信のじゅんびをしています。内容は公開までに変わることがあります。</p>
+</main>
+
+<footer class="wrap">
+<p>お問い合わせ: <a href="mailto:sjch.sjch@icloud.com">sjch.sjch@icloud.com</a></p>
+<p>© 2026 七色パレットゲームズ</p>
+</footer>
+</body></html>
