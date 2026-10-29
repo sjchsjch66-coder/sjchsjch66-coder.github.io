@@ -90,6 +90,18 @@ section.alt{background:var(--soft)}
 footer{padding-top:28px;padding-bottom:40px;text-align:center;font-size:.88rem;color:var(--muted)}
 footer nav{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;margin-bottom:8px}
 
+/* かざり(ゲームの絵から切りぬいた小物)。文字にかさならない所にだけ置く・押せない */
+.hs{position:relative}
+section{position:relative}
+.dm{position:absolute;width:88px;height:auto;pointer-events:none;display:none;z-index:0}
+.db{position:absolute;top:-26px;left:14px;width:52px;height:auto;pointer-events:none;z-index:1}
+.df{float:right;width:54px;height:auto;margin:-12px 0 0 10px;pointer-events:none;shape-outside:circle(50%)}
+.sway{transform:rotate(var(--r,0deg));animation:sway 7s ease-in-out infinite;animation-delay:var(--d,0s)}
+@keyframes sway{0%,100%{transform:rotate(var(--r,0deg)) translateY(0)}50%{transform:rotate(calc(var(--r,0deg) + 4deg)) translateY(-4px)}}
+@media (prefers-reduced-motion:reduce){.sway{animation:none}}
+@media (min-width:1280px){.dm{display:block}.df,.db{display:none}
+ .dm.l{left:calc((100% - 1080px) / 4 - 44px)}.dm.r{right:calc((100% - 1080px) / 4 - 44px)}}
+
 @media (min-width:820px){
  .hero{grid-template-columns:1.05fr .95fr;gap:48px;padding-top:16px;padding-bottom:56px}
  .hero .art{order:2;aspect-ratio:4/5;max-height:640px}
@@ -108,7 +120,7 @@ footer nav{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;margi
 <body>
 <div class="wrap top"><a href="../">← 七色パレットゲームズ</a></div>
 <main>
-<div class="wrap hero">
+<div class="hs"><img class="dm l sway" src="images/deco_cat.webp" alt="" aria-hidden="true" loading="lazy" style="top:12%;--r:-8deg;--d:-1.7s"><img class="dm r sway" src="images/deco_cake.webp" alt="" aria-hidden="true" loading="lazy" style="top:70%;--r:7deg;--d:-3.4s"><div class="wrap hero">
  <div class="art"><img src="images/lp_hero.webp" alt="床に座って猫のだいずをだっこする、ことの" width="780" height="1397" fetchpriority="high"></div>
  <div>
   <p class="eyebrow">無料の脱出ゲーム</p>
@@ -118,41 +130,42 @@ footer nav{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;margi
   <ul class="facts"><li>iPhone(iOS 15 以上)</li><li>無料・課金なし</li><li>3つの場所</li><li>こわい演出なし</li></ul>
  </div>
 </div>
+</div>
 
-<section class="alt"><div class="wrap">
+<section class="alt"><img class="dm l sway" src="images/deco_train.webp" alt="" aria-hidden="true" loading="lazy" style="top:62%;--r:6deg;--d:-5.1s"><img class="db sway" src="images/deco_letter.webp" alt="" aria-hidden="true" loading="lazy" style="--r:8deg;--d:-1.3s"><div class="wrap">
  <div class="story">
-  <div><p class="eyebrow">STORY</p><h2>からくり好きの<wbr>女の子の、<wbr>ちこくできない朝</h2><p>からくり作りが大好きな女の子、ことの。ちこくぐせを直すために、部屋のドアに「おでかけ計画ロック」をつけました。</p><p>ところが、その計画をぜんぶ謎にしてかくしてしまって……。お部屋のしかけを解いて、レトロな電車「からくり号」に乗って、開店前のカフェまで。</p><p>絵はやわらかい水彩。こわい場面や、急におどろかせる演出はありません。</p></div>
+  <div><img class="df sway" src="images/deco_train.webp" alt="" aria-hidden="true" loading="lazy" style="--r:-7deg;--d:-0.9s"><p class="eyebrow">STORY</p><h2>からくり好きの<wbr>女の子の、<wbr>ちこくできない朝</h2><p>からくり作りが大好きな女の子、ことの。ちこくぐせを直すために、部屋のドアに「おでかけ計画ロック」をつけました。</p><p>ところが、その計画をぜんぶ謎にしてかくしてしまって……。お部屋のしかけを解いて、レトロな電車「からくり号」に乗って、開店前のカフェまで。</p><p>絵はやわらかい水彩。こわい場面や、急におどろかせる演出はありません。</p></div>
   <div class="scene"><img src="images/lp_scene.webp" alt="夕方の駅で、オレンジ色の電車を見つけてよろこぶことの" loading="lazy" width="780" height="605"></div>
  </div>
  <div class="shots" style="--n:4"><figure><img src="images/lp_screen1.webp" alt="ことのの部屋の窓のかべ。ベッドと猫のだいずがいる" loading="lazy" width="480" height="1030"><figcaption>はじまりは、ことのの部屋</figcaption></figure><figure><img src="images/lp_screen2.webp" alt="レトロな電車の中。木の座席と運転席のドア" loading="lazy" width="480" height="1030"><figcaption>レトロな電車「からくり号」</figcaption></figure><figure><img src="images/lp_screen3.webp" alt="夕方の駅前にある、開店前のカフェの入口" loading="lazy" width="480" height="1030"><figcaption>友だちのカフェの前で</figcaption></figure><figure><img src="images/lp_screen4.webp" alt="手がかりの名前がならんだ手帳の画面" loading="lazy" width="480" height="1030"><figcaption>見た手がかりは手帳にのこる</figcaption></figure></div>
 </div></section>
 
-<section><div class="wrap">
- <p class="eyebrow">POINT</p><h2>身近なものが、<wbr>ぜんぶ手がかり</h2><p class="lead">カレンダー、時刻表、楽譜。見慣れたものの中に、答えへの道がかくれています。</p>
+<section><img class="dm r sway" src="images/deco_usagi.webp" alt="" aria-hidden="true" loading="lazy" style="top:20%;--r:-6deg;--d:-6.8s"><div class="wrap">
+ <img class="df sway" src="images/deco_usagi.webp" alt="" aria-hidden="true" loading="lazy" style="--r:7deg;--d:-1.8s"><p class="eyebrow">POINT</p><h2>身近なものが、<wbr>ぜんぶ手がかり</h2><p class="lead">カレンダー、時刻表、楽譜。見慣れたものの中に、答えへの道がかくれています。</p>
  <ul class="cards"><li><b>3つの場所で、<wbr>ひとつのおでかけ</b><span>自分の部屋、からくり号、開店前のカフェ。部屋を出るたびに、お話が先へ進みます。</span></li><li><b>手がかりが集まって、<wbr>1つの答えに</b><span>あちこちで見つけた手がかりを合わせて解く「集まる謎」が、どの部屋にもあります。</span></li><li><b>手帳に自動でメモ</b><span>一度見た手がかりは手帳にのこります。気づいたことは「じゆうメモ」に書けます。</span></li><li><b>自分の記録がのこる</b><span>部屋ごとのクリア時間とヒントの回数が出ます。進み具合は自動でセーブ。</span></li></ul>
 </div></section>
 
-<section class="alt"><div class="wrap">
- <p class="eyebrow">HOW TO PLAY</p><h2>遊び方は<wbr>3つだけ</h2><p class="lead">はじめての脱出ゲームでも、すぐに遊べます。</p>
+<section class="alt"><img class="dm l sway" src="images/deco_letter.webp" alt="" aria-hidden="true" loading="lazy" style="top:30%;--r:8deg;--d:-1.5s"><img class="db sway" src="images/deco_cat.webp" alt="" aria-hidden="true" loading="lazy" style="--r:8deg;--d:-3.9s"><div class="wrap">
+ <img class="df sway" src="images/deco_letter.webp" alt="" aria-hidden="true" loading="lazy" style="--r:-7deg;--d:-2.7s"><p class="eyebrow">HOW TO PLAY</p><h2>遊び方は<wbr>3つだけ</h2><p class="lead">はじめての脱出ゲームでも、すぐに遊べます。</p>
  <ol class="cards steps"><li><b>しらべる</b><span>気になるところをタップ。左右の矢印で、部屋のべつのかべへ。</span></li><li><b>つかう</b><span>手に入れた持ち物をえらんで、使いたいところをタップ。</span></li><li><b>とく</b><span>数字や合言葉がわかったら、錠に入れてみよう。</span></li></ol>
 </div></section>
 
-<section><div class="wrap">
- <p class="eyebrow">HINT &amp; PRICE</p><h2>ヒントと<wbr>広告のこと</h2><p class="lead">遊ぶ前に知っておきたいことを、正直に書いておきます。</p>
+<section><img class="dm r sway" src="images/deco_tulip.webp" alt="" aria-hidden="true" loading="lazy" style="top:45%;--r:-7deg;--d:-3.2s"><div class="wrap">
+ <img class="df sway" src="images/deco_tulip.webp" alt="" aria-hidden="true" loading="lazy" style="--r:7deg;--d:-3.6s"><p class="eyebrow">HINT &amp; PRICE</p><h2>ヒントと<wbr>広告のこと</h2><p class="lead">遊ぶ前に知っておきたいことを、正直に書いておきます。</p>
  <dl class="money"><div><dt>値段</dt><dd>無料です。アプリ内課金はありません。</dd></div><div><dt>ヒント</dt><dd>右上の「ヒント」から3段階(どこを見るか・どう考えるか・答え)。動画広告を最後まで見ると、1つずつ見られます。</dd></div><div><dt>広告</dt><dd>部屋を1つクリアするごとに、全画面の広告が1回出ます。謎を解いている最中には出ません。バナー広告はありません。</dd></div></dl>
 </div></section>
 
-<section class="alt"><div class="wrap faq">
- <p class="eyebrow">Q&amp;A</p><h2>よくある質問</h2><p class="lead">ほかに困ったことは<a href="support.html">サポート</a>へどうぞ。</p>
+<section class="alt"><img class="dm l sway" src="images/deco_cat.webp" alt="" aria-hidden="true" loading="lazy" style="top:14%;--r:-5deg;--d:-4.9s"><img class="dm r sway" src="images/deco_cake.webp" alt="" aria-hidden="true" loading="lazy" style="top:66%;--r:9deg;--d:-6.6s"><img class="db sway" src="images/deco_train.webp" alt="" aria-hidden="true" loading="lazy" style="--r:8deg;--d:-6.5s"><div class="wrap faq">
+ <img class="df sway" src="images/deco_cat.webp" alt="" aria-hidden="true" loading="lazy" style="--r:-7deg;--d:-4.5s"><p class="eyebrow">Q&amp;A</p><h2>よくある質問</h2><p class="lead">ほかに困ったことは<a href="support.html">サポート</a>へどうぞ。</p>
  <details><summary>無料で遊べますか?</summary><p>はい、無料です。アプリ内課金はありません。部屋をクリアしたときの全画面広告と、ヒントを見るときの動画広告があります。</p></details><details><summary>どれくらいの長さですか?</summary><p>部屋は3つです。部屋ごとに区切りがあり、進み具合は自動でセーブされるので、1部屋ずつ遊んでも大丈夫です。タイトルの「つづきから」で続きを遊べます。</p></details><details><summary>むずかしいですか?</summary><p>カレンダーや時刻表など、身近なものを手がかりに解く謎です。いくつかの手がかりを合わせて1つの答えを出す謎も、どの部屋にもあります。困ったときはヒントがあります。</p></details><details><summary>詰まって先へ進めません</summary><p>右上の「ヒント」から、3段階のヒントを見られます。3つめは答えなので、先へ進めなくなることはありません。動画は最後まで見て閉じると、ヒントが1つ出ます。電波の弱いところでは、動画を読みこめないことがあります。</p></details><details><summary>こわい場面はありますか?</summary><p>ありません。明るい水彩の絵で、急におどろかせる場面もありません。</p></details><details><summary>前に見た手がかりを忘れました</summary><p>左上の「手帳」に、見た手がかりが自動でのこっています。気づいたことは「じゆうメモ」に書いておけます。</p></details><details><summary>機種変更でデータを引き継げますか?</summary><p>ゲームのデータは端末の中にだけ保存されるため、引き継ぎはできません。アプリを削除すると、データも消えます。</p></details><details><summary>シリーズはどの順番で遊べばいいですか?</summary><p>「ルピナと星の塔」とは、主人公もお話も別々です。どちらから遊んでも大丈夫です。</p></details><details><summary>Android でも遊べますか?</summary><p>いまは iPhone 版だけです(iOS 15 以上)。</p></details>
 </div></section>
 
-<section><div class="wrap">
- <p class="eyebrow">SERIES</p><h2>七色パレットゲームズの<wbr> ほかのゲーム</h2><p class="lead">脱出ゲームは、1作ごとに主人公もお話も別々です。どこからでもどうぞ。</p>
+<section><img class="dm r sway" src="images/deco_train.webp" alt="" aria-hidden="true" loading="lazy" style="top:30%;--r:6deg;--d:-1.3s"><div class="wrap">
+ <img class="df sway" src="images/deco_cake.webp" alt="" aria-hidden="true" loading="lazy" style="--r:7deg;--d:-5.4s"><p class="eyebrow">SERIES</p><h2>七色パレットゲームズの<wbr> ほかのゲーム</h2><p class="lead">脱出ゲームは、1作ごとに主人公もお話も別々です。どこからでもどうぞ。</p>
  <ul class="series"><li><a class="here" href="../kotono/"><img src="../kotono/images/icon.png" alt="ことのと おでかけ大作戦のアイコン" loading="lazy" width="64" height="64"><div><b>ことのと おでかけ大作戦</b><span>からくり好きの女の子と、おでかけ前の3部屋</span><em>このページ</em></div></a></li><li><a href="../lupina/"><img src="../lupina/images/icon.png" alt="ルピナと星の塔のアイコン" loading="lazy" width="64" height="64"><div><b>ルピナと星の塔</b><span>見習い魔女の進級試験は、塔からの脱出</span><em>10月30日 配信</em></div></a></li><li><a href="../panya/"><img src="../panya/images/icon.png" alt="パン屋さん経営ゲーム ミミの世界のパンのアイコン" loading="lazy" width="64" height="64"><div><b>パン屋さん経営ゲーム ミミの世界のパン</b><span>ミミが世界のパンをめぐる、のんびりパン屋さん</span><em>配信中</em></div></a></li></ul>
 </div></section>
 
-<section class="alt end"><div class="wrap">
+<section class="alt end"><img class="dm l sway" src="images/deco_usagi.webp" alt="" aria-hidden="true" loading="lazy" style="top:28%;--r:-9deg;--d:-3.0s"><img class="dm r sway" src="images/deco_letter.webp" alt="" aria-hidden="true" loading="lazy" style="top:60%;--r:5deg;--d:-4.7s"><img class="db sway" src="images/deco_letter.webp" alt="" aria-hidden="true" loading="lazy" style="--r:8deg;--d:-9.1s"><div class="wrap">
  <div class="art"><img src="images/lp_end.webp" alt="夕焼けの駅前にある、しましまの屋根のカフェ" loading="lazy" width="780" height="543"></div>
  <h2>カフェのオープンに、<wbr>まにあうかな</h2><p class="lead">ことのといっしょに、おでかけの謎を解いてみてください。</p>
  <a class="btn" href="https://apps.apple.com/jp/app/id6824518808">App Store で入手 <small>無料</small></a>
