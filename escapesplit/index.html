@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>脱出ゲーム ゆずはと あおとの 宝探し|上下2画面の謎解き(iPhone)</title>
+<meta name="description" content="上の画面に姉のゆずは、下の画面に弟のあおと。上下2つの画面で、ふたりが別々の場所から いっしょに謎を解く脱出ゲーム。家・庭・町の図書館・山のロープウェイ……さいごの場所は、遊んでのおたのしみ。こわい演出はありません。">
+<link rel="canonical" href="https://sjchsjch66-coder.github.io/escapesplit/">
+<meta name="theme-color" content="#2f6fc0">
+<meta property="og:type" content="website"><meta property="og:site_name" content="七色パレットゲームズ">
+<meta property="og:title" content="脱出ゲーム ゆずはと あおとの 宝探し"><meta property="og:description" content="上と下、ふたりで解く脱出ゲーム。おばあちゃんの「ふたりでしか開かない宝さがし」に挑戦しよう。">
+<meta property="og:url" content="https://sjchsjch66-coder.github.io/escapesplit/"><meta property="og:image" content="https://sjchsjch66-coder.github.io/escapesplit/images/ogp.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="大きな木のある家を見上げる ゆずはと あおと、手をつなぐふたり、手紙を読むふたりの絵">
+<meta property="og:locale" content="ja_JP"><meta name="twitter:card" content="summary_large_image">
+<link rel="apple-touch-icon" href="images/icon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "ふたりの部屋", "operatingSystem": "iOS 15.0 以上", "applicationCategory": "GameApplication", "genre": "脱出ゲーム", "inLanguage": "ja", "url": "https://sjchsjch66-coder.github.io/escapesplit/", "image": "https://sjchsjch66-coder.github.io/escapesplit/images/ogp.jpg", "description": "上の画面に姉のゆずは、下の画面に弟のあおと。上下2つの画面で、ふたりが別々の場所から いっしょに謎を解く脱出ゲーム。家・庭・町の図書館・山のロープウェイ……さいごの場所は、遊んでのおたのしみ。こわい演出はありません。", "author": {"@type": "Organization", "name": "七色パレットゲームズ", "url": "https://sjchsjch66-coder.github.io/"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<style>
+:root{--ink:#3b3552;--muted:#6f6787;--line:#ece2d6;--bg:#fbf6ee;--panel:#fff;--soft:#f5ede2;
+--accent:#2f6fc0;--accent-ink:#fff;--accent-soft:#e3eefb}
+@media (prefers-color-scheme:dark){:root{--ink:#f1ecfb;--muted:#b9b0cc;--line:#3d3756;--bg:#1f1b2b;--panel:#2a2540;--soft:#262139;
+--accent:#8fbaf0;--accent-ink:#1f1b2b;--accent-soft:#332c4a}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;line-height:1.8;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.top{padding-top:14px;padding-bottom:14px}.top a{font-weight:700;text-decoration:none;font-size:.9rem}
+h1,h2,h3{line-height:1.4;word-break:keep-all;overflow-wrap:anywhere}
+h2{font-size:1.45rem;margin:0 0 .3em}
+.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.18em;font-size:.78rem;margin:0}
+section{padding:44px 0}
+section.alt{background:var(--soft)}
+.lead{color:var(--muted);margin:.2em 0 1.2em}
+
+/* ヒーロー */
+.hero{display:grid;gap:22px;align-items:center;padding-top:4px;padding-bottom:36px}
+.hero .art{border-radius:22px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;background:var(--soft)}
+.hero .art img{width:100%;height:100%;object-fit:cover;object-position:50% 70%}
+.hero h1{font-size:2rem;margin:.15em 0 .3em}
+.hero .one{font-size:1.08rem;margin:0 0 1.1em}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);font-weight:800;text-decoration:none;border-radius:99px;padding:13px 26px;font-size:1.02rem}
+.btn small{font-weight:700;opacity:.9;font-size:.8rem}
+.btn.wait{background:var(--panel);color:var(--accent);border:2px solid var(--accent)}
+.facts{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:6px 8px}
+.facts li{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:2px 12px;font-size:.82rem;color:var(--muted)}
+.icon{width:64px;height:64px;border-radius:15px;border:1px solid var(--line)}
+.titlerow{display:flex;gap:14px;align-items:center}
+
+/* こんなゲーム */
+.story{display:grid;gap:22px;align-items:center}
+.story .scene{border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+.story p{margin:0 0 .8em}
+.shots{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 16px 14px;margin:18px -16px 0;-webkit-overflow-scrolling:touch}
+.shots figure{margin:0;flex:none;width:62%;max-width:240px;scroll-snap-align:center}
+.shots img{width:100%;height:auto;border-radius:18px;border:1px solid var(--line);background:var(--panel)}
+.shots figcaption{font-size:.85rem;color:var(--muted);text-align:center;margin-top:8px;line-height:1.5}
+
+/* 特長・遊び方 */
+.cards{display:grid;gap:12px;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
+.cards li{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.cards b{display:block;font-size:1.02rem;margin-bottom:2px}
+.cards span{color:var(--muted);font-size:.93rem}
+.steps{counter-reset:s}
+.steps li{position:relative;padding-left:62px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:800;display:grid;place-items:center}
+
+/* ヒントと広告 */
+.money{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:6px 18px;margin:0}
+.money div{display:grid;grid-template-columns:4.5em 1fr;gap:10px;padding:12px 0;border-top:1px dashed var(--line)}
+.money div:first-child{border-top:0}
+.money dt{font-weight:800}.money dd{margin:0;color:var(--muted)}
+
+/* よくある質問 */
+.faq details{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:0 0 10px;padding:0 18px}
+.faq summary{cursor:pointer;font-weight:800;padding:14px 0;list-style:none;display:flex;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";color:var(--accent);font-weight:900;flex:none}
+.faq details p{margin:0 0 14px;color:var(--muted)}
+/* ご要望箱(よくある質問のすぐ下・Google フォームを 新しいタブで) */
+.req{max-width:860px;margin:22px 0 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.req h3{margin:0 0 .2em;font-size:1.08rem}
+.req p{margin:0 0 .8em;color:var(--muted);font-size:.92rem}
+.req .btn{padding:10px 22px;font-size:.95rem}
+
+/* シリーズ */
+.series{display:grid;gap:12px;grid-template-columns:1fr;list-style:none;padding:0;margin:0}
+.series a{display:flex;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px 14px;text-decoration:none;color:var(--ink)}
+.series a.here{border:2px solid var(--accent)}
+.series img{width:64px;height:64px;border-radius:15px;flex:none}
+.series b{display:block;line-height:1.45}
+.series span{font-size:.85rem;color:var(--muted);line-height:1.5;display:block}
+.series em{font-style:normal;font-size:.75rem;font-weight:800;color:var(--accent)}
+
+/* 最後 */
+.end{text-align:center}
+.end .ea{max-width:520px;margin:0 auto 26px}.end .art{border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+footer{padding-top:28px;padding-bottom:40px;text-align:center;font-size:.88rem;color:var(--muted)}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;margin-bottom:8px}
+
+/* かざり(ゲームの絵から切りぬいた小物)。文字にかさならない所にだけ置く・押せない */
+.hs{position:relative}
+section{position:relative}
+.dm{position:absolute;--w:min(120px, calc((100% - 1080px) / 2 - 24px));--m:calc((100% - 1080px) / 2 - var(--w) * var(--s,1));width:calc(var(--w) * var(--s,1));height:auto;pointer-events:none;display:none;z-index:0}
+.db{position:absolute;top:-36px;height:68px;width:auto;max-width:86px;object-fit:contain;pointer-events:none;z-index:1}
+.db.l{left:12px}.db.r{right:12px}.db.sm{height:50px;top:-26px}
+.hd{display:flex;align-items:center;gap:12px}.hd>div{flex:1;min-width:0}
+.df{flex:none;width:76px;height:auto;pointer-events:none}.df.l{order:-1}.df.r{order:1}
+.cw{position:relative}
+.cn{position:absolute;width:86px;height:auto;pointer-events:none;z-index:1}
+.cn.c0{left:-4px;bottom:-20px}.cn.c1{right:-2px;top:-28px}.cn.c2{right:-2px;bottom:-22px}
+main{overflow-x:clip}
+.sway{transform:rotate(var(--r,0deg));transform-origin:50% 85%;animation:sway var(--t,4s) ease-in-out infinite;animation-delay:var(--d,0s)}
+@keyframes sway{0%,100%{transform:rotate(calc(var(--r,0deg) - 8deg)) translateY(0)}25%{transform:rotate(var(--r,0deg)) translateY(-7px)}50%{transform:rotate(calc(var(--r,0deg) + 8deg)) translateY(0)}75%{transform:rotate(var(--r,0deg)) translateY(-7px)}}
+@media (prefers-reduced-motion:reduce){.sway{animation:none}}
+@media (min-width:1240px){.dm{display:block}.df,.db{display:none}.cn{width:112px}
+ .dm{--g:calc(var(--w) * .18)}.dm.l{left:calc(var(--g) + max(0px, var(--m) - 2 * var(--g)) / 2 * (1 + var(--j,0)))}.dm.r{right:calc(var(--g) + max(0px, var(--m) - 2 * var(--g)) / 2 * (1 + var(--j,0)))}}
+
+@media (min-width:820px){
+ .hero{grid-template-columns:1.05fr .95fr;gap:48px;padding-top:16px;padding-bottom:56px}
+ .hero .ha{order:2}.hero .art{aspect-ratio:4/5;max-height:640px}
+ .hero h1{font-size:2.6rem}
+ section{padding:64px 0}
+ h2{font-size:1.75rem}
+ .story{grid-template-columns:1fr 1fr;gap:40px}
+ .shots{overflow:visible;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(var(--n),1fr)}
+ .shots figure{width:auto;max-width:none}
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .steps{grid-template-columns:repeat(3,1fr)}
+ .series{grid-template-columns:repeat(3,1fr)}
+ .faq details{max-width:860px}
+}
+</style></head>
+<body>
+<div class="wrap top"><a href="../">← 七色パレットゲームズ</a></div>
+<main>
+<div class="hs"><img class="dm l sway" src="images/deco_yuzuha.webp" alt="" aria-hidden="true" loading="lazy" style="top:8%;--s:1;--j:0;--r:5deg;--d:-0.0s;--t:4.05s"><img class="dm l sway" src="images/deco_star1.svg" alt="" aria-hidden="true" loading="lazy" style="top:70%;--s:0.8;--j:-0.4;--r:8deg;--d:-1.7s;--t:3.92s"><img class="dm r sway" src="images/deco_aoto.webp" alt="" aria-hidden="true" loading="lazy" style="top:14%;--s:0.65;--j:-0.5;--r:5deg;--d:-3.4s;--t:4.53s"><img class="dm r sway" src="images/deco_house.webp" alt="" aria-hidden="true" loading="lazy" style="top:52%;--s:1;--j:0.2;--r:8deg;--d:-5.1s;--t:4.40s"><div class="wrap hero">
+ <div class="cw ha"><div class="art"><img src="images/lp_hero.webp" alt="大きな木のある おばあちゃんの家を見上げる、ゆずはと あおと" width="900" height="1350" fetchpriority="high"></div><img class="cn c0 sway" src="images/deco_duo.webp" alt="" aria-hidden="true" loading="lazy" style="--r:-8deg;--d:-0.5s;--t:3.04s"></div>
+ <div>
+  <p class="eyebrow">上下2画面の脱出ゲーム</p>
+  <div class="titlerow"><img class="icon" src="images/icon.png" alt="ふたりの部屋のアイコン" width="64" height="64"><h1>ゆずはと あおとの<wbr>宝探し</h1></div>
+  <p class="one">発明家のおばあちゃんが用意したのは、ふたりでしか開かない宝さがし。上の画面のゆずはと、下の画面のあおと。声と管だけでつながって、いっしょに謎を解こう。</p>
+  <span class="btn wait">近日配信 <small>iPhone</small></span>
+  <ul class="facts"><li>iPhone(iOS 15 以上)</li><li>無料(広告あり)</li><li>上下2画面</li><li>こわい演出なし</li></ul>
+ </div>
+</div>
+</div>
+
+<section class="alt"><img class="dm l sway" src="images/deco_star2.svg" alt="" aria-hidden="true" loading="lazy" style="top:38%;--s:1;--j:-0.3;--r:5deg;--d:-6.8s;--t:3.01s"><img class="dm r sway" src="images/deco_grandma.webp" alt="" aria-hidden="true" loading="lazy" style="top:20%;--s:0.9;--j:0.3;--r:-8deg;--d:-1.5s;--t:3.77s"><img class="dm r sway" src="images/deco_star3.svg" alt="" aria-hidden="true" loading="lazy" style="top:70%;--s:0.7;--j:-0.4;--r:-5deg;--d:-3.2s;--t:4.39s"><img class="db l sway" src="images/deco_duo.webp" alt="" aria-hidden="true" loading="lazy" style="--r:8deg;--d:-1.3s;--t:3.63s"><div class="wrap">
+ <div class="story">
+  <div><div class="hd"><img class="df r sway" src="images/deco_aoto.webp" alt="" aria-hidden="true" loading="lazy" style="--r:-7deg;--d:-0.9s;--t:3.13s"><div><p class="eyebrow">STORY</p><h2>夏休み、<wbr>おばあちゃんの家で</h2></div></div><p>発明家のおばあちゃんから手紙がとどきました。「ふたりで来てね。ふたりでしか開かない宝さがしを用意したよ」。</p><p>姉のゆずはは屋根裏へ、弟のあおとは地下へ。上と下の別々の場所から、家・庭・町の図書館・山のロープウェイへと、宝さがしは続きます。さいごは どこへ?</p><p>絵は明るくあたたかく。こわい場面や、急におどろかせる演出はありません。</p></div>
+  <div class="cw"><div class="scene"><img src="images/lp_scene.webp" alt="手をつないで立つ、ゆずはと あおと" loading="lazy" width="900" height="810"></div><img class="cn c1 sway" src="images/deco_star3.svg" alt="" aria-hidden="true" loading="lazy" style="--r:9deg;--d:-2.2s;--t:4.50s"></div>
+ </div>
+ <div class="shots" style="--n:4"><figure><img src="images/lp_screen1.webp" alt="上に屋根裏のアトリエ、下に地下の食料庫が見える画面" loading="lazy" width="480" height="1031"><figcaption>上と下、2つの画面がいつも見える</figcaption></figure><figure><img src="images/lp_screen2.webp" alt="上にツリーハウス、下に池のほとりが見える画面" loading="lazy" width="480" height="1031"><figcaption>かごや管で物を送る</figcaption></figure><figure><img src="images/lp_screen3.webp" alt="上に図書館の2階、下に1階のホールが見える画面" loading="lazy" width="480" height="1031"><figcaption>町の古い図書館</figcaption></figure><figure><img src="images/lp_screen4.webp" alt="上に山の上の駅、下にふもとの駅、まん中にロープウェイの線" loading="lazy" width="480" height="1031"><figcaption>まん中の線で ゴンドラが動く</figcaption></figure></div>
+</div></section>
+
+<section><img class="dm l sway" src="images/deco_duo.webp" alt="" aria-hidden="true" loading="lazy" style="top:18%;--s:0.8;--j:-0.2;--r:-8deg;--d:-4.9s;--t:4.26s"><img class="dm l sway" src="images/deco_yuzuha.webp" alt="" aria-hidden="true" loading="lazy" style="top:70%;--s:0.7;--j:0.5;--r:-5deg;--d:-6.6s;--t:4.87s"><img class="dm r sway" src="images/deco_star1.svg" alt="" aria-hidden="true" loading="lazy" style="top:40%;--s:1;--j:-0.3;--r:-8deg;--d:-1.3s;--t:3.63s"><img class="db r sway" src="images/deco_star1.svg" alt="" aria-hidden="true" loading="lazy" style="--r:-8deg;--d:-2.6s;--t:4.58s"><img class="db sm l sway" src="images/deco_yuzuha.webp" alt="" aria-hidden="true" loading="lazy" style="--r:9deg;--d:-2.4s;--t:4.64s"><div class="wrap">
+ <div class="hd"><img class="df l sway" src="images/deco_star2.svg" alt="" aria-hidden="true" loading="lazy" style="--r:7deg;--d:-1.8s;--t:3.78s"><div><p class="eyebrow">POINT</p><h2>上と下で、<wbr>ちがうものが見える</h2></div></div><p class="lead">画面の上はゆずは、下はあおと。片方だけでは解けない謎を、ふたりで見くらべて解きます。</p>
+ <ul class="cards"><li><b>いつも2つの画面が見える</b><span>上の画面と下の画面が同時に見えます。上で水をそそぐと、下に しずくが落ちる……そんな つながりを手がかりに。</span></li><li><b>物を送る・線をずらす</b><span>まん中の管やかごで物を送ったり、まん中の線をずらして片方の画面を広げたり。上下2画面ならではの しかけです。</span></li><li><b>ふたりで同時に押す</b><span>ときには2本の指で、上と下を同時に。片手で遊ぶための「押さえたままボタン」もあります。</span></li><li><b>ステージを、じゅんばんに</b><span>家、庭、町の図書館、山のロープウェイ……。だんだん広く、高く、むずかしくなります。さいごの場所は、遊んでのおたのしみ。</span></li></ul>
+</div></section>
+
+<section class="alt"><img class="dm l sway" src="images/deco_aoto.webp" alt="" aria-hidden="true" loading="lazy" style="top:50%;--s:0.95;--j:-0.2;--r:5deg;--d:-3.0s;--t:4.24s"><img class="dm r sway" src="images/deco_house.webp" alt="" aria-hidden="true" loading="lazy" style="top:24%;--s:0.75;--j:0.2;--r:-8deg;--d:-4.7s;--t:4.11s"><img class="db l sway" src="images/deco_house.webp" alt="" aria-hidden="true" loading="lazy" style="--r:8deg;--d:-3.9s;--t:3.53s"><div class="wrap">
+ <div class="hd"><img class="df r sway" src="images/deco_star3.svg" alt="" aria-hidden="true" loading="lazy" style="--r:-7deg;--d:-2.7s;--t:4.44s"><div><p class="eyebrow">HOW TO PLAY</p><h2>遊び方は<wbr>3つだけ</h2></div></div><p class="lead">はじめての脱出ゲームでも、すぐに遊べます。</p>
+ <ol class="cards steps"><li><b>しらべる</b><span>気になるところをタップ。さわった物は、その人の「手」に持ちます。</span></li><li><b>わたす</b><span>手の物を、まん中の管やかごへ ゆびで ひっぱると、もう1人にとどきます。</span></li><li><b>いっしょに</b><span>上と下で見えたことを手帳で見くらべて、扉のしかけを解こう。</span></li></ol>
+</div></section>
+
+<section><img class="dm l sway" src="images/deco_star2.svg" alt="" aria-hidden="true" loading="lazy" style="top:14%;--s:0.7;--j:0.3;--r:5deg;--d:-6.4s;--t:4.72s"><img class="dm r sway" src="images/deco_grandma.webp" alt="" aria-hidden="true" loading="lazy" style="top:44%;--s:0.9;--j:-0.2;--r:-8deg;--d:-1.1s;--t:3.48s"><img class="db r sway" src="images/deco_grandma.webp" alt="" aria-hidden="true" loading="lazy" style="--r:-8deg;--d:-5.2s;--t:4.48s"><img class="db sm l sway" src="images/deco_star3.svg" alt="" aria-hidden="true" loading="lazy" style="--r:9deg;--d:-3.8s;--t:3.66s"><div class="wrap">
+ <div class="hd"><img class="df l sway" src="images/deco_yuzuha.webp" alt="" aria-hidden="true" loading="lazy" style="--r:7deg;--d:-3.6s;--t:3.10s"><div><p class="eyebrow">HINT &amp; PRICE</p><h2>ヒントと<wbr>広告のこと</h2></div></div><p class="lead">遊ぶ前に知っておきたいことを、正直に書いておきます。</p>
+ <dl class="money"><div><dt>値段</dt><dd>無料です。アプリ内課金で「広告なし+ヒント見放題」(買い切り)を用意しています。</dd></div><div><dt>ヒント</dt><dd>どこを見るか → どう読むか → 答えとわけ、の3段階。動画広告を見ると1つずつ見られます。見たヒントは、いつでも見なおせます。</dd></div><div><dt>広告</dt><dd>ステージを1つクリアして次へ進むときに、全画面の広告が1回出ます。謎を解いている最中には出ません。バナー広告はありません。</dd></div></dl>
+</div></section>
+
+<section class="alt"><img class="dm l sway" src="images/deco_star3.svg" alt="" aria-hidden="true" loading="lazy" style="top:10%;--s:0.9;--j:0;--r:5deg;--d:-2.8s;--t:4.09s"><img class="dm l sway" src="images/deco_duo.webp" alt="" aria-hidden="true" loading="lazy" style="top:60%;--s:0.8;--j:-0.4;--r:8deg;--d:-4.5s;--t:3.96s"><img class="dm r sway" src="images/deco_yuzuha.webp" alt="" aria-hidden="true" loading="lazy" style="top:36%;--s:1;--j:0.2;--r:5deg;--d:-6.2s;--t:4.58s"><img class="db l sway" src="images/deco_duo.webp" alt="" aria-hidden="true" loading="lazy" style="--r:8deg;--d:-6.5s;--t:3.42s"><div class="wrap faq">
+ <div class="hd"><img class="df r sway" src="images/deco_aoto.webp" alt="" aria-hidden="true" loading="lazy" style="--r:-7deg;--d:-4.5s;--t:3.75s"><div><p class="eyebrow">Q&amp;A</p><h2>よくある質問</h2></div></div><p class="lead">ほかに困ったことは<a href="support.html">サポート</a>へどうぞ。</p>
+ <details><summary>無料で遊べますか?</summary><p>はい、無料で最後まで遊べます。ステージをクリアしたあとの全画面広告と、ヒントを見るときの動画広告があります。「広告なし+ヒント見放題」を買うと、どちらも出なくなります。</p></details><details><summary>どれくらいの長さですか?</summary><p>ステージを じゅんばんに進みます。はじめは短く、あとのステージほど長く、むずかしくなります。進み具合は自動でセーブされるので、1つずつ遊んでも大丈夫です。</p></details><details><summary>ひとりで遊べますか?</summary><p>はい、ひとりで上と下の両方を動かして遊びます。2本の指で同時に押す所は、片手用の「押さえたままボタン」(せってい)でも遊べます。</p></details><details><summary>詰まって先へ進めません</summary><p>上の「ヒント」から、3段階のヒントを見られます。3つめは答えとわけなので、先へ進めなくなることはありません。</p></details><details><summary>こわい場面はありますか?</summary><p>ありません。明るくあたたかい絵で、急におどろかせる場面もありません。</p></details><details><summary>前に見た手がかりを忘れました</summary><p>上の「手帳」に、見た手がかりが自動でのこっています。</p></details><details><summary>機種変更でデータを引き継げますか?</summary><p>ゲームのデータは、お使いのApple Accountの iCloud にも自動で保存されます。同じApple Accountで新しいiPhoneにアプリを入れると、データが戻ります。「広告なし+ヒント見放題」は「購入を復元」で戻せます。</p></details><details><summary>シリーズはどの順番で遊べばいいですか?</summary><p>「ことのと おでかけ大作戦」「ルピナと星の塔」とは、主人公もお話も別々です。どこから遊んでも大丈夫です。</p></details><details><summary>Android でも遊べますか?</summary><p>いまは iPhone 版だけです(iOS 15 以上)。</p></details><div class="req" id="request"><h3>ご要望箱</h3><p>つぎに遊びたいもの・ご要望を教えてください。お名前や連絡先は要りません。</p><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfaiI7u2lbt9bwFeZUt-tbgXndUIYVX700rq2caZ3NdWFW9uA/viewform?usp=pp_url&amp;entry.1550498070=%E3%82%86%E3%81%9A%E3%81%AF%E3%81%A8+%E3%81%82%E3%81%8A%E3%81%A8%E3%81%AE+%E5%AE%9D%E6%8E%A2%E3%81%97" target="_blank" rel="noopener">ご要望箱をひらく</a></div>
+</div></section>
+
+<section><img class="dm l sway" src="images/deco_star1.svg" alt="" aria-hidden="true" loading="lazy" style="top:58%;--s:0.9;--j:-0.3;--r:-8deg;--d:-0.9s;--t:3.34s"><img class="dm r sway" src="images/deco_aoto.webp" alt="" aria-hidden="true" loading="lazy" style="top:8%;--s:0.85;--j:0.1;--r:5deg;--d:-2.6s;--t:3.95s"><img class="db r sway" src="images/deco_star1.svg" alt="" aria-hidden="true" loading="lazy" style="--r:-8deg;--d:-7.8s;--t:4.37s"><img class="db sm l sway" src="images/deco_star2.svg" alt="" aria-hidden="true" loading="lazy" style="--r:9deg;--d:-5.2s;--t:4.69s"><div class="wrap">
+ <div class="hd"><img class="df l sway" src="images/deco_star2.svg" alt="" aria-hidden="true" loading="lazy" style="--r:7deg;--d:-5.4s;--t:4.41s"><div><p class="eyebrow">SERIES</p><h2>七色パレットゲームズの<wbr> ほかのゲーム</h2></div></div><p class="lead">脱出ゲームは、1作ごとに主人公もお話も別々です。どこからでもどうぞ。</p>
+ <ul class="series"><li><a href="../kotono/"><img src="../kotono/images/icon.png" alt="ことのと おでかけ大作戦のアイコン" loading="lazy" width="64" height="64"><div><b>ことのと おでかけ大作戦</b><span>からくり好きの女の子と、おでかけ前の3部屋</span><em>配信中</em></div></a></li><li><a href="../lupina/"><img src="../lupina/images/icon.png" alt="ルピナと星の塔のアイコン" loading="lazy" width="64" height="64"><div><b>ルピナと星の塔</b><span>見習い魔女の進級試験は、塔からの脱出</span><em>配信中</em></div></a></li><li><a href="../panya/"><img src="../panya/images/icon.png" alt="パン屋さん経営ゲーム ミミの世界のパンのアイコン" loading="lazy" width="64" height="64"><div><b>パン屋さん経営ゲーム ミミの世界のパン</b><span>ミミが世界のパンをめぐる、のんびりパン屋さん</span><em>配信中</em></div></a></li></ul>
+</div></section>
+
+<section class="alt end"><img class="dm l sway" src="images/deco_house.webp" alt="" aria-hidden="true" loading="lazy" style="top:44%;--s:1;--j:-0.2;--r:-8deg;--d:-4.3s;--t:3.82s"><img class="dm r sway" src="images/deco_star2.svg" alt="" aria-hidden="true" loading="lazy" style="top:18%;--s:0.65;--j:-0.6;--r:5deg;--d:-6.0s;--t:4.43s"><img class="dm r sway" src="images/deco_grandma.webp" alt="" aria-hidden="true" loading="lazy" style="top:60%;--s:0.9;--j:0.2;--r:8deg;--d:-0.7s;--t:3.19s"><img class="db l sway" src="images/deco_house.webp" alt="" aria-hidden="true" loading="lazy" style="--r:8deg;--d:-9.1s;--t:3.32s"><img class="db sm r sway" src="images/deco_duo.webp" alt="" aria-hidden="true" loading="lazy" style="--r:-9deg;--d:-5.9s;--t:3.20s"><div class="wrap">
+ <div class="cw ea"><div class="art"><img src="images/lp_end.webp" alt="おばあちゃんの手紙を読む ゆずはと あおと" loading="lazy" width="900" height="672"></div><img class="cn c2 sway" src="images/deco_grandma.webp" alt="" aria-hidden="true" loading="lazy" style="--r:-6deg;--d:-3.4s;--t:4.74s"></div>
+ <h2>ふたりで、<wbr>いっしょに</h2><p class="lead">ゆずはと あおとといっしょに、おばあちゃんの宝さがしに挑戦してみてください。</p>
+ <span class="btn wait">近日配信 <small>iPhone</small></span>
+</div></section>
+</main>
+<footer class="wrap"><nav><a href="support.html">サポート・お問い合わせ</a><a href="privacy.html">プライバシーポリシー</a><a href="../">七色パレットゲームズのトップ</a></nav>七色パレットゲームズ</footer>
+</body></html>
