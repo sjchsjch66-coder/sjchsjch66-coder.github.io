@@ -45,6 +45,25 @@ footer{margin-top:36px;text-align:center}
 .life{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px 18px;text-decoration:none;color:var(--ink)}
 .life .ic{display:flex;gap:4px;flex:none}.life .ic img{width:32px;height:30px;image-rendering:pixelated}
 .life .t{display:block;font-weight:800;color:var(--ink)}.life .s{display:block;color:var(--muted);font-size:.85rem;line-height:1.6}.life .s span{display:inline-block}
+
+/* ぽこのお話(本編)(11/1): いちばん上に・大きく。ドット絵は 1ドット=1px の絵を2倍で(縮めない・ぼかさない) */
+.honpen .lead{margin-bottom:14px}
+.hp{list-style:none;padding:0;margin:0;display:grid;gap:14px;grid-template-columns:1fr}
+@media (min-width:700px){.hp{grid-template-columns:1fr 1fr}}
+.hp li{background:var(--panel);border:2px solid var(--pink);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+.hp a.hpa{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);flex:1}
+.hp .art{display:flex;justify-content:center;overflow:hidden;border-bottom:1px solid var(--line)}
+.hp .art img{image-rendering:pixelated;image-rendering:crisp-edges;width:calc(var(--w) * 2px);height:calc(var(--h) * 2px);max-width:none;flex:none;display:block}
+.hp .tx{display:flex;flex-direction:column;gap:2px;padding:12px 16px 14px}
+.hp .no{align-self:flex-start;font-size:.75rem;font-weight:800;color:var(--badge-ink);background:var(--pink);border-radius:99px;padding:1px 10px}
+.hp .g{font-size:.8rem;color:var(--muted);font-weight:700}
+.hp .nm{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.2rem;margin:4px 0}
+.hp .nm .ic{width:44px;height:44px;border-radius:11px;flex:none}
+.hp .s{color:var(--muted);font-size:.9rem;line-height:1.65;word-break:keep-all;overflow-wrap:anywhere;margin-bottom:6px}
+.hp .badge{margin-top:0;align-self:flex-start}.honpen .lead,.world,.soon .s{word-break:keep-all;overflow-wrap:anywhere}
+.soon{display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:10px 14px;margin-top:12px;color:var(--ink);text-decoration:none}
+.soon img{width:48px;height:48px;border-radius:12px;flex:none}
+.soon>span:nth-child(2){flex:1;min-width:0}.soon b{display:block}.soon .s{display:block;color:var(--muted);font-size:.85rem;line-height:1.5}
 </style></head>
 <body><main>
 <div class="hero">
@@ -56,9 +75,15 @@ footer{margin-top:36px;text-align:center}
 <p class="hello">ぼく、ぽこ! 七色パレットの 案内役だよ</p>
 </div>
 
-<div class="world"><b>どのゲームも「いろどり村の世界」でつながっています。</b><br>色のしずくの妖精「ぽこ」と、いろどり村のなかまたち。ゲームごとに、なかまが店員になったり、パン屋さんを開いたり、冒険に出たり。ひとつ遊ぶと、ほかのゲームで知っている顔に会えます。</div>
+<div class="world"><b>どのゲームも<wbr>「いろどり村の世界」で<wbr>つながっています。</b><br>色の<wbr>しずくの<wbr>妖精「ぽこ」と、<wbr>いろどり村の<wbr>なかまたち。<wbr>ゲームごとに、<wbr>なかまが<wbr>店員に<wbr>なったり、<wbr>パン屋さんを<wbr>開いたり、<wbr>冒険に<wbr>出たり。<wbr>ひとつ<wbr>遊ぶと、<wbr>ほかのゲームで<wbr>知っている<wbr>顔に<wbr>会えます。</div>
 
-<section class="series"><h2><span class="dot" style="background:#e8557a"></span>ぽこの本編</h2><p class="lead">ぽこが主人公の、いろどり村の物語。</p><ul class="games"><li><a class="card" href="irodori-poko/"><img src="images/irodori.png" alt=""><span class="name">いろどり村のぽこ</span><span class="say">ドットのいろぬりパズル。灰色の村に色をとりもどそう</span><span class="badge b-on">配信中</span></a><a class="store" href="https://apps.apple.com/jp/app/id6817697203">App Store で見る</a></li><li><a class="card" href="marche/"><img src="marche/images/icon.png" alt=""><span class="name">ぽこのマルシェ</span><span class="say">いろどり村のなかまが店員に。マージ×カフェ経営</span><span class="badge b-pre">予約受付中</span><span class="date">11月6日配信</span></a><a class="store" href="https://apps.apple.com/jp/app/id6822205930">App Store で予約する</a></li><li><a class="card"><img src="images/coming_soon.png" alt=""><span class="name">Coming Soon</span><span class="say">ぽこの本編、つぎの物語をじゅんび中</span><span class="badge b-wip">制作中</span></a></li></ul></section>
+<section class="series honpen"><h2><span class="dot" style="background:#e8557a"></span>ぽこのお話(本編)</h2><p class="lead">ぽこが<wbr>主人公の、<wbr>いろどり村の<wbr>物語。<wbr>どちらから<wbr>遊んでも<wbr>楽しめます。</p>
+<ul class="hp">
+<li><a class="hpa" href="irodori-poko/"><span class="art" style="background:#78c2f2"><img src="images/honpen_irodori.png" alt="色がもどった いろどり村のドット絵" width="320" height="224" style="--w:160;--h:112"></span><span class="tx"><span class="no">第1作</span><span class="g">ドットのいろぬりパズル</span><span class="nm"><img class="ic" src="images/irodori.png" alt="">いろどり村のぽこ</span><span class="s">いたずら雲に<wbr>色を<wbr>ぬすまれた<wbr>村に、<wbr>バケツで<wbr>色を<wbr>ぬりもどすお話。</span><span class="badge b-on">配信中</span></span></a><a class="store" href="https://apps.apple.com/jp/app/id6817697203">App Store で見る</a></li>
+<li><a class="hpa" href="marche/"><span class="art" style="background:#7fc7f3"><img src="images/honpen_marche.png" alt="ドット絵のいろどりカフェ本店" width="300" height="224" style="--w:150;--h:112"></span><span class="tx"><span class="no">第2作</span><span class="g">ドット絵のマージ×カフェ経営</span><span class="nm"><img class="ic" src="marche/images/icon.png" alt="">ぽこのマルシェ</span><span class="s">いろどり村の<wbr>なかまと<wbr>いっしょに、<wbr>マルシェで<wbr>小さな<wbr>カフェ屋台を<wbr>開くお話。</span><span><span class="badge b-pre">予約受付中</span> <span class="date">11月6日配信</span></span></span></a><a class="store" href="https://apps.apple.com/jp/app/id6822205930">App Store で予約する</a></li>
+</ul>
+<a class="soon"><img src="images/coming_soon.png" alt=""><span><b>Coming Soon</b><span class="s">ぽこの本編、<wbr>つぎの物語を<wbr>じゅんび中</span></span><span class="badge b-wip">制作中</span></a>
+</section>
 <section class="series"><h2><span class="dot" style="background:#ffa94d"></span>いろどりシリーズ</h2><p class="lead">いろどり村のなかまが主人公。ぽこが紹介する、お店のゲーム。</p><ul class="games"><li><a class="card" href="panya/"><img src="panya/images/icon.png" alt=""><span class="name">パン屋さん経営ゲーム<br>ミミの世界のパン</span><span class="say">ミミが世界のパンをめぐる、タップと放置のパン屋さん</span><span class="badge b-on">配信中</span></a></li><li><a class="card"><img src="images/hanaya.png" alt=""><span class="name">いろどりシリーズ<br>〜ルカの世界のお花屋さん〜</span><span class="say">育てて贈る、花言葉の花束</span><span class="badge b-wip">制作中</span></a></li><li><a class="card"><img src="images/aquarium.png" alt=""><span class="name">いろどりシリーズ<br>〜ハヤテの港の水族館〜</span><span class="say">港の水族館で、世界の海の生き物を育てる</span><span class="badge b-wip">制作中</span></a></li></ul></section>
 <section class="series"><h2><span class="dot" style="background:#4dabf7"></span>ぽこのミニゲーム</h2><p class="lead">ちょっとした時間に。ぽこと遊ぶ、かんたんゲーム。</p><ul class="games"><li><a class="card" href="machigai/"><img src="machigai/images/icon.png" alt=""><span class="name">ぽこと<span class="nb">まちがいさがし</span></span><span class="say">2まいのドット絵をくらべる、かわいい脳トレ</span><span class="badge b-on">配信中</span></a><a class="store" href="https://apps.apple.com/jp/app/id6823128790">App Store で見る</a></li><li><a class="card" href="nurie/"><img src="nurie/images/icon.png" alt=""><span class="name">のんびりぽこと数字ぬりえ</span><span class="say">番号どおりにぬるだけ。考えない、のんびりぬりえ</span><span class="badge b-on">配信中</span></a><a class="store" href="https://apps.apple.com/jp/app/id6823193996">App Store で見る</a></li></ul></section>
 <section class="series"><h2><span class="dot" style="background:#9b7bd4"></span>謎解き・脱出ゲーム</h2><p class="lead">部屋をしらべて、謎を解いて、外へ。かわいい絵の脱出ゲーム。</p><ul class="games"><li><a class="card" href="kotono/"><img src="kotono/images/icon.png" alt=""><span class="name">ことのと おでかけ大作戦</span><span class="say">からくり好きの女の子と、3つの部屋からの脱出</span><span class="badge b-on">配信中</span></a></li><li><a class="card" href="lupina/"><img src="lupina/images/icon.png" alt=""><span class="name">ルピナと星の塔</span><span class="say">見習い魔女ルピナの、塔からの脱出(進級試験)</span><span class="badge b-on">配信中</span></a></li></ul></section>

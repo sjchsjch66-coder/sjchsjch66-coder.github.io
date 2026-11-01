@@ -83,6 +83,12 @@ section.alt{background:var(--soft)}
 .req .btn{padding:10px 22px;font-size:.95rem}
 
 /* シリーズ */
+.video{max-width:860px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;word-break:keep-all;overflow-wrap:anywhere}
+.video h2{font-size:1.15rem;margin:0 0 .5em}
+.video p,.video li{color:var(--muted);font-size:.92rem;margin:0 0 .5em}
+.video ul{margin:0;padding-left:1.2em}
+.video .nw{white-space:nowrap}
+.video code{display:block;margin:.3em 0 .2em;padding:8px 10px;background:var(--bg,#fff);border:1px solid var(--line);border-radius:8px;font-size:.82rem;color:var(--ink);font-family:ui-monospace,Menlo,monospace}
 .series{display:grid;gap:12px;grid-template-columns:1fr;list-style:none;padding:0;margin:0}
 .series a{display:flex;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px 14px;text-decoration:none;color:var(--ink)}
 .series a.here{border:2px solid var(--accent)}
@@ -171,9 +177,9 @@ main{overflow-x:clip}
 @media (min-width:1420px){.pk.big{--kd:3}}
 .pxbox{--k:var(--kp,2)}@media (min-width:1100px){.pxbox{--k:var(--kd,3)}}
 /* 作品ごとの動き(motion)。どれも「動きを減らす」設定では止まる */
-/* paint(いろどり村): 灰色の小物に、ときどき色がもどる */
-.paint{animation:paint var(--t,6s) steps(1,end) infinite;animation-delay:var(--d,0s)}
-@keyframes paint{0%,100%{filter:grayscale(.9)}46%{filter:grayscale(.6)}50%{filter:grayscale(.3)}54%{filter:grayscale(0)}90%{filter:grayscale(0)}94%{filter:grayscale(.5)}}
+/* paint(いろどり村): ページを開くと、小物に いっしゅんで色がつく(1回だけ・そのあとは ずっと色つき。灰色のまま並べない) */
+.paint{animation:paint .9s steps(1,end) 1 both;animation-delay:var(--d,0s)}
+@keyframes paint{0%{filter:grayscale(.9)}35%{filter:grayscale(.5)}70%{filter:grayscale(0)}100%{filter:none}}
 /* puff(パン屋): 焼きたてのパンが ぽこっとふくらんで、湯気が立つ(小さい絵⇔大きい絵の入れかえ・ドットは縮めない) */
 .puff:not(.pk){position:relative}.puff{width:calc(44px * var(--k));height:calc(60px * var(--k));flex:none}
 .puff .st{position:absolute;left:50%;transform:translateX(-50%)}
@@ -200,25 +206,61 @@ main{overflow-x:clip}
 .mo img.rc{filter:grayscale(.86)}
 .recap{font-size:.8rem;color:var(--muted);text-align:center;margin:6px 0 0}
 @media (prefers-reduced-motion:reduce){.hop,.paint,.puff *{animation:none!important}.puff .st{display:none}}
+/* full(11/1): スマホでは ヒーローの絵を はしからはしまで(大きく)。絵が画面より広いときは ゆっくり左右に見わたす(1ドットずつ・動きを減らす設定では止まる) */
+@media (max-width:819px){.hero .art.pxa.full{width:auto;max-width:none;margin:0 -16px;border-radius:0;border-left:0;border-right:0;justify-content:flex-start}
+.mo .hero .art.full img{animation:pan 14s steps(var(--ps,30),end) infinite alternate;animation-delay:1.2s}}
+@keyframes pan{0%,8%{transform:translateX(0)}92%,100%{transform:translateX(min(0px,calc(100vw - var(--w) * var(--k) * 1px)))}}
+@media (prefers-reduced-motion:reduce){.hero .art.full img{animation:none!important}}
+/* なかまの列(ヒーローの絵のすぐ下・ドット絵の 32px を整数倍で) */
+.parade{display:flex;justify-content:center;gap:6px;margin:-30px 0 0;position:relative;z-index:1}
+.parade .px{--kp:2;--kd:2}
+/* 前と後(ならべる) */
+.pair{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:nowrap}
+.pair figure{margin:0;text-align:center}.pair+.cap{margin-top:12px}.pair .pxa{border-radius:14px}
+.pair .tag{display:inline-block;font-size:.78rem;font-weight:800;border-radius:99px;padding:1px 10px;margin-top:6px;background:var(--panel);border:1px solid var(--line);color:var(--muted)}
+.pair .tag.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.pair .arw{font-weight:800;color:var(--accent);font-size:1.2rem;flex:none}@media (max-width:419px){.pair .arw{display:none}}
+.kw{word-break:keep-all;overflow-wrap:anywhere}
+/* ぽこってだれ? */
+.poko{padding-top:0}.who{display:flex;gap:18px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:18px}
+.who .px{--kp:3;--kd:3;flex:none}
+.who h2{margin:0 0 .2em}.who p{margin:0 0 .5em;word-break:keep-all;overflow-wrap:anywhere}.who p:last-child{margin:0}
+.who .say{display:inline-block;background:var(--accent-soft,var(--soft));border-radius:14px;padding:4px 12px;font-weight:700;color:var(--ink)}
+@media (max-width:519px){.who{flex-direction:column;text-align:center}}
+/* ぽこのお話(本編) */
+.hp{display:grid;gap:14px;grid-template-columns:1fr;list-style:none;padding:0;margin:0}
+@media (min-width:820px){.hp{grid-template-columns:1fr 1fr}}
+.hp a{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;text-decoration:none;color:var(--ink);height:100%}
+.hp a.here{border:2px solid var(--accent)}
+.hp .pxa{border:0;border-radius:0;border-bottom:1px solid var(--line)}
+.hp .px{--kp:2;--kd:2}
+.hp .tx{padding:12px 16px 14px}
+.hp .no{display:inline-block;font-size:.75rem;font-weight:800;color:var(--accent-ink);background:var(--accent);border-radius:99px;padding:1px 10px;margin-right:6px}
+.hp .g{font-size:.8rem;color:var(--muted);font-weight:700}
+.hp b{display:block;font-size:1.1rem;margin:4px 0 2px}
+.hp span.s{display:block;font-size:.9rem;color:var(--muted);line-height:1.6;word-break:keep-all;overflow-wrap:anywhere}
+.hp em{font-style:normal;font-size:.78rem;font-weight:800;color:var(--accent)}
+.hp .arr{font-weight:800;color:var(--accent);text-align:center;margin:-4px 0;font-size:.9rem}
+@media (min-width:820px){.hp .arr{display:none}}
 </style></head>
 <body>
 <div class="wrap top"><a href="../">← 七色パレットゲームズ</a></div>
 <main>
-<div class="hs"><img class="px pk hop l big" src="images/deco_poko32_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:10%;--t:2.60s;--d:-0.0s"><img class="px pk hop l" src="images/deco_W5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:66%;--t:2.97s;--d:-1.3s"><img class="px pk hop r" src="images/deco_mimi_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:18%;--t:3.34s;--d:-2.6s"><img class="px pk hop r big" src="images/deco_F6_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:60%;--t:3.71s;--d:-3.9s"><div class="wrap hero">
+<div class="hs"><img class="px pk hop l big" src="images/deco_poko32_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:10%;--t:2.60s;--d:-0.0s"><img class="px pk hop l" src="images/deco_W5_32.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:66%;--t:2.97s;--d:-1.3s"><img class="px pk hop r" src="images/deco_mimi_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:18%;--t:3.34s;--d:-2.6s"><img class="px pk hop r big" src="images/deco_F6_32.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:60%;--t:3.71s;--d:-3.9s"><div class="wrap hero">
  <div class="cw ha"><div class="art pxa" style="--sky:#7fc7f3"><img class="px" src="images/hero.png" alt="ドット絵のいろどりカフェ本店。黄色いしましまの日よけの下で、ぽことなかまが店員をしている" width="450" height="600" style="--w:150;--h:200;--kp:2;--kd:3" fetchpriority="high"></div></div>
  <div>
   <p class="eyebrow">ドット絵のマージ×カフェ経営</p>
   <div class="titlerow"><img class="icon" src="images/icon.png" alt="ぽこのマルシェのアイコン" width="64" height="64"><h1>ぽこの<wbr>マルシェ</h1></div>
-  <p class="one">いろどり村のなかまたちが、あなたのカフェの店員に。注文を聞いて、素材を合成して、売って。小さな屋台を、大きなカフェに育てよう。</p>
+  <p class="one kw">いろどり村の<wbr>なかまたちが、<wbr>あなたの<wbr>カフェの<wbr>店員に。<wbr>注文を<wbr>聞いて、<wbr>素材を<wbr>合成して、<wbr>売って。<wbr>小さな<wbr>屋台を、<wbr>大きな<wbr>カフェに<wbr>育てよう。</p>
   <a class="btn pre" href="https://apps.apple.com/jp/app/id6822205930">App Store で予約する <small>11月6日配信</small></a><p class="note">いまは予約を受け付けています。遊べるのは 2026年11月6日からです。</p>
   <ul class="facts"><li>iPhone(iOS 15 以上)</li><li>基本無料・アプリ内課金あり</li><li>なかま18人</li><li>3つの町</li></ul>
  </div>
 </div>
 </div>
 
-<section class="alt"><img class="px pk hop l big" src="images/deco_ruka_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:30%;--t:4.08s;--d:-0.2s"><img class="px pk hop r" src="images/deco_B5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:16%;--t:2.65s;--d:-1.5s"><img class="px pk hop r big" src="images/deco_sora_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:72%;--t:3.02s;--d:-2.8s"><div class="wrap">
+<section class="alt"><img class="px pk hop l big" src="images/deco_ruka_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:30%;--t:4.08s;--d:-0.2s"><img class="px pk hop r" src="images/deco_B5_32.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:16%;--t:2.65s;--d:-1.5s"><img class="px pk hop r big" src="images/deco_sora_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:72%;--t:3.02s;--d:-2.8s"><div class="wrap">
  <div class="story">
-  <div><div class="hd"><img class="px pf hop r" src="images/deco_ruka_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:3.3s;--d:-0.8s"><div><p class="eyebrow">STORY</p><h2>色のしずくの妖精ぽこが、<wbr>マルシェにカフェを<wbr>開きました</h2></div></div><p>色のしずくの妖精「ぽこ」が、マルシェに小さなカフェ屋台を開きました。いろどり村のなかまたちといっしょに、みんなが笑顔になるお店をめざします。</p><p>いろどり村・港町・わたゆき高原。3つの町のマルシェをめぐって、ライバル店と売り上げを競います。</p><p>七色パレットゲームズのシリーズ第2作。第1作「いろどり村のぽこ」を遊んでいなくても楽しめます。</p></div>
+  <div><div class="hd"><img class="px pf hop r" src="images/deco_ruka_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:3.3s;--d:-0.8s"><div><p class="eyebrow">STORY</p><h2>色のしずくの妖精ぽこが、<wbr>マルシェにカフェを<wbr>開きました</h2></div></div><p class="kw">色の<wbr>しずくの<wbr>妖精「ぽこ」が、<wbr>マルシェに<wbr>小さな<wbr>カフェ屋台を<wbr>開きました。<wbr>いろどり村の<wbr>なかまたちと<wbr>いっしょに、<wbr>みんなが<wbr>笑顔に<wbr>なる<wbr>お店を<wbr>めざします。</p><p class="kw">いろどり村・<wbr>港町・<wbr>わたゆき高原。<wbr>3つの<wbr>町の<wbr>マルシェを<wbr>めぐって、<wbr>ライバル店と<wbr>売り上げを<wbr>競います。</p><p class="kw">七色パレットゲームズの<wbr>シリーズ第2作。<wbr>第1作「いろどり村のぽこ」を<wbr>遊んでいなくても<wbr>楽しめます。</p></div>
   <div class="cw"><div class="scene pxa" style="--sky:#fff4dc"><img class="px" src="images/scene.png" alt="ぽこと、いろどり村のなかま18人のドット絵" width="516" height="414" loading="lazy" style="--w:172;--h:138;--kp:2;--kd:3"></div><p class="cap">ぽこと、店員になってくれる いろどり村のなかま18人</p></div>
  </div>
  <h3 style="margin:34px 0 0;font-size:1.15rem">小さな屋台が、<wbr>カフェ本店に</h3><p class="lead" style="margin-bottom:0">カフェは5段階で育ちます。段階が上がるたびに、建物が大きく変わります。</p>
@@ -226,32 +268,35 @@ main{overflow-x:clip}
  <div class="shots2"><figure><img src="images/screen1.webp" alt="カフェの画面。なかまが店員をしていて、お客さんが注文している" loading="lazy" width="603" height="1311"><figcaption>なかまと開く、あなたのカフェ</figcaption></figure><figure><img src="images/screen2.webp" alt="作業台の画面。同じ素材を合わせて合成する" loading="lazy" width="603" height="1311"><figcaption>同じものを合成して作る</figcaption></figure><figure><img src="images/screen3.webp" alt="なかまの画面。店員にするなかまを選ぶ" loading="lazy" width="603" height="1311"><figcaption>なかまを集めて店員に</figcaption></figure><figure><img src="images/screen4.webp" alt="なかまのコンビが発動した画面" loading="lazy" width="603" height="1311"><figcaption>相性のいい2人でコンビ</figcaption></figure><figure><img src="images/screen5.webp" alt="ライバル店との売り上げバトルの画面" loading="lazy" width="603" height="1311"><figcaption>ライバル店と売り上げバトル</figcaption></figure></div>
 </div></section>
 
-<section><img class="px pk hop l" src="images/deco_T5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:20%;--t:3.39s;--d:-4.1s"><img class="px pk hop l big" src="images/deco_kiki_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:70%;--t:3.76s;--d:-0.4s"><img class="px pk hop r big" src="images/deco_C5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:44%;--t:4.13s;--d:-1.7s"><div class="wrap">
+<section class="alt poko">
+<div class="wrap"><div class="who"><img class="px hop" src="images/poko.png" alt="ぽこ" loading="lazy" width="144" height="144" style="--w:48;--h:48;--t:3.4s"><div><p class="eyebrow">WHO IS POKO</p><h2>ぽこって<wbr>だれ?</h2><p>色の<wbr>しずくの<wbr>妖精。<wbr>七色パレットゲームズの<wbr>案内役です。</p><p>このゲームでは、<wbr>マルシェに<wbr>小さな<wbr>カフェ屋台を<wbr>開いて、<wbr>いろどり村の<wbr>なかまと<wbr>お店を<wbr>育てます。</p><p><span class="say">ぼく、ぽこ! カフェで待ってるね!</span></p></div></div><div class="hd" style="margin-top:34px"><div><p class="eyebrow">STORY OF POKO</p><h2>ぽこのお話<wbr>(本編)</h2></div></div><p class="lead">ぽこが主人公の、いろどり村の物語。どちらから遊んでも楽しめます。</p><ul class="hp"><li><a href="../irodori-poko/"><div class="pxa" style="--sky:#78c2f2"><img class="px" src="images/honpen1.png" alt="色がもどった いろどり村のドット絵" width="320" height="224" loading="lazy" style="--w:160;--h:112;--kp:2;--kd:2"></div><div class="tx"><span class="no">第1作</span><span class="g">ドットのいろぬりパズル</span><b>いろどり村のぽこ</b><span class="s">いたずら雲に色をぬすまれた村に、バケツで色をぬりもどすお話。</span><em>配信中</em></div></a></li><li><a class="here" href="../marche/"><div class="pxa" style="--sky:#7fc7f3"><img class="px" src="images/honpen2.png" alt="ドット絵のいろどりカフェ本店" width="300" height="224" loading="lazy" style="--w:150;--h:112;--kp:2;--kd:2"></div><div class="tx"><span class="no">第2作</span><span class="g">ドット絵のマージ×カフェ経営</span><b>ぽこのマルシェ</b><span class="s">いろどり村のなかまといっしょに、マルシェで小さなカフェ屋台を開くお話。</span><em>このページ</em></div></a></li></ul></div></section>
+
+<section><img class="px pk hop l" src="images/deco_T5_32.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:20%;--t:3.39s;--d:-4.1s"><img class="px pk hop l big" src="images/deco_kiki_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:70%;--t:3.76s;--d:-0.4s"><img class="px pk hop r big" src="images/deco_C5_32.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:44%;--t:4.13s;--d:-1.7s"><div class="wrap">
  <div class="hd"><img class="px pf hop l" src="images/deco_T5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:3.6s;--d:-1.6s"><div><p class="eyebrow">POINT</p><h2>合成して、売って、<wbr>お店を育てる</h2></div></div><p class="lead">注文の品を作るほど、カフェがにぎやかになっていきます。</p>
  <ul class="cards"><li><b>なかま18人が、<wbr>店員に</b><span>「いろどり村のぽこ」のなかまたち18人が、店員として集まります。なかまごとに、得意な商品や効果がちがいます。</span></li><li><b>5種類の商品を<wbr>合成で育てる</b><span>パン・スイーツ・花・ドリンク・雑貨。同じものを2つ合わせると、ひとつ上の商品になります。</span></li><li><b>なかまの<wbr>コンビ</b><span>相性のいい2人を店員にすると、コンビが生まれて、お店がもっとにぎやかに。組み合わせ探しも楽しめます。</span></li><li><b>ライバル店と<wbr>売り上げバトル</b><span>町ごとに、個性ゆたかなライバル店が勝負をいどんできます。勝てば、次の町への道がひらけます。</span></li><li><b>閉じているあいだは<wbr>お留守番</b><span>カウンターが使えるようになると、アプリを閉じているあいだも、店員のなかまが売上を集めてくれます(最大の時間があります)。</span></li><li><b>称号集めの<wbr>やり込みも</b><span>称号集め・コンビ探し・カフェの飾りつけ。のんびり長く遊べます。</span></li></ul>
 </div></section>
 
-<section class="alt"><img class="px pk hop l big" src="images/deco_koko_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:46%;--t:2.70s;--d:-3.0s"><img class="px pk hop r" src="images/deco_W6_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:22%;--t:3.07s;--d:-4.3s"><div class="wrap">
+<section class="alt"><img class="px pk hop l big" src="images/deco_koko_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:46%;--t:2.70s;--d:-3.0s"><img class="px pk hop r" src="images/deco_W6_32.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:22%;--t:3.07s;--d:-4.3s"><div class="wrap">
  <div class="hd"><img class="px pf hop r" src="images/deco_koko_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:3.9s;--d:-2.4s"><div><p class="eyebrow">HOW TO PLAY</p><h2>遊び方は<wbr>3つだけ</h2></div></div><p class="lead">合成ゲームがはじめてでも、すぐに遊べます。</p>
  <ol class="cards steps"><li><b>注文を聞く</b><span>お客さんが、ほしい商品を注文しにやってきます。</span></li><li><b>合成する</b><span>同じ素材を2つ合わせて、ひとつ上の商品に。合成をくり返して、注文の品を作ります。</span></li><li><b>売って育てる</b><span>売ってコインを稼いで、カフェを進化させよう。</span></li></ol>
 </div></section>
 
-<section><img class="px pk hop l" src="images/deco_poko32_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:18%;--t:3.44s;--d:-0.6s"><img class="px pk hop r big" src="images/deco_W5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:50%;--t:3.81s;--d:-1.9s"><div class="wrap">
+<section><img class="px pk hop l" src="images/deco_poko32_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:18%;--t:3.44s;--d:-0.6s"><img class="px pk hop r big" src="images/deco_W5_32.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:50%;--t:3.81s;--d:-1.9s"><div class="wrap">
  <div class="hd"><img class="px pf hop l" src="images/deco_W5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:4.2s;--d:-3.2s"><div><p class="eyebrow">PRICE &amp; ADS</p><h2>無料・課金・<wbr>広告のこと</h2></div></div><p class="lead">遊ぶ前に知っておきたいことを、正直に書いておきます。</p>
  <dl class="money"><div><dt>値段</dt><dd>基本無料です。アプリ内課金(ジュエル: 100円〜1,500円・はじめてセット 500円)があります。月ごとの支払い(サブスクリプション)はありません。</dd></div><div><dt>未成年</dt><dd>未成年の方は、1か月に買える金額に上限があります(15歳以下は5,000円・16〜19歳は10,000円まで)。</dd></div><div><dt>広告</dt><dd>エネルギーがなくなったときに、自分で「動画を見て +20」を押したときだけ、動画広告が流れます(1日3回まで)。勝手に流れる広告やバナー広告はありません。</dd></div></dl>
 </div></section>
 
-<section class="alt"><img class="px pk hop l big" src="images/deco_mimi_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:12%;--t:4.18s;--d:-3.2s"><img class="px pk hop l" src="images/deco_F6_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:62%;--t:2.75s;--d:-4.5s"><img class="px pk hop r big" src="images/deco_ruka_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:34%;--t:3.12s;--d:-0.8s"><div class="wrap faq">
+<section class="alt"><img class="px pk hop l big" src="images/deco_mimi_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:12%;--t:4.18s;--d:-3.2s"><img class="px pk hop l" src="images/deco_F6_32.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:62%;--t:2.75s;--d:-4.5s"><img class="px pk hop r big" src="images/deco_ruka_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:34%;--t:3.12s;--d:-0.8s"><div class="wrap faq">
  <div class="hd"><img class="px pf hop r" src="images/deco_ruka_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:4.5s;--d:-4.0s"><div><p class="eyebrow">Q&amp;A</p><h2>よくある質問</h2></div></div><p class="lead">ほかに困ったことは<a href="support.html">サポート</a>へどうぞ。</p>
- <details><summary>いつから遊べますか?</summary><p>2026年11月6日に配信の予定です。いまは App Store で予約を受け付けています。</p></details><details><summary>無料で遊べますか?</summary><p>基本無料です。アプリ内課金(ジュエル)と、自分で選んだときだけの動画広告があります。</p></details><details><summary>「いろどり村のぽこ」を遊んでいなくても大丈夫?</summary><p>大丈夫です。シリーズ第2作ですが、はじめての方も楽しめます。</p></details><details><summary>動画の広告は勝手に流れますか?</summary><p>流れません。エネルギーがなくなったときに、自分で「動画を見て +20」を押した場合だけです(1日3回まで)。</p></details><details><summary>アプリを閉じているあいだも売上は入りますか?</summary><p>カウンターが使えるようになると、店員のなかまが「お留守番」をして売上を集めてくれます(最大の時間があります)。</p></details><details><summary>機種変更でデータを引き継げますか?</summary><p>ゲームのデータは、お使いの Apple Account の iCloud にも保存されます。新しい iPhone で同じ Apple Account にサインインしてアプリを入れると、データが戻ります。</p></details><details><summary>Android でも遊べますか?</summary><p>いまは iPhone 版だけです(iOS 15 以上)。</p></details><div class="req" id="request"><h3>ご要望箱</h3><p>つぎに遊びたいもの・ご要望を教えてください。お名前や連絡先は要りません。</p><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfaiI7u2lbt9bwFeZUt-tbgXndUIYVX700rq2caZ3NdWFW9uA/viewform?usp=pp_url&amp;entry.1550498070=%E3%81%84%E3%82%8D%E3%81%A9%E3%82%8A%E3%83%9E%E3%83%AB%E3%82%B7%E3%82%A7" target="_blank" rel="noopener">ご要望箱をひらく</a></div>
+ <details><summary>いつから遊べますか?</summary><p>2026年11月6日に配信の予定です。いまは App Store で予約を受け付けています。</p></details><details><summary>無料で遊べますか?</summary><p>基本無料です。アプリ内課金(ジュエル)と、自分で選んだときだけの動画広告があります。</p></details><details><summary>「いろどり村のぽこ」を遊んでいなくても大丈夫?</summary><p>大丈夫です。シリーズ第2作ですが、はじめての方も楽しめます。</p></details><details><summary>動画の広告は勝手に流れますか?</summary><p>流れません。エネルギーがなくなったときに、自分で「動画を見て +20」を押した場合だけです(1日3回まで)。</p></details><details><summary>アプリを閉じているあいだも売上は入りますか?</summary><p>カウンターが使えるようになると、店員のなかまが「お留守番」をして売上を集めてくれます(最大の時間があります)。</p></details><details><summary>機種変更でデータを引き継げますか?</summary><p>ゲームのデータは、お使いの Apple Account の iCloud にも保存されます。新しい iPhone で同じ Apple Account にサインインしてアプリを入れると、データが戻ります。</p></details><details><summary>Android でも遊べますか?</summary><p>いまは iPhone 版だけです(iOS 15 以上)。</p></details><div class="req" id="request"><h3>ご要望箱</h3><p>つぎに遊びたいもの・ご要望を教えてください。お名前や連絡先は要りません。</p><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfaiI7u2lbt9bwFeZUt-tbgXndUIYVX700rq2caZ3NdWFW9uA/viewform?usp=pp_url&amp;entry.1550498070=%E3%81%BD%E3%81%93%E3%81%AE%E3%83%9E%E3%83%AB%E3%82%B7%E3%82%A7" target="_blank" rel="noopener">ご要望箱をひらく</a></div>
 </div></section>
 
-<section><img class="px pk hop l" src="images/deco_B5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:56%;--t:3.49s;--d:-2.1s"><img class="px pk hop r big" src="images/deco_sora_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:10%;--t:3.86s;--d:-3.4s"><div class="wrap">
+<section><img class="px pk hop l" src="images/deco_B5_32.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:56%;--t:3.49s;--d:-2.1s"><img class="px pk hop r big" src="images/deco_sora_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:10%;--t:3.86s;--d:-3.4s"><div class="wrap">
  <div class="hd"><img class="px pf hop l" src="images/deco_T5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:4.8s;--d:-4.8s"><div><p class="eyebrow">GAMES</p><h2>七色パレットゲームズの<wbr> ほかのゲーム</h2></div></div><p class="lead">どのゲームも「いろどり村の世界」でつながっています。どこからでもどうぞ。</p>
- <ul class="series"><li><a href="../irodori-poko/"><img src="../images/irodori.png" alt="いろどり村のぽこのアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>いろどり村のぽこ</b><span>ドットのいろぬりパズル。灰色の村に色をとりもどそう</span><em>配信中</em></div></a></li><li><a class="here" href="../marche/"><img src="../marche/images/icon.png" alt="ぽこのマルシェのアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>ぽこのマルシェ</b><span>いろどり村のなかまが店員に。マージ×カフェ経営</span><em>このページ</em></div></a></li><li><a href="../panya/"><img src="../panya/images/icon.png" alt="パン屋さん経営ゲーム ミミの世界のパンのアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>パン屋さん経営ゲーム ミミの世界のパン</b><span>ミミが世界のパンをめぐる、タップと放置のパン屋さん</span><em>配信中</em></div></a></li><li><a href="../machigai/"><img src="../machigai/images/icon.png" alt="ぽことまちがいさがしのアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>ぽことまちがいさがし</b><span>2まいのドット絵をくらべる、かわいい脳トレ</span><em>配信中</em></div></a></li><li><a href="../nurie/"><img src="../nurie/images/icon.png" alt="のんびりぽこと数字ぬりえのアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>のんびりぽこと数字ぬりえ</b><span>番号どおりにぬるだけ。のんびりぬりえ</span><em>配信中</em></div></a></li><li><a href="../kotono/"><img src="../kotono/images/icon.png" alt="ことのと おでかけ大作戦のアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>ことのと おでかけ大作戦</b><span>からくり好きの女の子と、3つの場所からの脱出</span><em>配信中</em></div></a></li><li><a href="../lupina/"><img src="../lupina/images/icon.png" alt="ルピナと星の塔のアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>ルピナと星の塔</b><span>見習い魔女の進級試験は、塔からの脱出</span><em>10月30日 配信</em></div></a></li></ul>
+ <ul class="series"><li><a href="../irodori-poko/"><img src="../images/irodori.png" alt="いろどり村のぽこのアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>いろどり村のぽこ</b><span>ドットのいろぬりパズル。灰色の村に色をとりもどそう</span><em>配信中</em></div></a></li><li><a class="here" href="../marche/"><img src="../marche/images/icon.png" alt="ぽこのマルシェのアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>ぽこのマルシェ</b><span>いろどり村のなかまが店員に。マージ×カフェ経営</span><em>このページ</em></div></a></li><li><a href="../panya/"><img src="../panya/images/icon.png" alt="パン屋さん経営ゲーム ミミの世界のパンのアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>パン屋さん経営ゲーム ミミの世界のパン</b><span>ミミが世界のパンをめぐる、タップと放置のパン屋さん</span><em>配信中</em></div></a></li><li><a href="../machigai/"><img src="../machigai/images/icon.png" alt="ぽことまちがいさがしのアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>ぽことまちがいさがし</b><span>2まいのドット絵をくらべる、かわいい脳トレ</span><em>配信中</em></div></a></li><li><a href="../nurie/"><img src="../nurie/images/icon.png" alt="のんびりぽこと数字ぬりえのアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>のんびりぽこと数字ぬりえ</b><span>番号どおりにぬるだけ。のんびりぬりえ</span><em>配信中</em></div></a></li><li><a href="../kotono/"><img src="../kotono/images/icon.png" alt="ことのと おでかけ大作戦のアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>ことのと おでかけ大作戦</b><span>からくり好きの女の子と、3つの場所からの脱出</span><em>配信中</em></div></a></li><li><a href="../lupina/"><img src="../lupina/images/icon.png" alt="ルピナと星の塔のアイコン" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>ルピナと星の塔</b><span>見習い魔女の進級試験は、塔からの脱出</span><em>配信中</em></div></a></li></ul>
 </div></section>
 
-<section class="alt end"><img class="px pk hop l big" src="images/deco_T5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:40%;--t:4.23s;--d:-4.7s"><img class="px pk hop r" src="images/deco_kiki_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:20%;--t:2.80s;--d:-1.0s"><img class="px pk hop r big" src="images/deco_C5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;top:64%;--t:3.17s;--d:-2.3s"><div class="wrap">
+<section class="alt end"><img class="px pk hop l big" src="images/deco_T5_32.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:40%;--t:4.23s;--d:-4.7s"><img class="px pk hop r" src="images/deco_kiki_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:20%;--t:2.80s;--d:-1.0s"><img class="px pk hop r big" src="images/deco_C5_32.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:64%;--t:3.17s;--d:-2.3s"><div class="wrap">
  <div class="cw ea"><div class="art pxa" style="--sky:#7fc7f3"><img class="px" src="images/end.png" alt="赤い屋根のいろどりカフェで、ぽことなかまがお客さんをむかえている" width="300" height="400" loading="lazy" style="--w:150;--h:200;--kp:2;--kd:2"></div></div>
  <h2>11月6日、<wbr>マルシェがひらきます</h2><p class="lead">いろどり村のなかまといっしょに、あなたのカフェを育ててみてください。</p>
  <a class="btn pre" href="https://apps.apple.com/jp/app/id6822205930">App Store で予約する <small>11月6日配信</small></a>
