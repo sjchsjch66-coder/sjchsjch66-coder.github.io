@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pixel Spot the Difference | Cute pixel-art puzzle for iPhone (free)</title>
+<meta name="description" content="Spot the differences between two charming pixel-art pictures. A relaxing puzzle game with 100 puzzles in 10 stages, about 1 to 2 minutes each. Works offline.">
+<link rel="canonical" href="https://sjchsjch66-coder.github.io/machigai/en/">
+<meta name="theme-color" content="#d9466f">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Nanairo Palette Games">
+<meta property="og:title" content="Pixel Spot the Difference"><meta property="og:description" content="Compare two pixel-art pictures and tap the differences. A cozy brain teaser for your iPhone.">
+<meta property="og:url" content="https://sjchsjch66-coder.github.io/machigai/en/"><meta property="og:image" content="https://sjchsjch66-coder.github.io/machigai/en/images/ogp.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Two nearly identical pixel-art pictures">
+<meta property="og:locale" content="en_US"><link rel="alternate" hreflang="ja" href="https://sjchsjch66-coder.github.io/machigai/"><link rel="alternate" hreflang="en" href="https://sjchsjch66-coder.github.io/machigai/en/"><link rel="alternate" hreflang="x-default" href="https://sjchsjch66-coder.github.io/machigai/"><meta name="twitter:card" content="summary_large_image">
+<link rel="apple-touch-icon" href="images/icon.png">
+<script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('mo')</script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "Pixel Spot the Difference", "operatingSystem": "iOS 15.0 or later", "applicationCategory": "GameApplication", "genre": "Puzzle", "inLanguage": "en", "url": "https://sjchsjch66-coder.github.io/machigai/en/", "image": "https://sjchsjch66-coder.github.io/machigai/en/images/ogp.jpg", "description": "Spot the differences between two charming pixel-art pictures. A relaxing puzzle game with 100 puzzles in 10 stages, about 1 to 2 minutes each. Works offline.", "author": {"@type": "Organization", "name": "Nanairo Palette Games", "url": "https://sjchsjch66-coder.github.io/"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "installUrl": "https://apps.apple.com/us/app/id6823128790"}</script>
+<style>
+:root{--ink:#3b3552;--muted:#6f6787;--line:#ece2d6;--bg:#fbf6ee;--panel:#fff;--soft:#f5ede2;
+--accent:#d9466f;--accent-ink:#fff;--accent-soft:#fde4ec}
+@media (prefers-color-scheme:dark){:root{--ink:#f1ecfb;--muted:#b9b0cc;--line:#3d3756;--bg:#1f1b2b;--panel:#2a2540;--soft:#262139;
+--accent:#ff8fae;--accent-ink:#1f1b2b;--accent-soft:#332c4a}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;line-height:1.8;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.top{padding-top:14px;padding-bottom:14px}.top a{font-weight:700;text-decoration:none;font-size:.9rem}
+h1,h2,h3{line-height:1.4;word-break:keep-all;overflow-wrap:anywhere}
+h2{font-size:1.45rem;margin:0 0 .3em}
+.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.18em;font-size:.78rem;margin:0}
+section{padding:44px 0}
+section.alt{background:var(--soft)}
+.lead{color:var(--muted);margin:.2em 0 1.2em}
+
+/* ヒーロー */
+.hero{display:grid;gap:22px;align-items:center;padding-top:4px;padding-bottom:36px}
+.hero .art{border-radius:22px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;background:var(--soft)}
+.hero .art img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.hero h1{font-size:2rem;margin:.15em 0 .3em}
+.hero .one{font-size:1.08rem;margin:0 0 1.1em}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);font-weight:800;text-decoration:none;border-radius:99px;padding:13px 26px;font-size:1.02rem}
+.btn small{font-weight:700;opacity:.9;font-size:.8rem}
+.btn.wait{background:var(--panel);color:var(--accent);border:2px solid var(--accent)}
+.facts{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:6px 8px}
+.facts li{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:2px 12px;font-size:.82rem;color:var(--muted)}
+.icon{width:64px;height:64px;border-radius:15px;border:1px solid var(--line)}
+.titlerow{display:flex;gap:14px;align-items:center}
+
+/* こんなゲーム */
+.story{display:grid;gap:22px;align-items:center}
+.story .scene{border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+.story p{margin:0 0 .8em}
+.shots{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 16px 14px;margin:18px -16px 0;-webkit-overflow-scrolling:touch}
+.shots figure{margin:0;flex:none;width:62%;max-width:240px;scroll-snap-align:center}
+.shots img{width:100%;height:auto;border-radius:18px;border:1px solid var(--line);background:var(--panel)}
+.shots figcaption{font-size:.85rem;color:var(--muted);text-align:center;margin-top:8px;line-height:1.5}
+
+/* 特長・遊び方 */
+.cards{display:grid;gap:12px;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
+.cards li{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.cards b{display:block;font-size:1.02rem;margin-bottom:2px}
+.cards span{color:var(--muted);font-size:.93rem}
+.steps{counter-reset:s}
+.steps li{position:relative;padding-left:62px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:800;display:grid;place-items:center}
+
+/* ヒントと広告 */
+.money{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:6px 18px;margin:0}
+.money div{display:grid;grid-template-columns:4.5em 1fr;gap:10px;padding:12px 0;border-top:1px dashed var(--line)}
+.money div:first-child{border-top:0}
+.money dt{font-weight:800}.money dd{margin:0;color:var(--muted)}
+
+/* よくある質問 */
+.faq details{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:0 0 10px;padding:0 18px}
+.faq summary{cursor:pointer;font-weight:800;padding:14px 0;list-style:none;display:flex;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";color:var(--accent);font-weight:900;flex:none}
+.faq details p{margin:0 0 14px;color:var(--muted)}
+/* ご要望箱(よくある質問のすぐ下・Google フォームを 新しいタブで) */
+.req{max-width:860px;margin:22px 0 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.req h3{margin:0 0 .2em;font-size:1.08rem}
+.req p{margin:0 0 .8em;color:var(--muted);font-size:.92rem}
+.req .btn{padding:10px 22px;font-size:.95rem}
+
+/* シリーズ */
+.video{max-width:860px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;word-break:keep-all;overflow-wrap:anywhere}
+.video h2{font-size:1.15rem;margin:0 0 .5em}
+.video p,.video li{color:var(--muted);font-size:.92rem;margin:0 0 .5em}
+.video ul{margin:0;padding-left:1.2em}
+.video .nw{white-space:nowrap}
+.video code{display:block;margin:.3em 0 .2em;padding:8px 10px;background:var(--bg,#fff);border:1px solid var(--line);border-radius:8px;font-size:.74rem;line-height:1.6;color:var(--ink);font-family:inherit}
+.series{display:grid;gap:12px;grid-template-columns:1fr;list-style:none;padding:0;margin:0}
+.series a{display:flex;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px 14px;text-decoration:none;color:var(--ink)}
+.series a.here{border:2px solid var(--accent)}
+.series img{width:64px;height:64px;border-radius:15px;flex:none}
+.series b{display:block;line-height:1.45}
+.series span{font-size:.85rem;color:var(--muted);line-height:1.5;display:block}
+.series em{font-style:normal;font-size:.75rem;font-weight:800;color:var(--accent)}
+
+/* 最後 */
+.end{text-align:center}
+.end .ea{max-width:520px;margin:0 auto 26px}.end .art{border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+footer{padding-top:28px;padding-bottom:40px;text-align:center;font-size:.88rem;color:var(--muted)}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;margin-bottom:8px}
+
+/* かざり(ゲームの絵から切りぬいた小物)。文字にかさならない所にだけ置く・押せない */
+.hs{position:relative}
+section{position:relative}
+.dm{position:absolute;--w:min(120px, calc((100% - 1080px) / 2 - 24px));--m:calc((100% - 1080px) / 2 - var(--w) * var(--s,1));width:calc(var(--w) * var(--s,1));height:auto;pointer-events:none;display:none;z-index:0}
+.db{position:absolute;top:-36px;height:68px;width:auto;max-width:86px;object-fit:contain;pointer-events:none;z-index:1}
+.db.l{left:12px}.db.r{right:12px}.db.sm{height:50px;top:-26px}
+.hd{display:flex;align-items:center;gap:12px}.hd>div{flex:1;min-width:0}
+.df{flex:none;width:76px;height:auto;pointer-events:none}.df.l{order:-1}.df.r{order:1}
+.cw{position:relative}
+.cn{position:absolute;width:86px;height:auto;pointer-events:none;z-index:1}
+.cn.c0{left:-4px;bottom:-20px}.cn.c1{right:-2px;top:-28px}.cn.c2{right:-2px;bottom:-22px}
+main{overflow-x:clip}
+.sway{transform:rotate(var(--r,0deg));transform-origin:50% 85%;animation:sway var(--t,4s) ease-in-out infinite;animation-delay:var(--d,0s)}
+@keyframes sway{0%,100%{transform:rotate(calc(var(--r,0deg) - 8deg)) translateY(0)}25%{transform:rotate(var(--r,0deg)) translateY(-7px)}50%{transform:rotate(calc(var(--r,0deg) + 8deg)) translateY(0)}75%{transform:rotate(var(--r,0deg)) translateY(-7px)}}
+@media (prefers-reduced-motion:reduce){.sway{animation:none}}
+@media (min-width:1240px){.dm{display:block}.df,.db{display:none}.cn{width:112px}
+ .dm{--g:calc(var(--w) * .18)}.dm.l{left:calc(var(--g) + max(0px, var(--m) - 2 * var(--g)) / 2 * (1 + var(--j,0)))}.dm.r{right:calc(var(--g) + max(0px, var(--m) - 2 * var(--g)) / 2 * (1 + var(--j,0)))}}
+
+@media (min-width:820px){
+ .hero{grid-template-columns:1.05fr .95fr;gap:48px;padding-top:16px;padding-bottom:56px}
+ .hero .ha{order:2}.hero .art{aspect-ratio:4/5;max-height:640px}
+ .hero h1{font-size:2.6rem}
+ section{padding:64px 0}
+ h2{font-size:1.75rem}
+ .story{grid-template-columns:1fr 1fr;gap:40px}
+ .shots{overflow:visible;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(var(--n),1fr)}
+ .shots figure{width:auto;max-width:none}
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .steps{grid-template-columns:repeat(3,1fr)}
+ .series{grid-template-columns:repeat(3,1fr)}
+ .faq details{max-width:860px}
+}
+
+/* ドット絵(1ドット=1px のファイルを 整数倍で)。--w/--h=元の大きさ・--k=倍率(スマホ --kp / パソコン --kd) */
+.px{--k:var(--kp,2);image-rendering:pixelated;image-rendering:crisp-edges;width:calc(var(--w) * var(--k) * 1px);height:calc(var(--h) * var(--k) * 1px);max-width:none;flex:none;display:block}
+@media (min-width:1100px){.px{--k:var(--kd,3)}}  /* 820〜1099px(2列でも せまい)は スマホの倍率のまま */
+.pxa{display:flex;justify-content:center;align-items:flex-start;overflow:hidden;border-radius:22px;border:1px solid var(--line);background:var(--sky,#bfe3f7)}
+.hero .art.pxa{aspect-ratio:auto;max-height:none;width:fit-content;max-width:100%;margin:0 auto}
+.story .scene.pxa,.end .art.pxa{width:fit-content;max-width:100%;margin:0 auto}
+.hero .art.pxa img,.story .scene.pxa img{object-fit:fill;height:calc(var(--h) * var(--k) * 1px);width:calc(var(--w) * var(--k) * 1px)}
+.story .scene.pxa{border-radius:20px}
+.hero>*,.story>*,.cw{min-width:0}  /* ドット絵が広くても 文の列を押しひろげない(はみ出た絵は まん中を見せて切る) */
+.px.hd2{display:none}@media (min-width:1100px){.px.hm{display:none}.px.hd2{display:block}}
+.cap{font-size:.85rem;color:var(--muted);text-align:center;margin-top:8px;line-height:1.5}
+/* ドット絵の帯(育つお店・国のお店)。スマホは横に流す・パソコンはならべる */
+.strip{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 16px 14px;margin:18px -16px 0;-webkit-overflow-scrolling:touch}
+.strip figure{margin:0;flex:none;scroll-snap-align:center}
+.strip .pxa{border-radius:16px}
+.strip b{display:block;font-size:.95rem;color:var(--ink)}
+.swipe{font-size:.8rem;color:var(--muted);margin:6px 0 0}
+@media (min-width:820px){.strip{overflow:visible;flex-wrap:wrap;justify-content:center;margin:24px 0 0;padding:0;gap:18px}.swipe{display:none}}
+/* ストアの画面(スマホで 1:1 になる 201px) */
+.shots2{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 16px 14px;margin:18px -16px 0;-webkit-overflow-scrolling:touch}
+.shots2 figure{margin:0;flex:none;width:201px;scroll-snap-align:center}
+.shots2 img{width:201px;height:auto;border-radius:16px;border:1px solid var(--line);background:var(--panel)}
+.shots2 figcaption{font-size:.85rem;color:var(--muted);text-align:center;margin-top:8px;line-height:1.5}
+@media (min-width:820px){.shots2{overflow:visible;flex-wrap:wrap;justify-content:center;margin:24px 0 0;padding:0;gap:9px}}
+/* 値段の札 */
+.money dd b{color:var(--ink)}
+.btn.pre small{font-weight:800}
+.note{font-size:.85rem;color:var(--muted);margin:10px 0 0}
+/* かざり(ゲームのドット絵の小物)。回さない・ぴょこっとはねる。押せない・文字にかさねない */
+.pk{position:absolute;pointer-events:none;z-index:0;display:none;--kp:2;--kd:2}
+.pk.l{left:calc((100% - 1080px) / 4 - var(--w) * var(--k) * .5px)}
+.pk.r{right:calc((100% - 1080px) / 4 - var(--w) * var(--k) * .5px)}
+.pf{flex:none;pointer-events:none;--kp:2;--kd:2}
+.hd .pf.l{order:-1}.hd .pf.r{order:1}
+.hop{animation:hop var(--t,3.2s) steps(1,end) infinite;animation-delay:var(--d,0s)}
+@keyframes hop{0%,58%,100%{transform:translateY(0)}64%{transform:translateY(-6px)}70%{transform:translateY(-9px)}76%{transform:translateY(-6px)}82%{transform:translateY(0)}88%{transform:translateY(-3px)}94%{transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){.hop{animation:none}}
+@media (min-width:1240px){.pk{display:block}.pf{display:none}}
+@media (min-width:1420px){.pk.big{--kd:3}}
+.pxbox{--k:var(--kp,2)}@media (min-width:1100px){.pxbox{--k:var(--kd,3)}}
+/* 作品ごとの動き(motion)。どれも「動きを減らす」設定では止まる */
+/* paint(いろどり村): ページを開くと、小物に いっしゅんで色がつく(1回だけ・そのあとは ずっと色つき。灰色のまま並べない) */
+.paint{animation:paint .9s steps(1,end) 1 both;animation-delay:var(--d,0s)}
+@keyframes paint{0%{filter:grayscale(.9)}35%{filter:grayscale(.5)}70%{filter:grayscale(0)}100%{filter:none}}
+/* puff(パン屋): 焼きたてのパンが ぽこっとふくらんで、湯気が立つ(小さい絵⇔大きい絵の入れかえ・ドットは縮めない) */
+.puff:not(.pk){position:relative}.puff{width:calc(44px * var(--k));height:calc(60px * var(--k));flex:none}
+.puff .st{position:absolute;left:50%;transform:translateX(-50%)}
+.puff .pw{position:absolute;bottom:0;left:0;width:calc(44px * var(--k));height:calc(44px * var(--k));overflow:hidden}
+.puff .sh{position:absolute;top:0;left:0;animation:pfsh var(--t,5s) steps(1,end) infinite;animation-delay:var(--d,0s)}
+.puff .st{bottom:calc(36px * var(--k));opacity:0;animation:pst var(--t,5s) steps(1,end) infinite;animation-delay:var(--d,0s)}
+@keyframes pfsh{0%,100%{transform:translateY(0)}8%{transform:translateY(calc(-44px * var(--k)))}26%{transform:translateY(0)}}
+@keyframes pst{0%,100%{opacity:0;transform:translate(-50%,0)}10%{opacity:1;transform:translate(-50%,0)}16%{opacity:1;transform:translate(-50%,calc(-3px * var(--k)))}22%{opacity:1;transform:translate(-50%,calc(-6px * var(--k)))}28%{opacity:.6;transform:translate(-50%,calc(-9px * var(--k)))}34%{opacity:0}}
+.shelf{display:flex;justify-content:center;gap:0;margin:10px auto 0;padding:0 0 6px;border-bottom:calc(4px) solid var(--accent);width:fit-content;max-width:100%}
+.shelf .puff{--kp:2;--kd:2;display:block}
+.pf.puff{display:block}@media (min-width:1240px){.pf.puff{display:none}}
+.shelf-cap{font-size:.8rem;color:var(--muted);text-align:center;margin:6px 0 0}
+/* grow(マルシェ): スクロールに合わせて、カフェが屋台から本店へ育つ */
+.grow{display:none;margin:22px auto 0;width:fit-content;max-width:100%}
+.mo .grow{display:block}.mo .strip.gs,.mo .strip.gs+.swipe{display:none}
+.grow .gstack{display:grid;justify-items:center;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:var(--sky,#bfe3f7)}
+.grow .gf{grid-area:1/1;visibility:hidden}.grow .gf.on{visibility:visible}
+.grow.pop .gstack{animation:gpop .36s steps(3,end)}
+@keyframes gpop{0%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+.grow .gl{display:block;text-align:center;font-weight:800;margin-top:10px;min-height:1.6em}
+.gd{display:flex;gap:8px;justify-content:center;margin-top:6px}.gd i{width:12px;height:12px;border-radius:3px;background:var(--line);display:block}.gd i.on{background:var(--accent)}
+.grow .gh{font-size:.8rem;color:var(--muted);text-align:center;margin:4px 0 0}
+/* recolor(いろどり村): 灰色の絵に、下から少しずつ色がもどる(JS で canvas に) */
+.mo img.rc{filter:grayscale(.86)}
+.recap{font-size:.8rem;color:var(--muted);text-align:center;margin:6px 0 0}
+@media (prefers-reduced-motion:reduce){.hop,.paint,.puff *{animation:none!important}.puff .st{display:none}}
+/* full(11/1): スマホでは ヒーローの絵を はしからはしまで(大きく)。絵が画面より広いときは ゆっくり左右に見わたす(1ドットずつ・動きを減らす設定では止まる) */
+@media (max-width:819px){.hero .art.pxa.full{width:auto;max-width:none;margin:0 -16px;border-radius:0;border-left:0;border-right:0;justify-content:flex-start}
+.mo .hero .art.full img{animation:pan 14s steps(var(--ps,30),end) infinite alternate;animation-delay:1.2s}}
+@keyframes pan{0%,8%{transform:translateX(0)}92%,100%{transform:translateX(min(0px,calc(100vw - var(--w) * var(--k) * 1px)))}}
+@media (prefers-reduced-motion:reduce){.hero .art.full img{animation:none!important}}
+/* なかまの列(ヒーローの絵のすぐ下・ドット絵の 32px を整数倍で) */
+.parade{display:flex;justify-content:center;gap:6px;margin:-30px 0 0;position:relative;z-index:1}
+.parade .px{--kp:2;--kd:2}
+/* 前と後(ならべる) */
+.pair{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:nowrap}
+.pair figure{margin:0;text-align:center}.pair+.cap{margin-top:12px}.pair .pxa{border-radius:14px}
+.pair .tag{display:inline-block;font-size:.78rem;font-weight:800;border-radius:99px;padding:1px 10px;margin-top:6px;background:var(--panel);border:1px solid var(--line);color:var(--muted)}
+.pair .tag.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.pair .arw{font-weight:800;color:var(--accent);font-size:1.2rem;flex:none}@media (max-width:419px){.pair .arw{display:none}}
+.kw{word-break:keep-all;overflow-wrap:anywhere}
+.pair.v{flex-direction:column;gap:8px}
+.ring{position:absolute;display:none;border:3px solid var(--accent);border-radius:50%;box-shadow:0 0 0 2px #fff;pointer-events:none}
+.ansck{position:absolute;opacity:0;pointer-events:none}
+.ansbtn{display:block;width:fit-content;margin:0 auto 12px;cursor:pointer;font-weight:800;font-size:.9rem;border:2px solid var(--accent);color:var(--accent);border-radius:99px;padding:6px 18px;background:var(--panel)}
+.ansbtn .a1{display:none}.ansck:checked+.ansbtn .a0{display:none}.ansck:checked+.ansbtn .a1{display:inline}
+.ansck:checked~.pair .ring{display:block}.ansck:focus-visible+.ansbtn{outline:2px solid var(--accent);outline-offset:2px}.pair.v .arw{display:block;transform:rotate(90deg)}
+/* ふわふわ(11/1): ゲームの小物が ゆっくり上下に浮かぶ。回さない(ドットがくずれる)。PC は左右の余白・スマホは区切りのかどに1つ。動きを減らす設定では止まる */
+.fz{position:absolute;pointer-events:none;z-index:0;image-rendering:pixelated;image-rendering:crisp-edges;animation:fz var(--t,5s) ease-in-out infinite;animation-delay:var(--d,0s);max-width:none}
+.fz.big{width:calc(var(--w) * var(--k) * 1px);height:calc(var(--h) * var(--k) * 1px)}
+@keyframes fz{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.fz.m{display:none;--k:var(--kd,3)}
+.fz.m.l{left:calc((100% - 1080px) / 4 - var(--w) * var(--k) * .5px)}.fz.m.r{right:calc((100% - 1080px) / 4 - var(--w) * var(--k) * .5px)}
+.fz.s{--k:var(--kp,2);top:calc(var(--h) * var(--k) * -.5px);width:calc(var(--w) * var(--k) * 1px);height:calc(var(--h) * var(--k) * 1px)}
+.fz.s.l{left:10px}.fz.s.r{right:10px}
+.fz.m{width:calc(var(--w) * var(--k) * 1px);height:calc(var(--h) * var(--k) * 1px)}
+@media (min-width:1240px){.fz.m{display:block}.fz.s{display:none}}
+@media (prefers-reduced-motion:reduce){.fz{animation:none}}
+.langsw{float:right;font-weight:700;font-size:.9rem;display:flex;gap:12px}.langsw a{text-decoration:none}
+/* 言語ごとの字(ハングル・アクセントつきのラテン文字)。韓国語は ことばの区切りで折り返す */
+html[lang=ko] body{font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;word-break:keep-all}
+html[lang=es] body,html[lang=fr] body,html[lang=pt] body,html[lang=en] body{font-family:-apple-system,"Helvetica Neue","Segoe UI",Roboto,sans-serif}
+/* ぽこってだれ? */
+.poko{padding-top:0}.who{display:flex;gap:18px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:18px}
+.who .px{--kp:3;--kd:3;flex:none}
+.who h2{margin:0 0 .2em}.who p{margin:0 0 .5em;word-break:keep-all;overflow-wrap:anywhere}.who p:last-child{margin:0}
+.who .say{display:inline-block;background:var(--accent-soft,var(--soft));border-radius:14px;padding:4px 12px;font-weight:700;color:var(--ink)}
+@media (max-width:519px){.who{flex-direction:column;text-align:center}}
+/* ぽこのお話(本編) */
+.hp{display:grid;gap:14px;grid-template-columns:1fr;list-style:none;padding:0;margin:0}
+@media (min-width:820px){.hp{grid-template-columns:1fr 1fr}}
+.hp a{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;text-decoration:none;color:var(--ink);height:100%}
+.hp a.here{border:2px solid var(--accent)}
+.hp .pxa{border:0;border-radius:0;border-bottom:1px solid var(--line)}
+.hp .px{--kp:2;--kd:2}
+.hp .tx{padding:12px 16px 14px}
+.hp .no{display:inline-block;font-size:.75rem;font-weight:800;color:var(--accent-ink);background:var(--accent);border-radius:99px;padding:1px 10px;margin-right:6px}
+.hp .g{font-size:.8rem;color:var(--muted);font-weight:700}
+.hp b{display:block;font-size:1.1rem;margin:4px 0 2px}
+.hp span.s{display:block;font-size:.9rem;color:var(--muted);line-height:1.6;word-break:keep-all;overflow-wrap:anywhere}
+.hp em{font-style:normal;font-size:.78rem;font-weight:800;color:var(--accent)}
+.hp .arr{font-weight:800;color:var(--accent);text-align:center;margin:-4px 0;font-size:.9rem}
+@media (min-width:820px){.hp .arr{display:none}}
+</style></head>
+<body>
+<div class="wrap top"><a href="../../">← Nanairo Palette Games</a><span class="langsw"><a href="../" hreflang="ja" lang="ja">日本語</a></span></div>
+<main>
+<div class="hs"><img class="px pk hop l big" src="images/deco_poko32_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:10%;--t:2.60s;--d:-0.0s"><img class="px pk hop l" src="images/deco_mimi_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:66%;--t:2.97s;--d:-1.3s"><img class="px pk hop r" src="images/deco_ruka_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:18%;--t:3.34s;--d:-2.6s"><img class="px pk hop r big" src="images/deco_sora_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:60%;--t:3.71s;--d:-3.9s"><img class="fz m l" src="images/fz_F3_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kd:3;top:22%;--t:4.4s;--d:-0.0s"><img class="fz m r" src="images/fz_W5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kd:3;top:70%;--t:5.4s;--d:-2.1s"><div class="wrap hero">
+ <div class="cw ha"><div class="art pxa" style="--sky:#bfe3f7"><img class="px" src="images/hero.png" alt="A pixel-art market stall with green and white stripes, with a small water-drop fairy behind the counter" width="480" height="384" style="--w:120;--h:96;--kp:3;--kd:4" fetchpriority="high"></div></div>
+ <div>
+  <p class="eyebrow">Pixel-art spot the difference</p>
+  <div class="titlerow"><img class="icon" src="images/icon.png" alt="Pixel Spot the Differenceのアイコン" width="64" height="64"><h1>Pixel Spot the Difference</h1></div>
+  <p class="one">Compare two charming pixel-art pictures and tap every difference you find. A relaxing puzzle for a coffee break or winding down at night.</p>
+  <a class="btn" href="https://apps.apple.com/us/app/id6823128790">Download on the App Store <small>Free</small></a>
+  <ul class="facts"><li>iPhone (iOS 15 or later)</li><li>Free to play, with ads</li><li>100 puzzles in 10 stages</li><li>Works offline</li></ul>
+ </div>
+</div>
+</div>
+
+<section class="alt"><img class="px pk hop l big" src="images/deco_nono_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:30%;--t:4.08s;--d:-0.2s"><img class="px pk hop r" src="images/deco_kohaku_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:16%;--t:2.65s;--d:-1.5s"><img class="px pk hop r big" src="images/deco_shion_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:72%;--t:3.02s;--d:-2.8s"><img class="fz m l" src="images/fz_B3_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kd:3;top:60%;--t:5.1s;--d:-1.3s"><img class="fz m r" src="images/fz_T4_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kd:3;top:18%;--t:6.1s;--d:-3.4s"><img class="fz s l" src="images/fz_C4_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kp:2;--t:4.9s;--d:-0.9s"><div class="wrap">
+ <div class="story">
+  <div><div class="hd"><img class="px pf hop r" src="images/deco_nono_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:3.3s;--d:-0.8s"><div><p class="eyebrow">ABOUT</p><h2>Top or bottom: what changed?</h2></div></div><p>Compare the top and bottom pictures and tap every difference you find.</p><p>Each puzzle hides 3 or 4 differences and takes about 1 to 2 minutes. Find them all before the timer runs out.</p><p>Visit Irodori Village, Harbor Town, the markets, and sunset and night scenes.</p></div>
+  <div class="cw"><input type="checkbox" id="ans" class="ansck"><label for="ans" class="ansbtn"><span class="a0">Show answers</span><span class="a1">Hide answers</span></label><div class="pair v"><figure><div class="pxa" style="--sky:#bfe3f7"><img class="px" src="images/scene_before.png" alt="Top picture" width="360" height="288" loading="lazy" style="--w:120;--h:96;--kp:2;--kd:3"></div><span class="tag">Top</span></figure><figure><div class="pxa" style="--sky:#bfe3f7;position:relative"><img class="px" src="images/scene.png" alt="Bottom picture (3 differences)" width="360" height="288" loading="lazy" style="--w:120;--h:96;--kp:2;--kd:3"><span class="ring" style="left:85.83%;top:11.46%;width:11.67%;height:8.33%"></span><span class="ring" style="left:58.33%;top:78.12%;width:16.67%;height:21.88%"></span><span class="ring" style="left:49.17%;top:28.12%;width:17.50%;height:14.58%"></span></div><span class="tag on">Bottom</span></figure></div><p class="cap">Give it a try: 3 differences (the first puzzle of Stage 1)</p></div>
+ </div>
+ <h3 style="margin:34px 0 0;font-size:1.15rem">Cozy places</h3><p class="lead" style="margin-bottom:0">10 stages and 100 puzzles that get harder little by little.</p>
+ <div class="strip"><figure><div class="pxa" style="--sky:#bfe3f7"><img class="px" src="images/strip1.png" alt="A harbor town with a lighthouse and a beach" width="240" height="192" loading="lazy" style="--w:120;--h:96;--kp:2;--kd:2"></div><figcaption class="cap"><b>Harbor Town</b></figcaption></figure><figure><div class="pxa" style="--sky:#bfe3f7"><img class="px" src="images/strip2.png" alt="A market with stalls" width="240" height="192" loading="lazy" style="--w:120;--h:96;--kp:2;--kd:2"></div><figcaption class="cap"><b>Flower Marche</b></figcaption></figure><figure><div class="pxa" style="--sky:#f3d9c4"><img class="px" src="images/strip3.png" alt="A village at sunset" width="240" height="192" loading="lazy" style="--w:120;--h:96;--kp:2;--kd:2"></div><figcaption class="cap"><b>Sunset Village</b></figcaption></figure></div><p class="swipe">← Swipe to see more →</p>
+ <div class="shots2"><figure><img src="images/screen1.webp" alt="Puzzle screen" loading="lazy" width="603" height="1311"><figcaption>Compare top and bottom</figcaption></figure><figure><img src="images/screen2.webp" alt="Title screen" loading="lazy" width="603" height="1311"><figcaption>A cute pixel-art brain teaser</figcaption></figure><figure><img src="images/screen3.webp" alt="Puzzle select screen" loading="lazy" width="603" height="1311"><figcaption>100 puzzles in 10 stages</figcaption></figure><figure><img src="images/screen4.webp" alt="Hint screen" loading="lazy" width="603" height="1311"><figcaption>Stuck? Use a hint</figcaption></figure><figure><img src="images/screen5.webp" alt="Clear screen" loading="lazy" width="603" height="1311"><figcaption>Earn 3 stars</figcaption></figure></div>
+</div></section>
+
+<section class="alt poko">
+<div class="wrap"><div class="who"><img class="px hop" src="images/poko.png" alt="ぽこ" loading="lazy" width="144" height="144" style="--w:48;--h:48;--t:3.4s"><div><p class="eyebrow">WHO IS POKO</p><h2>Meet Poko</h2><p>Poko is a little water-drop fairy of colors, and the guide to the games of Nanairo Palette Games.</p><p>In this game, Poko looks for differences with you in a cozy pixel-art village.</p><p><span class="say">Hi, I&#x27;m Poko! Let&#x27;s find them together!</span></p></div></div></div></section>
+
+<section><img class="px pk hop l" src="images/deco_mint_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:20%;--t:3.39s;--d:-4.1s"><img class="px pk hop l big" src="images/deco_hayate_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:70%;--t:3.76s;--d:-0.4s"><img class="px pk hop r big" src="images/deco_kiki_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:44%;--t:4.13s;--d:-1.7s"><img class="fz m l" src="images/fz_C4_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kd:3;top:30%;--t:5.8s;--d:-2.6s"><img class="fz m r" src="images/fz_W6_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kd:3;top:76%;--t:4.6s;--d:-4.7s"><img class="fz s r" src="images/fz_B5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kp:2;--t:5.2s;--d:-1.8s"><div class="wrap">
+ <div class="hd"><img class="px pf hop l" src="images/deco_mint_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:3.6s;--d:-1.6s"><div><p class="eyebrow">FEATURES</p><h2>Easy on the eyes, fair to play</h2></div></div><p class="lead">Perfect for a quick break.</p>
+ <ul class="cards"><li><b>1 to 2 minutes</b><span>Each puzzle is short and sweet.</span></li><li><b>Big, clear pixels</b><span>Pixel art is shown large, so details are easy to see on smaller screens.</span></li><li><b>Fair taps</b><span>Tapping slightly outside a difference still counts. Tapping a spot you already found never costs time.</span></li><li><b>Hints when you need them</b><span>Use your free hint to reveal one difference you have not found yet.</span></li><li><b>Earn 3 stars</b><span>Each puzzle gives 1 to 3 stars based on your time, misses and hints.</span></li><li><b>Play anywhere</b><span>Works offline, on a train or on a plane.</span></li></ul>
+</div></section>
+
+<section class="alt"><img class="px pk hop l big" src="images/deco_koko_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:46%;--t:2.70s;--d:-3.0s"><img class="px pk hop r" src="images/deco_riku_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:22%;--t:3.07s;--d:-4.3s"><img class="fz m l" src="images/fz_F5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kd:3;top:64%;--t:6.5s;--d:-3.9s"><img class="fz m r" src="images/fz_B5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kd:3;top:26%;--t:5.3s;--d:-1.0s"><img class="fz s l" src="images/fz_X5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kp:2;--t:5.5s;--d:-2.7s"><div class="wrap">
+ <div class="hd"><img class="px pf hop r" src="images/deco_koko_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:3.9s;--d:-2.4s"><div><p class="eyebrow">HOW TO PLAY</p><h2>How to play</h2></div></div><p class="lead">Simple to learn.</p>
+ <ol class="cards steps"><li><b>Compare</b><span>Two nearly identical pictures appear, one on top and one below.</span></li><li><b>Tap</b><span>Found a difference? Tap it on either picture.</span></li><li><b>Clear</b><span>Find them all before time runs out.</span></li></ol>
+</div></section>
+
+<section><img class="px pk hop l" src="images/deco_poko32_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:18%;--t:3.44s;--d:-0.6s"><img class="px pk hop r big" src="images/deco_mimi_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:50%;--t:3.81s;--d:-1.9s"><img class="fz m l" src="images/fz_C5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kd:3;top:40%;--t:5.0s;--d:-0.2s"><img class="fz m r" src="images/fz_T5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kd:3;top:80%;--t:6.0s;--d:-2.3s"><img class="fz s r" src="images/fz_W5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kp:2;--t:5.8s;--d:-3.6s"><div class="wrap">
+ <div class="hd"><img class="px pf hop l" src="images/deco_mimi_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:4.2s;--d:-3.2s"><div><p class="eyebrow">PRICE &amp; ADS</p><h2>Price &amp; ads</h2></div></div><p class="lead">Good to know before you start.</p>
+ <dl class="money"><div><dt>Price</dt><dd>Free to play. One optional in-app purchase, Remove Ads (one-time). No subscriptions.</dd></div><div><dt>Ads</dt><dd>Ads appear only between puzzles, never during play. Remove Ads removes the between-puzzle ads.</dd></div><div><dt>Videos</dt><dd>Optional reward videos give an extra hint or 30 more seconds, only when you choose.</dd></div></dl>
+</div></section>
+
+<section class="alt"><img class="px pk hop l big" src="images/deco_ruka_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:12%;--t:4.18s;--d:-3.2s"><img class="px pk hop l" src="images/deco_sora_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:62%;--t:2.75s;--d:-4.5s"><img class="px pk hop r big" src="images/deco_nono_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:34%;--t:3.12s;--d:-0.8s"><img class="fz m l" src="images/fz_X5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kd:3;top:16%;--t:5.7s;--d:-1.5s"><img class="fz m r" src="images/fz_F6_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kd:3;top:58%;--t:4.5s;--d:-3.6s"><img class="fz s l" src="images/fz_C4_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kp:2;--t:6.1s;--d:-0.5s"><div class="wrap faq">
+ <div class="hd"><img class="px pf hop r" src="images/deco_nono_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:4.5s;--d:-4.0s"><div><p class="eyebrow">Q&amp;A</p><h2>FAQ</h2></div></div><p class="lead">Need more help? Visit <a href="../support.html">Support</a>.</p>
+ <details><summary>Is it free?</summary><p>Yes, it is free to play with ads. You can remove the between-puzzle ads with a one-time purchase.</p></details><details><summary>How many differences are there?</summary><p>Each puzzle has 3 or 4 differences.</p></details><details><summary>Does it work offline?</summary><p>Yes.</p></details><details><summary>Is there an Android version?</summary><p>Not yet. It is available on iPhone (iOS 15 or later).</p></details>
+</div></section>
+
+<section><img class="px pk hop l" src="images/deco_kohaku_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:56%;--t:3.49s;--d:-2.1s"><img class="px pk hop r big" src="images/deco_shion_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:10%;--t:3.86s;--d:-3.4s"><img class="fz m l" src="images/fz_F3_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kd:3;top:34%;--t:6.4s;--d:-2.8s"><img class="fz m r" src="images/fz_W5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kd:3;top:72%;--t:5.2s;--d:-4.9s"><img class="fz s r" src="images/fz_B5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kp:2;--t:6.4s;--d:-1.4s"><div class="wrap">
+ <div class="hd"><img class="px pf hop l" src="images/deco_mint_happy.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--t:4.8s;--d:-4.8s"><div><p class="eyebrow">GAMES</p><h2>More games</h2></div></div><p class="lead">Our games available in English.</p>
+ <ul class="series"><li><a class="here" href="../../machigai/en/"><img src="../../machigai/images/icon.png" alt="Pixel Spot the Difference icon" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>Pixel Spot the Difference</b><span>Compare two pixel-art pictures and find the differences</span><em>This page</em></div></a></li><li><a href="../../nurie/en/"><img src="../../nurie/images/icon.png" alt="Pixel Nap: Color by Number icon" loading="lazy" width="64" height="64" style="image-rendering:pixelated"><div><b>Pixel Nap: Color by Number</b><span>Calm pixel-art coloring, one cell at a time</span><em>Available now</em></div></a></li></ul>
+</div></section>
+
+<section class="alt end"><img class="px pk hop l big" src="images/deco_mint_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:40%;--t:4.23s;--d:-4.7s"><img class="px pk hop r" src="images/deco_hayate_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:20%;--t:2.80s;--d:-1.0s"><img class="px pk hop r big" src="images/deco_kiki_happy.png" alt="" aria-hidden="true" style="--w:32;--h:32;top:64%;--t:3.17s;--d:-2.3s"><img class="fz m l" src="images/fz_B3_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kd:3;top:60%;--t:4.9s;--d:-4.1s"><img class="fz m r" src="images/fz_T4_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kd:3;top:30%;--t:5.9s;--d:-1.2s"><img class="fz s r" src="images/fz_X5_32.png" alt="" aria-hidden="true" loading="lazy" style="--w:32;--h:32;--kp:2;--t:6.7s;--d:-2.3s"><div class="wrap">
+ <div class="cw ea"><div class="art pxa" style="--sky:#bfe3f7"><img class="px" src="images/end.png" alt="A pixel-art market stall" width="360" height="288" loading="lazy" style="--w:120;--h:96;--kp:2;--kd:3"></div></div>
+ <h2>How many can you find?</h2><p class="lead">Grab a cup of tea and compare the two pictures.</p>
+ <a class="btn" href="https://apps.apple.com/us/app/id6823128790">Download on the App Store <small>Free</small></a>
+</div></section>
+</main>
+<footer class="wrap"><nav><a href="../support.html">Support</a><a href="../privacy_en.html">Privacy Policy</a><a href="../../">Nanairo Palette Games</a></nav>Nanairo Palette Games</footer>
+<script>(function(){
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+document.querySelectorAll('.grow').forEach(function(g){var f=g.querySelectorAll('.gf'),n=f.length,lab=g.querySelector('.gl'),dots=g.querySelectorAll('.gd i'),cur=-1;
+function up(){var r=g.getBoundingClientRect(),vh=innerHeight,p=(vh-r.top)/(vh+r.height),s=Math.max(0,Math.min(n-1,Math.floor(p*n*1.3-0.25)));
+if(s!==cur){var first=cur<0;cur=s;f.forEach(function(e,i){e.classList.toggle('on',i===s)});lab.textContent=f[s].getAttribute('data-name');dots.forEach(function(d,i){d.classList.toggle('on',i<=s)});if(!first){g.classList.remove('pop');void g.offsetWidth;g.classList.add('pop')}}}
+addEventListener('scroll',up,{passive:true});addEventListener('resize',up);up()});
+function rc(img){var gs=new Image();gs.onload=function(){var w=img.naturalWidth,h=img.naturalHeight,c=document.createElement('canvas');c.width=w;c.height=h;c.className=img.className.replace('rc','');c.style.cssText=img.style.cssText;c.setAttribute('role','img');c.setAttribute('aria-label',img.alt);
+var x=c.getContext('2d',{willReadFrequently:true});x.drawImage(img,0,0);var col=x.getImageData(0,0,w,h);x.clearRect(0,0,w,h);x.drawImage(gs,0,0);var cur=x.getImageData(0,0,w,h);img.replaceWith(c);
+var cs=+img.getAttribute('data-cell')||1,bw=Math.ceil(w/cs),bh=Math.ceil(h/cs),N=bw*bh,ord=[],i;for(i=0;i<N;i++){ord.push([(bh-1-Math.floor(i/bw))+Math.random()*(cs>1?1.6:7),i])}ord.sort(function(a,b){return a[0]-b[0]});
+var done=0;function paint(k){var bx=k%bw,by=Math.floor(k/bw),yy,xx,o;for(yy=by*cs;yy<Math.min(h,by*cs+cs);yy++)for(xx=bx*cs;xx<Math.min(w,bx*cs+cs);xx++){o=(yy*w+xx)*4;cur.data[o]=col.data[o];cur.data[o+1]=col.data[o+1];cur.data[o+2]=col.data[o+2];cur.data[o+3]=col.data[o+3]}}
+function run(){var t0=Date.now(),D=+img.getAttribute('data-dur')||2600;function st(){var p=Math.min(1,(Date.now()-t0)/D),to=Math.floor(p*N);while(done<to){paint(ord[done][1]);done++}x.putImageData(cur,0,0);if(p<1)setTimeout(st,40)}st()}
+if(img.getAttribute('data-mode')==='view'){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();setTimeout(run,250)}},{threshold:.6});io.observe(c)}else setTimeout(run,600)};gs.src=img.getAttribute('data-gray')}
+document.querySelectorAll('img.rc').forEach(function(img){if(img.complete&&img.naturalWidth)rc(img);else img.addEventListener('load',function(){rc(img)})});
+})();</script>
+</body></html>
