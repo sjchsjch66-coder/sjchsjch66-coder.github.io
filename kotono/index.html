@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>脱出ゲーム ことのと おでかけ大作戦|無料・こわくない謎解き(iPhone)</title>
-<meta name="description" content="からくり好きの女の子・ことのと、自分の部屋・レトロな電車・友だちのカフェの3つの場所から脱出する、無料の謎解きゲーム。明るい水彩の絵で、こわい演出はありません。ヒントは3段階、手がかりは手帳に自動でのこります。">
+<meta name="description" content="からくり好きの女の子・ことのと、自分の部屋・レトロな電車・友だちのカフェから脱出する、無料の謎解きゲーム。第2章「ただいま大作戦」も追加して、全部で5つの場所。明るい水彩の絵で、こわい演出はありません。ヒントは3段階、手がかりは手帳に自動でのこります。">
 <link rel="canonical" href="https://sjchsjch66-coder.github.io/kotono/">
 <meta name="theme-color" content="#cf4566">
 <meta property="og:type" content="website"><meta property="og:site_name" content="七色パレットゲームズ">
-<meta property="og:title" content="脱出ゲーム ことのと おでかけ大作戦"><meta property="og:description" content="からくり好きの女の子と、お部屋・電車・カフェの3つの場所から脱出。明るい水彩の絵の、こわくない謎解きゲームです。">
+<meta property="og:title" content="脱出ゲーム ことのと おでかけ大作戦"><meta property="og:description" content="からくり好きの女の子と、お部屋・電車・カフェから脱出。第2章「ただいま大作戦」も登場。明るい水彩の絵の、こわくない謎解きゲームです。">
 <meta property="og:url" content="https://sjchsjch66-coder.github.io/kotono/"><meta property="og:image" content="https://sjchsjch66-coder.github.io/kotono/images/ogp.jpg">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="ことのと猫のだいず、夕方の駅の電車、開店前のカフェの絵">
 <meta property="og:locale" content="ja_JP"><meta name="twitter:card" content="summary_large_image">
 <link rel="apple-touch-icon" href="images/icon.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "ことのと おでかけ大作戦", "operatingSystem": "iOS 15.0 以上", "applicationCategory": "GameApplication", "genre": "脱出ゲーム", "inLanguage": "ja", "url": "https://sjchsjch66-coder.github.io/kotono/", "image": "https://sjchsjch66-coder.github.io/kotono/images/ogp.jpg", "description": "からくり好きの女の子・ことのと、自分の部屋・レトロな電車・友だちのカフェの3つの場所から脱出する、無料の謎解きゲーム。明るい水彩の絵で、こわい演出はありません。ヒントは3段階、手がかりは手帳に自動でのこります。", "author": {"@type": "Organization", "name": "七色パレットゲームズ", "url": "https://sjchsjch66-coder.github.io/"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "installUrl": "https://apps.apple.com/jp/app/id6824518808"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "ことのと おでかけ大作戦", "operatingSystem": "iOS 15.0 以上", "applicationCategory": "GameApplication", "genre": "脱出ゲーム", "inLanguage": "ja", "url": "https://sjchsjch66-coder.github.io/kotono/", "image": "https://sjchsjch66-coder.github.io/kotono/images/ogp.jpg", "description": "からくり好きの女の子・ことのと、自分の部屋・レトロな電車・友だちのカフェから脱出する、無料の謎解きゲーム。第2章「ただいま大作戦」も追加して、全部で5つの場所。明るい水彩の絵で、こわい演出はありません。ヒントは3段階、手がかりは手帳に自動でのこります。", "author": {"@type": "Organization", "name": "七色パレットゲームズ", "url": "https://sjchsjch66-coder.github.io/"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "installUrl": "https://apps.apple.com/jp/app/id6824518808"}</script>
 <style>
 :root{--ink:#3b3552;--muted:#6f6787;--line:#ece2d6;--bg:#fbf6ee;--panel:#fff;--soft:#f5ede2;
 --accent:#cf4566;--accent-ink:#fff;--accent-soft:#fde8ea}
@@ -39,6 +39,7 @@ section.alt{background:var(--soft)}
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);font-weight:800;text-decoration:none;border-radius:99px;padding:13px 26px;font-size:1.02rem}
 .btn small{font-weight:700;opacity:.9;font-size:.8rem}
 .btn.wait{background:var(--panel);color:var(--accent);border:2px solid var(--accent)}
+.news{margin:12px 0 0;display:inline-block;background:var(--panel);border:1px dashed var(--accent);border-radius:12px;padding:6px 12px;font-size:.88rem;color:var(--ink);word-break:keep-all;overflow-wrap:anywhere}
 .facts{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:6px 8px}
 .facts li{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:2px 12px;font-size:.82rem;color:var(--muted)}
 .icon{width:64px;height:64px;border-radius:15px;border:1px solid var(--line)}
@@ -144,14 +145,14 @@ main{overflow-x:clip}
   <div class="titlerow"><img class="icon" src="images/icon.png" alt="ことのと おでかけ大作戦のアイコン" width="64" height="64"><h1>ことのと <wbr>おでかけ大作戦</h1></div>
   <p class="one">今日は友だちのカフェがオープンする日。なのに、自分で作った「おでかけ計画ロック」が開かない。お部屋から、電車、カフェへ。ことのといっしょに出かけよう。</p>
   <a class="btn" href="https://apps.apple.com/jp/app/id6824518808">App Store で入手 <small>無料</small></a>
-  <ul class="facts"><li>iPhone(iOS 15 以上)</li><li>無料・課金なし</li><li>3つの場所</li><li>こわい演出なし</li></ul>
+  <ul class="facts"><li>iPhone(iOS 15 以上)</li><li>無料(広告なし+ヒント見放題 ¥300 あり)</li><li>2章・5つの場所</li><li>こわい演出なし</li></ul>
  </div>
 </div>
 </div>
 
 <section class="alt"><img class="dm l sway" src="images/deco_letter.webp" alt="" aria-hidden="true" loading="lazy" style="top:38%;--s:1;--j:-0.3;--r:5deg;--d:-6.8s;--t:3.01s"><img class="dm r sway" src="images/deco_tulip.webp" alt="" aria-hidden="true" loading="lazy" style="top:20%;--s:0.9;--j:0.3;--r:-8deg;--d:-1.5s;--t:3.77s"><img class="dm r sway" src="images/deco_kotono.webp" alt="" aria-hidden="true" loading="lazy" style="top:70%;--s:0.7;--j:-0.4;--r:-5deg;--d:-3.2s;--t:4.39s"><img class="db l sway" src="images/deco_bag.webp" alt="" aria-hidden="true" loading="lazy" style="--r:8deg;--d:-1.3s;--t:3.63s"><div class="wrap">
  <div class="story">
-  <div><div class="hd"><img class="df r sway" src="images/deco_train.webp" alt="" aria-hidden="true" loading="lazy" style="--r:-7deg;--d:-0.9s;--t:3.13s"><div><p class="eyebrow">STORY</p><h2>からくり好きの<wbr>女の子の、<wbr>ちこくできない朝</h2></div></div><p>からくり作りが大好きな女の子、ことの。ちこくぐせを直すために、部屋のドアに「おでかけ計画ロック」をつけました。</p><p>ところが、その計画をぜんぶ謎にしてかくしてしまって……。お部屋のしかけを解いて、レトロな電車「からくり号」に乗って、開店前のカフェまで。</p><p>絵はやわらかい水彩。こわい場面や、急におどろかせる演出はありません。</p></div>
+  <div><div class="hd"><img class="df r sway" src="images/deco_train.webp" alt="" aria-hidden="true" loading="lazy" style="--r:-7deg;--d:-0.9s;--t:3.13s"><div><p class="eyebrow">STORY</p><h2>からくり好きの<wbr>女の子の、<wbr>ちこくできない朝</h2></div></div><p>からくり作りが大好きな女の子、ことの。ちこくぐせを直すために、部屋のドアに「おでかけ計画ロック」をつけました。</p><p>ところが、その計画をぜんぶ謎にしてかくしてしまって……。お部屋のしかけを解いて、レトロな電車「からくり号」に乗って、開店前のカフェまで。</p><p>そして第2章「ただいま大作戦」。おでかけから帰る夜にも、また新しいからくりが待っています。もちろん無料で、最後まで遊べます。</p><p>絵はやわらかい水彩。こわい場面や、急におどろかせる演出はありません。</p></div>
   <div class="cw"><div class="scene"><img src="images/lp_scene.webp" alt="夕方の駅で、オレンジ色の電車を見つけてよろこぶことの" loading="lazy" width="780" height="605"></div><img class="cn c1 sway" src="images/deco_kasa.webp" alt="" aria-hidden="true" loading="lazy" style="--r:9deg;--d:-2.2s;--t:4.50s"></div>
  </div>
  <div class="shots" style="--n:4"><figure><img src="images/lp_screen1.webp" alt="ことのの部屋の窓のかべ。ベッドと猫のだいずがいる" loading="lazy" width="480" height="1030"><figcaption>はじまりは、ことのの部屋</figcaption></figure><figure><img src="images/lp_screen2.webp" alt="レトロな電車の中。木の座席と運転席のドア" loading="lazy" width="480" height="1030"><figcaption>レトロな電車「からくり号」</figcaption></figure><figure><img src="images/lp_screen3.webp" alt="夕方の駅前にある、開店前のカフェの入口" loading="lazy" width="480" height="1030"><figcaption>友だちのカフェの前で</figcaption></figure><figure><img src="images/lp_screen4.webp" alt="手がかりの名前がならんだ手帳の画面" loading="lazy" width="480" height="1030"><figcaption>見た手がかりは手帳にのこる</figcaption></figure></div>
@@ -179,7 +180,7 @@ main{overflow-x:clip}
 
 <section><img class="dm l sway" src="images/deco_tulip.webp" alt="" aria-hidden="true" loading="lazy" style="top:58%;--s:0.9;--j:-0.3;--r:-8deg;--d:-0.9s;--t:3.34s"><img class="dm r sway" src="images/deco_kotono.webp" alt="" aria-hidden="true" loading="lazy" style="top:8%;--s:0.85;--j:0.1;--r:5deg;--d:-2.6s;--t:3.95s"><img class="db r sway" src="images/deco_tulip.webp" alt="" aria-hidden="true" loading="lazy" style="--r:-8deg;--d:-7.8s;--t:4.37s"><img class="db sm l sway" src="images/deco_cafe.webp" alt="" aria-hidden="true" loading="lazy" style="--r:9deg;--d:-5.2s;--t:4.69s"><div class="wrap">
  <div class="hd"><img class="df l sway" src="images/deco_cat.webp" alt="" aria-hidden="true" loading="lazy" style="--r:7deg;--d:-5.4s;--t:4.41s"><div><p class="eyebrow">SERIES</p><h2>七色パレットゲームズの<wbr> ほかのゲーム</h2></div></div><p class="lead">脱出ゲームは、1作ごとに主人公もお話も別々です。どこからでもどうぞ。</p>
- <ul class="series"><li><a class="here" href="../kotono/"><img src="../kotono/images/icon.png" alt="ことのと おでかけ大作戦のアイコン" loading="lazy" width="64" height="64"><div><b>ことのと おでかけ大作戦</b><span>からくり好きの女の子と、おでかけ前の3部屋</span><em>このページ</em></div></a></li><li><a href="../lupina/"><img src="../lupina/images/icon.png" alt="ルピナと星の塔のアイコン" loading="lazy" width="64" height="64"><div><b>ルピナと星の塔</b><span>見習い魔女の進級試験は、塔からの脱出</span><em>配信中</em></div></a></li><li><a href="../panya/"><img src="../panya/images/icon.png" alt="パン屋さん経営ゲーム ミミの世界のパンのアイコン" loading="lazy" width="64" height="64"><div><b>パン屋さん経営ゲーム ミミの世界のパン</b><span>ミミが世界のパンをめぐる、のんびりパン屋さん</span><em>配信中</em></div></a></li></ul>
+ <ul class="series"><li><a class="here" href="../kotono/"><img src="../kotono/images/icon.png" alt="ことのと おでかけ大作戦のアイコン" loading="lazy" width="64" height="64"><div><b>ことのと おでかけ大作戦</b><span>からくり好きの女の子と、2章・5つの場所の謎解き</span><em>このページ</em></div></a></li><li><a href="../lupina/"><img src="../lupina/images/icon.png" alt="ルピナと星の塔のアイコン" loading="lazy" width="64" height="64"><div><b>ルピナと星の塔</b><span>見習い魔女の進級試験は、塔からの脱出</span><em>配信中</em></div></a></li><li><a href="../panya/"><img src="../panya/images/icon.png" alt="パン屋さん経営ゲーム ミミの世界のパンのアイコン" loading="lazy" width="64" height="64"><div><b>パン屋さん経営ゲーム ミミの世界のパン</b><span>ミミが世界のパンをめぐる、のんびりパン屋さん</span><em>配信中</em></div></a></li></ul>
 </div></section>
 
 <section class="alt end"><img class="dm l sway" src="images/deco_bag.webp" alt="" aria-hidden="true" loading="lazy" style="top:44%;--s:1;--j:-0.2;--r:-8deg;--d:-4.3s;--t:3.82s"><img class="dm r sway" src="images/deco_cafe.webp" alt="" aria-hidden="true" loading="lazy" style="top:18%;--s:0.65;--j:-0.6;--r:5deg;--d:-6.0s;--t:4.43s"><img class="dm r sway" src="images/deco_daizu.webp" alt="" aria-hidden="true" loading="lazy" style="top:60%;--s:0.9;--j:0.2;--r:8deg;--d:-0.7s;--t:3.19s"><img class="db l sway" src="images/deco_bag.webp" alt="" aria-hidden="true" loading="lazy" style="--r:8deg;--d:-9.1s;--t:3.32s"><img class="db sm r sway" src="images/deco_treat.webp" alt="" aria-hidden="true" loading="lazy" style="--r:-9deg;--d:-5.9s;--t:3.20s"><div class="wrap">
