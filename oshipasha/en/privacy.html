@@ -11,7 +11,7 @@ h1{font-size:1.5rem;margin:.2em 0 .6em}h2{font-size:1.1rem;margin:1.6em 0 .4em}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
 dl{margin:0}dt{color:var(--muted);font-size:.85rem;margin-top:12px}dt:first-child{margin-top:0}dd{margin:2px 0 0}
 a{color:var(--pink)}ul{padding-left:1.2em}.muted{color:var(--muted);font-size:.9rem}
-header .lang{font-weight:600;font-size:.9rem;border:1px solid var(--line);border-radius:99px;padding:2px 12px;margin-left:auto}
+header .langs{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;margin-left:auto}header .lang{font-weight:600;font-size:.85rem;border:1px solid var(--line);border-radius:99px;padding:2px 10px;white-space:nowrap}
 .hero{text-align:center;padding:12px 0 4px}.hero img{width:128px;height:128px;border-radius:28px;box-shadow:0 6px 0 var(--line)}
 .hero .sub{color:var(--pink);font-weight:800;letter-spacing:.2em;font-size:.9rem;margin:14px 0 0}.hero h1{font-size:2rem;margin:.1em 0 .3em}
 .soon{display:inline-block;background:var(--pink);color:#fff;font-weight:800;border-radius:99px;padding:6px 18px;font-size:.9rem;text-decoration:none}
@@ -20,13 +20,14 @@ nav ul{list-style:none;padding:0}nav li{margin:10px 0}nav a{display:block;backgr
 .shots{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:16px 16px 10px;margin:0 -16px}
 .shots img{width:min(402px,calc(100vw - 56px));height:auto;flex:none;border-radius:18px;scroll-snap-align:center;box-shadow:0 4px 0 var(--line)}
 </style></head>
-<body><main><header><a href="./">← Oshi &amp; Me</a><a class="lang" href="../privacy.html" hreflang="ja">日本語</a></header><h1>Privacy Policy | Oshi &amp; Me</h1>
+<body><main><header><a href="./">← Oshi &amp; Me</a><span class="langs"><a class="lang" href="../privacy.html" hreflang="ja">日本語</a><a class="lang" href="../ko/privacy.html" hreflang="ko">한국어</a><a class="lang" href="../zh/privacy.html" hreflang="zh-Hant">繁體中文</a></span></header><h1>Privacy Policy | Oshi &amp; Me</h1>
 <div class="card">
 <p>CHIHIRO SHIRATA (“we”) sets out the following policy on how the smartphone camera app “Oshi & Me” (“the app”) handles information about its users.</p>
 <h2>1. Information we collect</h2>
 <p>We do not collect any information that can identify you, such as your name, email address, phone number, address, contacts or photos. We do not send your app data to any server of ours.</p>
 <h2>2. Camera, photos and app data</h2>
 <p>The camera image, your photos, and face and body detection are all processed only on your device. None of this is sent off your device, either to us or to any third party. A photo is passed to your Photos app, or to an app you choose, only when you tap “Save to Photos” or “Share”. The faves, frames and settings you create are saved on your device. So that you can keep your data when you delete the app or change phones, it is also saved in your own iCloud (a service of Apple). Data saved in iCloud is managed by Apple, and we cannot see or receive it.</p>
+<p>Face and body detection is used only to find where things are in the photo. It is never used to identify anyone, it is not saved, and it is not used for ads.</p>
 <p>To set a spending limit for minors, the app asks for your age group (15 or under, 16 to 19, or 20 and over) the first time you make a purchase. This age group and the amount spent that month are also saved only on your device and in your own iCloud.</p>
 <h2>3. Ads (Google AdMob)</h2>
 <p>This app shows the following ads. It does not show banner ads.</p>
@@ -45,9 +46,17 @@ nav ul{list-style:none;padding:0}nav li{margin:10px 0}nav a{display:block;backgr
 <p>Payments for in-app purchases are processed by Apple Inc. on the App Store. We never receive your payment information, such as credit card numbers. To process purchases, we may save the transaction number sent by Apple in the app data.</p>
 <h2>5. Information you send us</h2>
 <p>If you contact us by email, we use your email address and message only to reply to you, and we do not give them to any third party unless required by law.</p>
-<h2>6. Changes</h2>
+<p>“Report an Ad” (our feedback form) in the app’s Settings uses Google Forms, a service of Google LLC. What you send in the form is stored on Google’s service, and we read it to reply to you and to improve the app. You don’t need to write your name or contact details in the form. For how Google handles information, see <a href="https://policies.google.com/privacy">Google’s Privacy Policy</a>.</p>
+<h2>6. How to delete your data</h2>
+<ul>
+<li>Tap “Delete data” in the app’s Settings to delete your faves, outfits and frames both on your device and in your own iCloud (purchase records, your age group and the volume setting are kept).</li>
+<li>Deleting the app deletes the data on your device, but the copy saved in iCloud remains. To delete everything, first tap “Delete data”, then delete the app.</li>
+<li>Photos you saved to your Photos app can be deleted in the Photos app.</li>
+<li>If you would like us to delete something you sent us by email or through the form, please email us.</li>
+</ul>
+<h2>7. Changes</h2>
 <p>If we change this policy, we will announce it on this page.</p>
-<h2>7. Contact</h2>
+<h2>8. Contact</h2>
 <p>CHIHIRO SHIRATA<br>Email: <a href="mailto:sjch.sjch@icloud.com">sjch.sjch@icloud.com</a></p>
 <p class="muted">Effective date: November 5, 2026</p>
 </div></main></body></html>
