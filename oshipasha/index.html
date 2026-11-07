@@ -171,7 +171,9 @@ p,li,dd,dt,summary,figcaption,b,span,.lead,h1,h2,h3{word-break:keep-all;overflow
 .flow .arr{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--accent);font-weight:900}
 .flow .arr i{font-style:normal;font-size:1.3rem;line-height:1}
 .flow .arr span{writing-mode:vertical-rl;text-orientation:upright;font-size:.7rem;letter-spacing:.02em}
-:not(:lang(ja)) .flow .arr span{writing-mode:horizontal-tb;font-size:.62rem;text-align:center;line-height:1.2}
+:not(:lang(ja)) .flow{grid-template-columns:28% 48px 1fr}
+:lang(ko) .flow .arr span{word-break:keep-all !important}
+:not(:lang(ja)) .flow .arr span{word-break:normal;overflow-wrap:normal;writing-mode:horizontal-tb;font-size:.62rem;text-align:center;line-height:1.2}
 .places{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .places figcaption{font-weight:700;margin-top:2px;font-size:.74rem;color:var(--muted)}
 .note{font-size:.76rem;color:var(--muted);margin:8px 0 0;text-align:center}
