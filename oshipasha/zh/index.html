@@ -150,17 +150,19 @@ p,li,dd,dt,summary,figcaption,b,span,.lead,h1,h2,h3{word-break:keep-all;overflow
 .top>a{white-space:nowrap}
 .langs{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
 .langs a{font-size:.8rem;border:1px solid var(--line);border-radius:99px;padding:2px 10px;white-space:nowrap;text-decoration:none;font-weight:700}
-.hero{display:grid;gap:18px;grid-template-areas:"t" "q" "v";padding-top:0;padding-bottom:30px}
-.ht{grid-area:t}.hq{grid-area:q}.hv{grid-area:v}
+.hero,.hero.wrap{display:block;padding-top:0;padding-bottom:8px;max-width:1080px}
+.hv{padding-top:8px;padding-bottom:36px;max-width:820px}
+.cta{text-align:center;margin-top:18px}
 .name{display:flex;gap:10px;align-items:center;margin:6px 0 0}
 .name img{width:44px;height:44px;border-radius:11px;border:1px solid var(--line)}
 .name b{display:block;font-size:1rem;line-height:1.3}.name small{display:block;color:var(--muted);font-size:.78rem;line-height:1.3}
 .hero h1{font-size:2rem;margin:.35em 0 0;line-height:1.3}
-.worries{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.worries li{background:var(--panel);border:2px solid var(--accent-soft);border-radius:16px;padding:12px 12px 12px 14px;font-weight:800;font-size:1.06rem;line-height:1.45;display:flex;align-items:center;position:relative}
+.worries{list-style:none;padding:0;margin:18px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.worries li{background:var(--panel);border:2px solid var(--accent-soft);border-radius:16px;padding:12px 12px 12px 14px;font-weight:800;font-size:1.14rem;line-height:1.45;display:flex;align-items:center;position:relative;min-height:6.2em}
 .worries li::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:5px;border-radius:0 4px 4px 0;background:var(--accent)}
-.solve{font-weight:800;color:var(--accent);font-size:1.12rem;margin:14px 0 12px;line-height:1.5}
-.hq .btn{font-size:1.06rem}
+.solve{font-weight:900;color:var(--accent);font-size:1.5rem;margin:22px 0 0;line-height:1.45;text-align:center}
+.cta .btn{font-size:1.1rem}
+.flow-h{text-align:center}
 .flow-h{font-size:1.25rem;margin:0 0 10px;line-height:1.4}
 .flow{display:grid;grid-template-columns:30% 24px 1fr;gap:6px;align-items:center}
 .flow figure{margin:0}
@@ -173,6 +175,7 @@ p,li,dd,dt,summary,figcaption,b,span,.lead,h1,h2,h3{word-break:keep-all;overflow
 .flow .arr span{writing-mode:vertical-rl;text-orientation:upright;font-size:.7rem;letter-spacing:.02em}
 :not(:lang(ja)) .flow{grid-template-columns:28% 48px 1fr}
 :lang(ko) .flow .arr span{word-break:keep-all !important}
+:lang(zh-Hant) .worries li,:lang(zh-Hant) .solve{word-break:keep-all;line-break:strict}
 :not(:lang(ja)) .flow .arr span{word-break:normal;overflow-wrap:normal;writing-mode:horizontal-tb;font-size:.62rem;text-align:center;line-height:1.2}
 .places{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .places figcaption{font-weight:700;margin-top:2px;font-size:.74rem;color:var(--muted)}
@@ -193,9 +196,14 @@ p,li,dd,dt,summary,figcaption,b,span,.lead,h1,h2,h3{word-break:keep-all;overflow
 .os{font-size:.8rem;color:var(--muted);margin:8px 0 0}
 @media (max-width:380px){.worries li{font-size:.98rem;padding:10px}.hero h1{font-size:1.75rem}}
 @media (min-width:820px){
- .hero{grid-template-columns:1fr 1fr;grid-template-areas:"t v" "q v";column-gap:48px;row-gap:10px;align-items:start}
- .hero h1{font-size:2.5rem}
- .worries li{font-size:1.15rem;padding:16px 16px 16px 18px}
+ .hero,.hero.wrap{display:block}
+ .hero h1{font-size:3rem;text-align:center}
+ .hero .ht{text-align:center}.hero .name{justify-content:center}
+ .worries{gap:18px;margin-top:28px}
+ .worries li{font-size:1.75rem;padding:28px 28px 28px 34px;min-height:5em}
+ .worries li::before{width:8px;top:22px;bottom:22px}
+ .solve{font-size:2.3rem;margin-top:34px}
+ .flow-h{font-size:1.6rem}
  .feat{grid-template-columns:1fr 1fr;gap:40px}
  .flow figcaption{font-size:.9rem}.places figcaption{font-size:.82rem}
 }
@@ -206,12 +214,15 @@ p,li,dd,dt,summary,figcaption,b,span,.lead,h1,h2,h3{word-break:keep-all;overflow
  <div class="ht"><p class="eyebrow">拍本命、拍娃娃的時候</p>
   <div class="name"><img src="../images/icon.png" alt="" width="44" height="44"><span><b>Oshi &amp; Me</b><small>和本命一起拍出可愛照片</small></span></div>
   <h1>你也有這些煩惱嗎?</h1></div>
- <div class="hq"><ul class="worries"><li>很在意旁人的眼光</li><li>擔心珍貴的娃娃或壓克力立牌(亞克力立牌)弄髒、弄壞</li><li>拍到了旁邊的路人</li><li>不想拍到自己的臉，但想和本命一起入鏡</li></ul><p class="solve">所以我做了一款能解決這些煩惱的 App!</p><a class="btn" href="https://apps.apple.com/tw/app/id6830922828">在 App Store 下載</a></div>
- <div class="hv"><h2 class="flow-h">在家拍好的本命，一起出門追星!</h2><div class="flow">
+ <ul class="worries"><li>很在意<wbr>旁人的<wbr>眼光……</li><li>擔心<wbr>珍貴的<wbr>娃娃或<wbr>壓克力立牌<wbr>(亞克力立牌)<wbr>弄髒、<wbr>弄壞……</li><li>拍到了<wbr>旁邊的<wbr>路人……</li><li>不想<wbr>拍到<wbr>自己的臉，<wbr>但想<wbr>和本命<wbr>一起入鏡……</li></ul>
+ <p class="solve">所以我做了<wbr>一款<wbr>能解決<wbr>這些煩惱的 App!</p>
+</section>
+<section class="wrap hv">
+ <h2 class="flow-h">在家拍好的本命，一起出門追星!</h2><div class="flow">
   <figure class="once"><img src="../images/lp/once.webp" alt="" width="360" height="480"><figcaption>在家慢慢拍</figcaption></figure>
   <div class="arr" aria-hidden="true"><i>▶</i><span>出門召喚</span></div>
   <div class="places"><figure><img src="../images/lp/p_cafe.webp" alt="" width="360" height="480"><figcaption>在咖啡廳</figcaption></figure><figure><img src="../images/lp/p_sea.webp" alt="" width="360" height="480"><figcaption>在海邊</figcaption></figure><figure><img src="../images/lp/p_park.webp" alt="" width="360" height="480"><figcaption>在公園</figcaption></figure><figure><img src="../images/lp/p_night.webp" alt="" width="360" height="480"><figcaption>在夜景前</figcaption></figure></div>
- </div><p class="note">全部都是用同一張在家拍好的本命，在 App 裡召喚出來拍的範例。</p></div>
+ </div><p class="note">全部都是用同一張在家拍好的本命，在 App 裡召喚出來拍的範例。</p><div class="cta"><a class="btn" href="https://apps.apple.com/tw/app/id6830922828">在 App Store 下載</a></div>
 </section>
 <section class="alt"><div class="wrap feat"><div><h2>在家慢慢拍出本命的好照片</h2><p>用帥氣或可愛的角度拍下本命，再幫照片做裝飾、做專屬相框。</p></div>
  <div class="pics"><figure><img src="../images/lp/home_shot.webp" alt="" loading="lazy"><figcaption>在家拍的本命</figcaption></figure><figure><img src="../images/lp/home_deco.webp" alt="" loading="lazy"><figcaption>加上裝飾和相框</figcaption></figure></div></div></section>
