@@ -194,6 +194,20 @@ p,li,dd,dt,summary,figcaption,b,span,.lead,h1,h2,h3{word-break:keep-all;overflow
 .grow h2{font-size:1.25rem}.grow p{margin:0 0 14px;color:var(--muted)}
 .money{max-width:860px}.money div{grid-template-columns:5.5em 1fr}
 .os{font-size:.8rem;color:var(--muted);margin:8px 0 0}
+/* ふわふわの スタンプ(押せない・字に かからない所だけ・動きを減らす設定では止まる) */
+section{position:relative}
+section.s-hero{padding-top:0;padding-bottom:0}section.s-flow{padding-top:20px;padding-bottom:0}
+.fz{position:absolute;pointer-events:none;width:var(--s);height:auto;z-index:0;opacity:.95;animation:fz 6s ease-in-out infinite;animation-delay:var(--d)}
+.fd{display:none}
+.fm{top:var(--t)}.fm.r{right:12px}.fm.l{left:12px}
+.hero .name,.hero h1,.worries,.solve{position:relative;z-index:1}
+@keyframes fz{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-10px) rotate(6deg)}}
+@media (prefers-reduced-motion:reduce){.fz{animation:none}}
+@media (min-width:1240px){
+ .fd{display:block;top:var(--t)}
+ .fz.l{left:calc((100% - 1080px) / 2 - var(--s) - 18px)}.fz.r{right:calc((100% - 1080px) / 2 - var(--s) - 18px)}
+ .fm{top:var(--t)}
+}
 @media (max-width:380px){.worries li{font-size:.98rem;padding:10px}.hero h1{font-size:1.75rem}}
 @media (min-width:820px){
  .hero,.hero.wrap{display:block}
@@ -209,31 +223,31 @@ p,li,dd,dt,summary,figcaption,b,span,.lead,h1,h2,h3{word-break:keep-all;overflow
 }
 </style></head>
 <body><main>
-<div class="wrap top"><a href="../">← 七色パレットゲームズ</a><span class="langs"><a href="en/" hreflang="en">English</a><a href="ko/" hreflang="ko">한국어</a><a href="zh/" hreflang="zh-Hant">繁體中文</a></span></div>
-<section class="wrap hero">
+<div class="wrap top"><a href="../index.html">← 七色パレットゲームズ</a><span class="langs"><a href="en/index.html" hreflang="en">English</a><a href="ko/index.html" hreflang="ko">한국어</a><a href="zh/index.html" hreflang="zh-Hant">繁體中文</a></span></div>
+<section class="s-hero"><img class="fz fm r" src="images/lp/s_heart.webp" alt="" aria-hidden="true" style="--t:0px;--s:44px;--d:0s"><img class="fz fd l" src="images/lp/s_ribbon.webp" alt="" aria-hidden="true" style="--t:30%;--s:76px;--d:1.2s"><img class="fz fd r" src="images/lp/s_star.webp" alt="" aria-hidden="true" style="--t:42%;--s:60px;--d:0.4s"><img class="fz fd l" src="images/lp/s_flower.webp" alt="" aria-hidden="true" style="--t:74%;--s:64px;--d:2.0s"><img class="fz fd r" src="images/lp/s_heart2.webp" alt="" aria-hidden="true" style="--t:78%;--s:56px;--d:1.6s"><div class="wrap hero">
  <div class="ht"><p class="eyebrow">推し活・<wbr>ぬい活の<wbr>写真で</p>
   <div class="name"><img src="images/icon.png" alt="" width="44" height="44"><span><b>推しパシャ</b><small>推しと一緒に撮れるカメラ</small></span></div>
   <h1>こんな<wbr>心配、<wbr>ありませんか?</h1></div>
  <ul class="worries"><li>周りの目が<wbr>気になる…</li><li>大事な<wbr>推しや<wbr>アクスタが<wbr>汚れたり<wbr>壊れたり<wbr>しないか<wbr>心配…</li><li>周りの人も<wbr>写って<wbr>しまった…</li><li>自分の顔は<wbr>写りたくない。<wbr>でも<wbr>推しと<wbr>一緒に<wbr>写りたい…</li></ul>
  <p class="solve">そういう<wbr>お悩みや<wbr>要望を<wbr>解決できる<wbr>アプリを<wbr>作りました!</p>
-</section>
-<section class="wrap hv">
+</div></section>
+<section class="s-flow"><img class="fz fd l" src="images/lp/s_cupcake.webp" alt="" aria-hidden="true" style="--t:20%;--s:64px;--d:0.8s"><img class="fz fd r" src="images/lp/s_cloud.webp" alt="" aria-hidden="true" style="--t:30%;--s:72px;--d:2.2s"><img class="fz fd r" src="images/lp/s_cherry.webp" alt="" aria-hidden="true" style="--t:72%;--s:60px;--d:1.0s"><div class="wrap hv">
  <h2 class="flow-h">家で<wbr>撮った<wbr>推しと、<wbr>外で<wbr>推し活!<wbr>ぬい活!</h2><div class="flow">
   <figure class="once"><img src="images/lp/once.webp" alt="" width="360" height="480"><figcaption>家で<wbr>じっくり<wbr>撮る</figcaption></figure>
   <div class="arr" aria-hidden="true"><i>▶</i><span>外で呼び出す</span></div>
   <div class="places"><figure><img src="images/lp/p_cafe.webp" alt="" width="360" height="480"><figcaption>カフェでも</figcaption></figure><figure><img src="images/lp/p_sea.webp" alt="" width="360" height="480"><figcaption>海でも</figcaption></figure><figure><img src="images/lp/p_park.webp" alt="" width="360" height="480"><figcaption>公園でも</figcaption></figure><figure><img src="images/lp/p_night.webp" alt="" width="360" height="480"><figcaption>夜景でも</figcaption></figure></div>
  </div><p class="note">どれも<wbr>家で<wbr>撮った<wbr>同じ<wbr>推しを、<wbr>アプリで<wbr>呼び出して<wbr>撮った<wbr>見本です。</p><div class="cta"><a class="btn" href="https://apps.apple.com/jp/app/id6830922828">App Store で入手 <small>無料</small></a></div>
-</section>
-<section class="alt"><div class="wrap feat"><div><h2>家で<wbr>じっくり、<wbr>推しの<wbr>いい写真を</h2><p>かっこいい・<wbr>可愛い<wbr>アングルで<wbr>写真を<wbr>とって、<wbr>さらに<wbr>その写真を<wbr>デコったり、<wbr>フレームを<wbr>つくったり。</p></div>
+</div></section>
+<section class="alt"><img class="fz fm r" src="images/lp/s_star.webp" alt="" aria-hidden="true" style="--t:6px;--s:34px;--d:0.6s"><img class="fz fd l" src="images/lp/s_heart.webp" alt="" aria-hidden="true" style="--t:40%;--s:60px;--d:1.4s"><div class="wrap feat"><div><h2>家で<wbr>じっくり、<wbr>推しの<wbr>いい写真を</h2><p>かっこいい・<wbr>可愛い<wbr>アングルで<wbr>写真を<wbr>とって、<wbr>さらに<wbr>その写真を<wbr>デコったり、<wbr>フレームを<wbr>つくったり。</p></div>
  <div class="pics"><figure><img src="images/lp/home_shot.webp" alt="" loading="lazy"><figcaption>家で<wbr>撮った<wbr>推し</figcaption></figure><figure><img src="images/lp/home_deco.webp" alt="" loading="lazy"><figcaption>デコって、<wbr>フレームも</figcaption></figure></div></div></section>
-<section><div class="wrap feat"><div><h2>人の目も<wbr>気にならない。<wbr>推しも<wbr>汚れない・<wbr>壊れない</h2><p>作成した<wbr>推しの<wbr>写真と<wbr>一緒に<wbr>外で<wbr>推し活!<wbr>ぬい活!<wbr>人の目も<wbr>気になりませんし、<wbr>推しが<wbr>よごれたり<wbr>壊れることは<wbr>ありません。<wbr>もちろん、<wbr>本物の<wbr>推しは<wbr>一緒に<wbr>もっていって、<wbr>写真だけ<wbr>アプリを<wbr>使えば<wbr>OK。</p></div>
+<section><img class="fz fm l" src="images/lp/s_cloud.webp" alt="" aria-hidden="true" style="--t:6px;--s:40px;--d:1.1s"><img class="fz fd r" src="images/lp/s_ribbon.webp" alt="" aria-hidden="true" style="--t:50%;--s:70px;--d:0.3s"><div class="wrap feat"><div><h2>人の目も<wbr>気にならない。<wbr>推しも<wbr>汚れない・<wbr>壊れない</h2><p>作成した<wbr>推しの<wbr>写真と<wbr>一緒に<wbr>外で<wbr>推し活!<wbr>ぬい活!<wbr>人の目も<wbr>気になりませんし、<wbr>推しが<wbr>よごれたり<wbr>壊れることは<wbr>ありません。<wbr>もちろん、<wbr>本物の<wbr>推しは<wbr>一緒に<wbr>もっていって、<wbr>写真だけ<wbr>アプリを<wbr>使えば<wbr>OK。</p></div>
  <div class="pics"><figure><img src="images/lp/p_park_t.webp" alt="" loading="lazy"></figure><figure><img src="images/lp/p_night_t.webp" alt="" loading="lazy"></figure></div></div></section>
-<section class="alt"><div class="wrap feat"><div><h2>顔は<wbr>かわいく<wbr>かくせる</h2><p>周りの人が<wbr>うつったら<wbr>顔かくし機能で<wbr>顔を<wbr>かくして。<wbr>自分の顔が<wbr>映るのが<wbr>嫌な<wbr>場合も、<wbr>顔かくしで<wbr>可愛く<wbr>かくせます。</p></div>
+<section class="alt"><img class="fz fm r" src="images/lp/s_flower.webp" alt="" aria-hidden="true" style="--t:6px;--s:36px;--d:1.8s"><img class="fz fd l" src="images/lp/s_heart2.webp" alt="" aria-hidden="true" style="--t:55%;--s:56px;--d:0.9s"><div class="wrap feat"><div><h2>顔は<wbr>かわいく<wbr>かくせる</h2><p>周りの人が<wbr>うつったら<wbr>顔かくし機能で<wbr>顔を<wbr>かくして。<wbr>自分の顔が<wbr>映るのが<wbr>嫌な<wbr>場合も、<wbr>顔かくしで<wbr>可愛く<wbr>かくせます。</p></div>
  <div class="solo"><img src="images/lp/face.webp" alt="" loading="lazy"></div></div></section>
 <section><div class="wrap"><div class="card"><h2>SNSにも<wbr>そのまま<wbr>投稿</h2><p>Xや<wbr>Instagram<wbr>などの<wbr>SNSへの<wbr>投稿も、<wbr>アプリから<wbr>できます。</p></div></div></section>
-<section class="alt"><div class="wrap ask"><p>推しとの<wbr>生活を<wbr>より<wbr>一層<wbr>いいものに<wbr>するために、<wbr>アプリ<wbr>「推しパシャ」<wbr>使ってみて<wbr>いただけませんか。</p><a class="btn" href="https://apps.apple.com/jp/app/id6830922828">App Store で入手 <small>無料</small></a><p class="os">iPhone(iOS 17.0 以上)</p></div></section>
-<section><div class="wrap"><div class="grow"><h2>まだまだ<wbr>成長中です</h2><p>みなさんの<wbr>推しに<wbr>対する<wbr>気持ちや<wbr>「こうしたい」<wbr>という<wbr>思いを<wbr>よせて<wbr>いただけたら、<wbr>それに<wbr>あわせて<wbr>アップデート<wbr>していきたいと<wbr>思っています!</p><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfaiI7u2lbt9bwFeZUt-tbgXndUIYVX700rq2caZ3NdWFW9uA/viewform?usp=pp_url&entry.1550498070=%E6%8E%A8%E3%81%97%E3%83%91%E3%82%B7%E3%83%A3" target="_blank" rel="noopener">ご要望箱をひらく</a></div></div></section>
+<section class="alt"><img class="fz fm l" src="images/lp/s_heart.webp" alt="" aria-hidden="true" style="--t:6px;--s:34px;--d:0.5s"><img class="fz fm r" src="images/lp/s_star.webp" alt="" aria-hidden="true" style="--t:6px;--s:34px;--d:1.5s"><div class="wrap ask"><p>推しとの<wbr>生活を<wbr>より<wbr>一層<wbr>いいものに<wbr>するために、<wbr>アプリ<wbr>「推しパシャ」<wbr>使ってみて<wbr>いただけませんか。</p><a class="btn" href="https://apps.apple.com/jp/app/id6830922828">App Store で入手 <small>無料</small></a><p class="os">iPhone(iOS 17.0 以上)</p></div></section>
+<section><img class="fz fm r" src="images/lp/s_ribbon.webp" alt="" aria-hidden="true" style="--t:6px;--s:40px;--d:1.0s"><img class="fz fd l" src="images/lp/s_cherry.webp" alt="" aria-hidden="true" style="--t:45%;--s:58px;--d:2.1s"><div class="wrap"><div class="grow"><h2>まだまだ<wbr>成長中です</h2><p>みなさんの<wbr>推しに<wbr>対する<wbr>気持ちや<wbr>「こうしたい」<wbr>という<wbr>思いを<wbr>よせて<wbr>いただけたら、<wbr>それに<wbr>あわせて<wbr>アップデート<wbr>していきたいと<wbr>思っています!</p><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfaiI7u2lbt9bwFeZUt-tbgXndUIYVX700rq2caZ3NdWFW9uA/viewform?usp=pp_url&entry.1550498070=%E6%8E%A8%E3%81%97%E3%83%91%E3%82%B7%E3%83%A3" target="_blank" rel="noopener">ご要望箱をひらく</a></div></div></section>
 <section class="alt"><div class="wrap"><h2>アプリ内課金と<wbr>広告のこと</h2><dl class="money"><div><dt>フレーム</dt><dd>自分で<wbr>作れる<wbr>フレームは<wbr>5こまで。<wbr>もっと<wbr>作りたい<wbr>方は、<wbr>+5こ・<wbr>「フレームたくさん(最大100こ)」を<wbr>追加できます。</dd></div><div><dt>飾り</dt><dd>飾りの<wbr>パックは<wbr>1回の<wbr>購入で<wbr>ずっと<wbr>使えます。<wbr>機種変更の<wbr>ときは<wbr>「購入を復元」で<wbr>もどせます。</dd></div><div><dt>広告</dt><dd>鍵の<wbr>スタンプは、<wbr>動画広告を<wbr>見ると<wbr>1つずつ<wbr>使えるように<wbr>なります。<wbr>写真を<wbr>保存した<wbr>あとに、<wbr>ときどき<wbr>広告が<wbr>出ます。<wbr>「広告なし」を<wbr>購入すると<wbr>出なくなります。</dd></div></dl></div></section>
 <section><div class="wrap faq"><h2>よくある質問</h2><p class="lead">ほかに困ったことは<a href="support.html">サポート</a>へどうぞ。</p><details><summary>推しを<wbr>毎回<wbr>持って<wbr>行かないと<wbr>いけないの?</summary><p>いいえ。<wbr>家で<wbr>撮って<wbr>切りぬいた<wbr>推しは、<wbr>アプリの<wbr>中に<wbr>残ります。<wbr>外では、<wbr>推しが<wbr>手元に<wbr>なくても<wbr>カメラの<wbr>中に<wbr>呼び出して<wbr>一緒に<wbr>撮れます。</p></details><details><summary>アクスタや<wbr>トレカでも<wbr>撮れますか?</summary><p>はい。<wbr>ぬいぐるみ・<wbr>アクスタ・<wbr>トレカ・<wbr>フィギュア・<wbr>缶バッジ<wbr>などを、<wbr>推しの<wbr>形に<wbr>切りぬけます。</p></details><details><summary>撮った<wbr>写真は<wbr>どこに<wbr>保存されますか?</summary><p>「写真アプリにほぞん」を<wbr>押すと、<wbr>iPhone の<wbr>写真アプリに<wbr>保存されます。<wbr>カメラの<wbr>映像と<wbr>写真は、<wbr>この端末の<wbr>外に<wbr>送りません。</p></details></div></section>
-<footer class="wrap"><nav><a href="support.html">サポート・お問い合わせ</a><a href="privacy.html">プライバシーポリシー</a><a href="tokusho.html">特定商取引法に基づく表記</a><a href="../">七色パレットゲームズのトップ</a></nav>© 七色パレットゲームズ</footer>
+<footer class="wrap"><nav><a href="support.html">サポート・お問い合わせ</a><a href="privacy.html">プライバシーポリシー</a><a href="tokusho.html">特定商取引法に基づく表記</a><a href="../index.html">七色パレットゲームズのトップ</a></nav>© 七色パレットゲームズ</footer>
 </main></body></html>
