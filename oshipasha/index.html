@@ -1,16 +1,15 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>推しパシャ|推しを1回撮れば、いつでもどこでも一緒に撮れるカメラ(iPhone)</title>
-<meta name="description" content="ぬい・アクスタ・トレカを1回撮って切りぬくだけ。カフェでも旅先でも、カメラの中に推しを呼び出して、となりにならべて撮れます。推しを持ち歩かなくても大丈夫。推し色の飾り・自分だけのフレーム・顔かくしスタンプで、推しとの写真をかわいく。">
-<link rel="canonical" href="https://sjchsjch66-coder.github.io/oshipasha/">
-<link rel="alternate" hreflang="ja" href="https://sjchsjch66-coder.github.io/oshipasha/"><link rel="alternate" hreflang="en" href="https://sjchsjch66-coder.github.io/oshipasha/en/">
+<title>推しパシャ|推しが汚れる・人目が気になる…を解決する、推しと一緒に撮れるカメラ(iPhone)</title>
+<meta name="description" content="推し活・ぬい活の写真で、周りの目や、大事な推しやアクスタが汚れたり壊れたりする心配はありませんか?家でじっくり撮った推しを、外ではカメラに呼び出して一緒にパシャ。周りの人や自分の顔は、顔かくしでかわいく隠せます。">
+<link rel="canonical" href="https://sjchsjch66-coder.github.io/oshipasha/"><link rel="alternate" hreflang="ja" href="https://sjchsjch66-coder.github.io/oshipasha/"><link rel="alternate" hreflang="en" href="https://sjchsjch66-coder.github.io/oshipasha/en/"><link rel="alternate" hreflang="ko" href="https://sjchsjch66-coder.github.io/oshipasha/ko/"><link rel="alternate" hreflang="zh-Hant" href="https://sjchsjch66-coder.github.io/oshipasha/zh/">
 <meta name="apple-itunes-app" content="app-id=6830922828">
 <meta property="og:type" content="website"><meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="推しパシャ|推しを1回撮れば、いつでもどこでも一緒に"><meta property="og:description" content="ぬい・アクスタ・トレカを1回撮って切りぬけば、カフェでも旅先でも、カメラの中に呼び出して一緒に撮れます。">
+<meta property="og:title" content="推しパシャ|推しを家に置いたまま、外で一緒に撮れる"><meta property="og:description" content="周りの目も、推しが汚れる心配もなし。家で撮った推しを、外でカメラに呼び出して一緒に推し活。">
 <meta property="og:url" content="https://sjchsjch66-coder.github.io/oshipasha/"><meta property="og:image" content="https://sjchsjch66-coder.github.io/oshipasha/images/lp/ogp.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="images/icon.png">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "推しパシャ - 推しと一緒に撮れるカメラ", "operatingSystem": "iOS", "applicationCategory": "PhotographyApplication", "url": "https://sjchsjch66-coder.github.io/oshipasha/", "downloadUrl": "https://apps.apple.com/jp/app/id6830922828", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "推しパシャ", "operatingSystem": "iOS", "applicationCategory": "PhotographyApplication", "url": "https://sjchsjch66-coder.github.io/oshipasha/", "downloadUrl": "https://apps.apple.com/jp/app/id6830922828", "inLanguage": "ja"}</script>
 <style>
 :root{--ink:#3b3552;--muted:#6f6787;--line:#ece2d6;--bg:#fbf6ee;--panel:#fff;--soft:#f5ede2;
 --accent:#d9466f;--accent-ink:#fff;--accent-soft:#fde4ec}
@@ -145,73 +144,83 @@ main{overflow-x:clip}
  .faq details{max-width:860px}
 }
 
-/* 推しパシャ(11/7 アオ)。ことばは keep-all + <wbr> で 単語の途中で 改行しない */
-p,li,dd,dt,summary,figcaption,b,span,.lead{word-break:keep-all;overflow-wrap:anywhere}
-.hero{grid-template-areas:"t" "v" "c"}
-.hero .ht{grid-area:t}.hero .hv{grid-area:v}.hero .hc{grid-area:c}
-.hero h1{font-size:1.9rem;margin:.1em 0 0}
-.hero .name{font-weight:800;font-size:1rem;margin:0}
-.hero .name small{display:block;color:var(--muted);font-weight:600;font-size:.78rem}
-.flow{display:grid;grid-template-columns:30% 26px 1fr;gap:6px;align-items:center}
+p,li,dd,dt,summary,figcaption,b,span,.lead,h1,h2,h3{word-break:keep-all;overflow-wrap:anywhere}
+:lang(zh-Hant) p,:lang(zh-Hant) li,:lang(zh-Hant) dd,:lang(zh-Hant) summary,:lang(zh-Hant) figcaption,:lang(zh-Hant) b,:lang(zh-Hant) span,:lang(zh-Hant) h1,:lang(zh-Hant) h2,:lang(zh-Hant) .lead{word-break:normal;line-break:strict}
+.top{display:flex;justify-content:space-between;gap:8px 12px;align-items:center;flex-wrap:wrap}
+.top>a{white-space:nowrap}
+.langs{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.langs a{font-size:.8rem;border:1px solid var(--line);border-radius:99px;padding:2px 10px;white-space:nowrap;text-decoration:none;font-weight:700}
+.hero{display:grid;gap:18px;grid-template-areas:"t" "q" "v";padding-top:0;padding-bottom:30px}
+.ht{grid-area:t}.hq{grid-area:q}.hv{grid-area:v}
+.name{display:flex;gap:10px;align-items:center;margin:6px 0 0}
+.name img{width:44px;height:44px;border-radius:11px;border:1px solid var(--line)}
+.name b{display:block;font-size:1rem;line-height:1.3}.name small{display:block;color:var(--muted);font-size:.78rem;line-height:1.3}
+.hero h1{font-size:2rem;margin:.35em 0 0;line-height:1.3}
+.worries{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.worries li{background:var(--panel);border:2px solid var(--accent-soft);border-radius:16px;padding:12px 12px 12px 14px;font-weight:800;font-size:1.06rem;line-height:1.45;display:flex;align-items:center;position:relative}
+.worries li::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:5px;border-radius:0 4px 4px 0;background:var(--accent)}
+.solve{font-weight:800;color:var(--accent);font-size:1.12rem;margin:14px 0 12px;line-height:1.5}
+.hq .btn{font-size:1.06rem}
+.flow-h{font-size:1.25rem;margin:0 0 10px;line-height:1.4}
+.flow{display:grid;grid-template-columns:30% 24px 1fr;gap:6px;align-items:center}
 .flow figure{margin:0}
 .flow img{width:100%;border-radius:12px;border:1px solid var(--line);background:var(--panel);aspect-ratio:3/4;object-fit:cover}
 .flow .once img{border:3px solid var(--accent)}
-.flow figcaption{font-size:.78rem;font-weight:800;text-align:center;line-height:1.35;margin-top:5px;color:var(--ink)}
+.flow figcaption{font-size:.78rem;font-weight:800;text-align:center;line-height:1.35;margin-top:5px}
 .flow .once figcaption{color:var(--accent)}
 .flow .arr{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--accent);font-weight:900}
-.flow .arr i{font-style:normal;font-size:1.4rem;line-height:1}
-.flow .arr span{writing-mode:vertical-rl;font-size:.72rem;letter-spacing:.1em}
+.flow .arr i{font-style:normal;font-size:1.3rem;line-height:1}
+.flow .arr span{writing-mode:vertical-rl;text-orientation:upright;font-size:.7rem;letter-spacing:.02em}
+:not(:lang(ja)) .flow .arr span{writing-mode:horizontal-tb;font-size:.62rem;text-align:center;line-height:1.2}
 .places{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .places figcaption{font-weight:700;margin-top:2px;font-size:.74rem;color:var(--muted)}
-.hv .note{font-size:.76rem;color:var(--muted);margin:8px 0 0;text-align:center}
-.hero .one{margin:16px 0 0}
-.hero .hc .btn{margin-top:2px}
+.note{font-size:.76rem;color:var(--muted);margin:8px 0 0;text-align:center}
+.feat{display:grid;gap:18px;align-items:center}
+.feat p{margin:0;color:var(--muted)}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pics figure{margin:0}.pics img{width:100%;border-radius:14px;border:1px solid var(--line);aspect-ratio:9/16;object-fit:cover}
+.pics figcaption{font-size:.82rem;text-align:center;color:var(--muted);margin-top:6px;line-height:1.4}
+.solo img{width:100%;max-width:340px;margin:0 auto;border-radius:16px;border:1px solid var(--line)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px 20px;max-width:860px}
+.card h2{font-size:1.25rem}.card p{margin:0;color:var(--muted)}
+.ask{text-align:center;max-width:760px;margin:0 auto}
+.ask p{font-weight:800;font-size:1.08rem;margin:0 0 16px}
+.grow{background:var(--panel);border:2px dashed var(--accent);border-radius:18px;padding:18px 20px;max-width:860px}
+.grow h2{font-size:1.25rem}.grow p{margin:0 0 14px;color:var(--muted)}
+.money{max-width:860px}.money div{grid-template-columns:5.5em 1fr}
 .os{font-size:.8rem;color:var(--muted);margin:8px 0 0}
-.steps3{display:grid;gap:18px;list-style:none;padding:0;margin:0;counter-reset:s}
-.steps3 li{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;grid-template-columns:42% 1fr;gap:14px;align-items:center}
-.steps3 img,.feats img{width:100%;border-radius:12px;border:1px solid var(--line)}
-.steps3 b{display:block;font-size:1.02rem;line-height:1.45;margin-bottom:4px}
-.steps3 b::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-size:.85rem;margin-right:6px;vertical-align:2px}
-.steps3 span,.feats span{color:var(--muted);font-size:.92rem;display:block;line-height:1.7}
-.feats{display:grid;gap:14px;grid-template-columns:1fr 1fr;list-style:none;padding:0;margin:0}
-.feats li{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:12px}
-.feats b{display:block;font-size:.98rem;line-height:1.45;margin:10px 0 4px}
-.safe{background:var(--panel);border:2px dashed var(--accent);border-radius:18px;padding:16px 18px;max-width:860px}
-.safe h2{font-size:1.2rem}.safe p{margin:0;color:var(--muted)}
-.money{max-width:860px}
-.money div{grid-template-columns:5em 1fr}
-@media (max-width:420px){.feats{grid-template-columns:1fr 1fr;gap:10px}.feats li{padding:8px}.feats span{font-size:.84rem}.steps3 li{grid-template-columns:38% 1fr;padding:12px;gap:12px}}
+@media (max-width:380px){.worries li{font-size:.98rem;padding:10px}.hero h1{font-size:1.75rem}}
 @media (min-width:820px){
- .hero{grid-template-columns:1fr 1.05fr;grid-template-areas:"t v" "c v";align-items:start;column-gap:48px;row-gap:14px}
- .hero .ht{align-self:end}.hero .hv{align-self:center}
+ .hero{grid-template-columns:1fr 1fr;grid-template-areas:"t v" "q v";column-gap:48px;row-gap:10px;align-items:start}
  .hero h1{font-size:2.5rem}
- .flow{grid-template-columns:28% 30px 1fr;gap:10px}
+ .worries li{font-size:1.15rem;padding:16px 16px 16px 18px}
+ .feat{grid-template-columns:1fr 1fr;gap:40px}
  .flow figcaption{font-size:.9rem}.places figcaption{font-size:.82rem}
- .steps3{grid-template-columns:repeat(3,1fr)}
- .steps3 li{grid-template-columns:1fr;align-content:start}
- .steps3 img{max-width:240px;margin:0 auto}
- .feats{grid-template-columns:repeat(4,1fr)}
 }
 </style></head>
 <body><main>
-<div class="wrap top" style="display:flex;justify-content:space-between;gap:12px"><a href="../">← 七色パレットゲームズ</a><a href="en/" hreflang="en">English</a></div>
-<section class="wrap hero" style="padding-top:0">
- <div class="ht"><p class="eyebrow">ぬい撮り・<wbr>アクスタ・<wbr>トレカも</p>
-  <div class="titlerow" style="margin:8px 0 6px"><img class="icon" src="images/icon.png" alt="推しパシャのアイコン" width="64" height="64" style="width:48px;height:48px;border-radius:12px"><p class="name">推しパシャ<small>推しと一緒に撮れるカメラ</small></p></div>
-  <h1>推しを<wbr>1回<wbr>撮れば、<wbr>いつでも<wbr>どこでも<wbr>一緒に<wbr>撮れる。</h1></div>
- <div class="hv"><div class="flow">
-  <figure class="once"><img src="images/lp/once.webp" alt="白いうさぎのぬいぐるみの写真" width="360" height="480"><figcaption>1回<wbr>撮って<wbr>切りぬく</figcaption></figure>
-  <div class="arr" aria-hidden="true"><i>▶</i><span>呼び出す</span></div>
-  <div class="places"><figure><img src="images/lp/p_cafe.webp" alt="カフェのテーブルで、コーヒーのとなりにうさぎのぬいぐるみ。リボンのフレームつき" width="360" height="480"><figcaption>カフェでも</figcaption></figure><figure><img src="images/lp/p_sea.webp" alt="海の見える場所で、うさぎのぬいぐるみと撮った写真" width="360" height="480"><figcaption>海でも</figcaption></figure><figure><img src="images/lp/p_park.webp" alt="公園のベンチで、うさぎのぬいぐるみと撮った写真" width="360" height="480"><figcaption>公園でも</figcaption></figure><figure><img src="images/lp/p_night.webp" alt="夜景の前で、うさぎのぬいぐるみと撮った写真" width="360" height="480"><figcaption>夜景でも</figcaption></figure></div>
- </div><p class="note">どれも<wbr>同じ<wbr>1回の<wbr>切りぬきから、<wbr>アプリで<wbr>撮った<wbr>見本です。</p></div>
- <div class="hc"><a class="btn" href="https://apps.apple.com/jp/app/id6830922828">App Store で入手 <small>無料</small></a><ul class="facts"><li>iPhone(iOS 17 以上)</li><li>ログインいらず</li><li>写真は この端末の中だけ</li></ul><p class="one">ぬい・<wbr>アクスタ・<wbr>トレカを<wbr>1回<wbr>撮って<wbr>切りぬくだけ。<wbr>カフェでも<wbr>旅先でも、<wbr>カメラの<wbr>中に<wbr>推しを<wbr>呼び出して、<wbr>となりに<wbr>ならべて<wbr>撮れます。<wbr>推しを<wbr>持ち歩かなくても<wbr>大丈夫。</p></div>
+<div class="wrap top"><a href="../">← 七色パレットゲームズ</a><span class="langs"><a href="en/" hreflang="en">English</a><a href="ko/" hreflang="ko">한국어</a><a href="zh/" hreflang="zh-Hant">繁體中文</a></span></div>
+<section class="wrap hero">
+ <div class="ht"><p class="eyebrow">推し活・<wbr>ぬい活の<wbr>写真で</p>
+  <div class="name"><img src="images/icon.png" alt="" width="44" height="44"><span><b>推しパシャ</b><small>推しと一緒に撮れるカメラ</small></span></div>
+  <h1>こんな<wbr>心配、<wbr>ありませんか?</h1></div>
+ <div class="hq"><ul class="worries"><li>周りの目が<wbr>気になる</li><li>大事な<wbr>推しや<wbr>アクスタが<wbr>汚れたり<wbr>壊れたり<wbr>しないか<wbr>心配</li><li>周りの人も<wbr>写って<wbr>しまった</li><li>自分の顔は<wbr>写りたくない。<wbr>でも<wbr>推しと<wbr>一緒に<wbr>写りたい</li></ul><p class="solve">そういう<wbr>お悩みや<wbr>要望を<wbr>解決できる<wbr>アプリを<wbr>作りました!</p><a class="btn" href="https://apps.apple.com/jp/app/id6830922828">App Store で入手 <small>無料</small></a></div>
+ <div class="hv"><h2 class="flow-h">家で<wbr>撮った<wbr>推しと、<wbr>外で<wbr>推し活!<wbr>ぬい活!</h2><div class="flow">
+  <figure class="once"><img src="images/lp/once.webp" alt="" width="360" height="480"><figcaption>家で<wbr>じっくり<wbr>撮る</figcaption></figure>
+  <div class="arr" aria-hidden="true"><i>▶</i><span>外で呼び出す</span></div>
+  <div class="places"><figure><img src="images/lp/p_cafe.webp" alt="" width="360" height="480"><figcaption>カフェでも</figcaption></figure><figure><img src="images/lp/p_sea.webp" alt="" width="360" height="480"><figcaption>海でも</figcaption></figure><figure><img src="images/lp/p_park.webp" alt="" width="360" height="480"><figcaption>公園でも</figcaption></figure><figure><img src="images/lp/p_night.webp" alt="" width="360" height="480"><figcaption>夜景でも</figcaption></figure></div>
+ </div><p class="note">どれも<wbr>家で<wbr>撮った<wbr>同じ<wbr>推しを、<wbr>アプリで<wbr>呼び出して<wbr>撮った<wbr>見本です。</p></div>
 </section>
-<section class="alt"><div class="wrap"><p class="eyebrow">HOW TO</p><h2>撮り方は<wbr>3つだけ</h2><p class="lead">いちど<wbr>推しを<wbr>登録すれば、<wbr>次からは<wbr>「いつもの子と とる」を<wbr>押すだけです。</p><ol class="steps3"><li><img src="images/lp/s_cut.webp" alt="推しを切りぬく画面" loading="lazy"><div><b>推しを<wbr>1回<wbr>撮って、<wbr>切りぬく</b><span>ぬいぐるみ・<wbr>アクスタ・<wbr>トレカ・<wbr>フィギュア・<wbr>缶バッジ。<wbr>カメラで<wbr>撮るか、<wbr>写真から<wbr>選ぶと、<wbr>推しの<wbr>形に<wbr>切りぬけます。</span></div></li><li><img src="images/lp/s_home.webp" alt="わたしの推しの一覧と「いつもの子と とる」ボタン" loading="lazy"><div><b>「いつもの子と とる」で<wbr>呼び出す</b><span>切りぬいた<wbr>推しは<wbr>「わたしの推し」に<wbr>入ります。<wbr>カフェでも<wbr>旅先でも、<wbr>カメラを<wbr>開けば<wbr>推しが<wbr>となりに。</span></div></li><li><img src="images/lp/s_finish.webp" alt="撮ったあとの仕上げの画面" loading="lazy"><div><b>撮り方を<wbr>えらんで、<wbr>パシャ</b><span>となりに<wbr>ならぶ・<wbr>肩に<wbr>のせる・<wbr>手のひらに<wbr>のせる・<wbr>奥と<wbr>手前・<wbr>大きく。<wbr>撮ったあとに、<wbr>位置や<wbr>大きさを<wbr>直せます。</span></div></li></ol></div></section>
-<section><div class="wrap"><p class="eyebrow">POINT</p><h2>推しとの写真を、<wbr>もっと<wbr>かわいく</h2><p class="lead">推し色・<wbr>フレーム・<wbr>顔かくし。<wbr>撮る前も、<wbr>撮ったあとも<wbr>選べます。</p><ul class="feats"><li><img src="images/lp/f_outline.webp" alt="推しのまわりに推し色のふちをつけた画面" loading="lazy"><b>推し色の<wbr>ふち・<wbr>飾り</b><span>推し色は<wbr>55色。<wbr>頭・<wbr>耳・<wbr>首の<wbr>飾りや、<wbr>きらきら・<wbr>ハート・<wbr>花びら・<wbr>ペンライトの海<wbr>などの<wbr>エフェクトも、<wbr>推し色に<wbr>そまります。</span></li><li><img src="images/lp/f_frame.webp" alt="フレームを作る画面" loading="lazy"><b>自分だけの<wbr>フレーム</b><span>形・<wbr>色・<wbr>文字・<wbr>スタンプを<wbr>えらんで、<wbr>推しごとの<wbr>フレームを<wbr>作れます。<wbr>文字は<wbr>指で<wbr>動かせます。</span></li><li><img src="images/lp/f_face.webp" alt="顔かくしスタンプで顔をかくした見本" loading="lazy"><b>自撮りでも、<wbr>顔は<wbr>かくせる</b><span>かわいい<wbr>顔かくし<wbr>スタンプが<wbr>顔に<wbr>のって、<wbr>動いても<wbr>ついてきます。<wbr>保存の<wbr>前に<wbr>「ぜんぶ<wbr>かくれています」を<wbr>確かめられます。</span></li><li><img src="images/lp/f_finish.webp" alt="撮ったあとに飾りやフレームを直す画面" loading="lazy"><b>プリクラ<wbr>みたいに<wbr>仕上げ</b><span>推し・<wbr>飾り・<wbr>顔かくしの<wbr>位置や<wbr>大きさ、<wbr>フレームと<wbr>エフェクトを<wbr>あとから<wbr>直せます。<wbr>写真アプリに<wbr>保存して、<wbr>そのまま<wbr>シェア。</span></li></ul></div></section>
-<section class="alt"><div class="wrap"><div class="safe"><h2>写真は<wbr>この端末の<wbr>中だけ</h2><p>カメラの<wbr>映像と<wbr>写真は、<wbr>この端末の<wbr>外に<wbr>送りません。<wbr>ログインも<wbr>いりません。<wbr>写真が<wbr>外に<wbr>出るのは、<wbr>写真アプリへの<wbr>保存か、<wbr>X・<wbr>Instagram・<wbr>TikTok<wbr>などへの<wbr>シェアを<wbr>選んだ<wbr>ときだけです。</p></div></div></section>
-<section><div class="wrap"><h2>アプリ内課金と<wbr>広告のこと</h2><dl class="money"><div><dt>フレーム</dt><dd>自分で<wbr>作れる<wbr>フレームは<wbr>5こまで。<wbr>もっと<wbr>作りたい<wbr>方は、<wbr>+5こ・<wbr>「フレームたくさん(最大100こ)」を<wbr>追加できます。</dd></div><div><dt>飾り</dt><dd>飾りの<wbr>パックは<wbr>1回の<wbr>購入で<wbr>ずっと<wbr>使えます。<wbr>機種変更の<wbr>ときは<wbr>「購入を復元」で<wbr>もどせます。</dd></div><div><dt>広告</dt><dd>鍵の<wbr>スタンプは、<wbr>動画広告を<wbr>見ると<wbr>1つずつ<wbr>使えるように<wbr>なります。<wbr>写真を<wbr>保存した<wbr>あとに、<wbr>ときどき<wbr>広告が<wbr>出ます。<wbr>「広告なし」を<wbr>購入すると<wbr>出なくなります。</dd></div></dl></div></section>
-<section class="alt"><div class="wrap faq"><h2>よくある質問</h2><p class="lead">ほかに困ったことは<a href="support.html">サポート</a>へどうぞ。</p><details><summary>推しを<wbr>毎回<wbr>持って<wbr>行かないと<wbr>いけないの?</summary><p>いいえ。<wbr>1回<wbr>撮って<wbr>切りぬいた<wbr>推しは、<wbr>アプリの<wbr>中に<wbr>残ります。<wbr>次からは、<wbr>推しが<wbr>手元に<wbr>なくても、<wbr>カメラの<wbr>中に<wbr>呼び出して<wbr>一緒に<wbr>撮れます。</p></details><details><summary>アクスタや<wbr>トレカでも<wbr>撮れますか?</summary><p>はい。<wbr>ぬいぐるみ・<wbr>アクスタ・<wbr>トレカ・<wbr>フィギュア・<wbr>缶バッジ<wbr>などを、<wbr>推しの<wbr>形に<wbr>切りぬけます。<wbr>トレカは<wbr>「トレカ・カード」の<wbr>切りぬき方を<wbr>えらべます。</p></details><details><summary>撮った<wbr>写真は<wbr>どこに<wbr>保存されますか?</summary><p>「写真アプリにほぞん」を<wbr>押すと、<wbr>iPhone の<wbr>写真アプリに<wbr>保存されます。<wbr>カメラの<wbr>映像と<wbr>写真は、<wbr>この端末の<wbr>外に<wbr>送りません。</p></details><details><summary>前に<wbr>撮った<wbr>推しを、<wbr>すぐ<wbr>呼び出せますか?</summary><p>はい。<wbr>前回の<wbr>推しと<wbr>撮り方を<wbr>おぼえているので、<wbr>ひらいて<wbr>すぐ<wbr>撮れます。</p></details>
-<div class="req"><h3>ご意見・ご要望</h3><p>「こんな<wbr>飾りが<wbr>ほしい」<wbr>「ここが<wbr>使いにくい」<wbr>など、<wbr>なんでも<wbr>お寄せください。<wbr>アプリの<wbr>「せってい」の<wbr>「サポート」からも<wbr>送れます。</p><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfaiI7u2lbt9bwFeZUt-tbgXndUIYVX700rq2caZ3NdWFW9uA/viewform?usp=pp_url&entry.1550498070=%E6%8E%A8%E3%81%97%E3%83%91%E3%82%B7%E3%83%A3" target="_blank" rel="noopener">ご要望箱をひらく</a></div></div></section>
-<section class="end"><div class="wrap"><h2>推しと<wbr>いっしょに、<wbr>いい写真を。</h2><a class="btn" href="https://apps.apple.com/jp/app/id6830922828">App Store で入手 <small>無料</small></a><p class="os">iPhone(iOS 17.0 以上)</p></div></section>
+<section class="alt"><div class="wrap feat"><div><h2>家で<wbr>じっくり、<wbr>推しの<wbr>いい写真を</h2><p>かっこいい・<wbr>可愛い<wbr>アングルで<wbr>写真を<wbr>とって、<wbr>さらに<wbr>その写真を<wbr>デコったり、<wbr>フレームを<wbr>つくったり。</p></div>
+ <div class="pics"><figure><img src="images/lp/home_shot.webp" alt="" loading="lazy"><figcaption>家で<wbr>撮った<wbr>推し</figcaption></figure><figure><img src="images/lp/home_deco.webp" alt="" loading="lazy"><figcaption>デコって、<wbr>フレームも</figcaption></figure></div></div></section>
+<section><div class="wrap feat"><div><h2>人の目も<wbr>気にならない。<wbr>推しも<wbr>汚れない・<wbr>壊れない</h2><p>作成した<wbr>推しの<wbr>写真と<wbr>一緒に<wbr>外で<wbr>推し活!<wbr>ぬい活!<wbr>人の目も<wbr>気になりませんし、<wbr>推しが<wbr>よごれたり<wbr>壊れることは<wbr>ありません。<wbr>もちろん、<wbr>本物の<wbr>推しは<wbr>一緒に<wbr>もっていって、<wbr>写真だけ<wbr>アプリを<wbr>使えば<wbr>OK。</p></div>
+ <div class="pics"><figure><img src="images/lp/p_park_t.webp" alt="" loading="lazy"></figure><figure><img src="images/lp/p_night_t.webp" alt="" loading="lazy"></figure></div></div></section>
+<section class="alt"><div class="wrap feat"><div><h2>顔は<wbr>かわいく<wbr>かくせる</h2><p>周りの人が<wbr>うつったら<wbr>顔かくし機能で<wbr>顔を<wbr>かくして。<wbr>自分の顔が<wbr>映るのが<wbr>嫌な<wbr>場合も、<wbr>顔かくしで<wbr>可愛く<wbr>かくせます。</p></div>
+ <div class="solo"><img src="images/lp/face.webp" alt="" loading="lazy"></div></div></section>
+<section><div class="wrap"><div class="card"><h2>SNSにも<wbr>そのまま<wbr>投稿</h2><p>Xや<wbr>Instagram<wbr>などの<wbr>SNSへの<wbr>投稿も、<wbr>アプリから<wbr>できます。</p></div></div></section>
+<section class="alt"><div class="wrap ask"><p>推しとの<wbr>生活を<wbr>より<wbr>一層<wbr>いいものに<wbr>するために、<wbr>アプリ<wbr>「推しパシャ」<wbr>使ってみて<wbr>いただけませんか。</p><a class="btn" href="https://apps.apple.com/jp/app/id6830922828">App Store で入手 <small>無料</small></a><p class="os">iPhone(iOS 17.0 以上)</p></div></section>
+<section><div class="wrap"><div class="grow"><h2>まだまだ<wbr>成長中です</h2><p>みなさんの<wbr>推しに<wbr>対する<wbr>気持ちや<wbr>「こうしたい」<wbr>という<wbr>思いを<wbr>よせて<wbr>いただけたら、<wbr>それに<wbr>あわせて<wbr>アップデート<wbr>していきたいと<wbr>思っています!</p><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfaiI7u2lbt9bwFeZUt-tbgXndUIYVX700rq2caZ3NdWFW9uA/viewform?usp=pp_url&entry.1550498070=%E6%8E%A8%E3%81%97%E3%83%91%E3%82%B7%E3%83%A3" target="_blank" rel="noopener">ご要望箱をひらく</a></div></div></section>
+<section class="alt"><div class="wrap"><h2>アプリ内課金と<wbr>広告のこと</h2><dl class="money"><div><dt>フレーム</dt><dd>自分で<wbr>作れる<wbr>フレームは<wbr>5こまで。<wbr>もっと<wbr>作りたい<wbr>方は、<wbr>+5こ・<wbr>「フレームたくさん(最大100こ)」を<wbr>追加できます。</dd></div><div><dt>飾り</dt><dd>飾りの<wbr>パックは<wbr>1回の<wbr>購入で<wbr>ずっと<wbr>使えます。<wbr>機種変更の<wbr>ときは<wbr>「購入を復元」で<wbr>もどせます。</dd></div><div><dt>広告</dt><dd>鍵の<wbr>スタンプは、<wbr>動画広告を<wbr>見ると<wbr>1つずつ<wbr>使えるように<wbr>なります。<wbr>写真を<wbr>保存した<wbr>あとに、<wbr>ときどき<wbr>広告が<wbr>出ます。<wbr>「広告なし」を<wbr>購入すると<wbr>出なくなります。</dd></div></dl></div></section>
+<section><div class="wrap faq"><h2>よくある質問</h2><p class="lead">ほかに困ったことは<a href="support.html">サポート</a>へどうぞ。</p><details><summary>推しを<wbr>毎回<wbr>持って<wbr>行かないと<wbr>いけないの?</summary><p>いいえ。<wbr>家で<wbr>撮って<wbr>切りぬいた<wbr>推しは、<wbr>アプリの<wbr>中に<wbr>残ります。<wbr>外では、<wbr>推しが<wbr>手元に<wbr>なくても<wbr>カメラの<wbr>中に<wbr>呼び出して<wbr>一緒に<wbr>撮れます。</p></details><details><summary>アクスタや<wbr>トレカでも<wbr>撮れますか?</summary><p>はい。<wbr>ぬいぐるみ・<wbr>アクスタ・<wbr>トレカ・<wbr>フィギュア・<wbr>缶バッジ<wbr>などを、<wbr>推しの<wbr>形に<wbr>切りぬけます。</p></details><details><summary>撮った<wbr>写真は<wbr>どこに<wbr>保存されますか?</summary><p>「写真アプリにほぞん」を<wbr>押すと、<wbr>iPhone の<wbr>写真アプリに<wbr>保存されます。<wbr>カメラの<wbr>映像と<wbr>写真は、<wbr>この端末の<wbr>外に<wbr>送りません。</p></details></div></section>
 <footer class="wrap"><nav><a href="support.html">サポート・お問い合わせ</a><a href="privacy.html">プライバシーポリシー</a><a href="tokusho.html">特定商取引法に基づく表記</a><a href="../">七色パレットゲームズのトップ</a></nav>© 七色パレットゲームズ</footer>
 </main></body></html>
