@@ -1,28 +1,217 @@
 <!doctype html>
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>推しパシャ</title><style>
-:root{--ink:#3b3552;--muted:#7d7594;--line:#ece2d6;--bg:#fbf6ee;--pink:#e8557a;--panel:#fff}
-@media (prefers-color-scheme:dark){:root{--ink:#f1ecfb;--muted:#b3aac8;--line:#3d3756;--bg:#211d2e;--pink:#ff8fae;--panel:#2c2740}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;line-height:1.75}
-main{max-width:720px;margin:0 auto;padding:24px 16px 48px}
-header{margin:8px 0 20px;display:flex;justify-content:space-between;gap:12px}header a{color:var(--pink);text-decoration:none;font-weight:700}
-h1{font-size:1.5rem;margin:.2em 0 .6em}h2{font-size:1.1rem;margin:1.6em 0 .4em}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-dl{margin:0}dt{color:var(--muted);font-size:.85rem;margin-top:12px}dt:first-child{margin-top:0}dd{margin:2px 0 0}
-a{color:var(--pink)}ul{padding-left:1.2em}.muted{color:var(--muted);font-size:.9rem}
-header .langs{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;margin-left:auto}header .lang{font-weight:600;font-size:.85rem;border:1px solid var(--line);border-radius:99px;padding:2px 10px;white-space:nowrap}
-.hero{text-align:center;padding:12px 0 4px}.hero img{width:128px;height:128px;border-radius:28px;box-shadow:0 6px 0 var(--line)}
-.hero .sub{color:var(--pink);font-weight:800;letter-spacing:.2em;font-size:.9rem;margin:14px 0 0}.hero h1{font-size:2rem;margin:.1em 0 .3em}
-.soon{display:inline-block;background:var(--pink);color:#fff;font-weight:800;border-radius:99px;padding:6px 18px;font-size:.9rem;text-decoration:none}
-.feat{padding-left:0;list-style:none}.feat li{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:8px 0}
-nav ul{list-style:none;padding:0}nav li{margin:10px 0}nav a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 18px;text-decoration:none;color:var(--ink);font-weight:700}
-.shots{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:16px 16px 10px;margin:0 -16px}
-.shots img{width:min(402px,calc(100vw - 56px));height:auto;flex:none;border-radius:18px;scroll-snap-align:center;box-shadow:0 4px 0 var(--line)}
+<title>推しパシャ|推しを1回撮れば、いつでもどこでも一緒に撮れるカメラ(iPhone)</title>
+<meta name="description" content="ぬい・アクスタ・トレカを1回撮って切りぬくだけ。カフェでも旅先でも、カメラの中に推しを呼び出して、となりにならべて撮れます。推しを持ち歩かなくても大丈夫。推し色の飾り・自分だけのフレーム・顔かくしスタンプで、推しとの写真をかわいく。">
+<link rel="canonical" href="https://sjchsjch66-coder.github.io/oshipasha/">
+<link rel="alternate" hreflang="ja" href="https://sjchsjch66-coder.github.io/oshipasha/"><link rel="alternate" hreflang="en" href="https://sjchsjch66-coder.github.io/oshipasha/en/">
+<meta name="apple-itunes-app" content="app-id=6830922828">
+<meta property="og:type" content="website"><meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="推しパシャ|推しを1回撮れば、いつでもどこでも一緒に"><meta property="og:description" content="ぬい・アクスタ・トレカを1回撮って切りぬけば、カフェでも旅先でも、カメラの中に呼び出して一緒に撮れます。">
+<meta property="og:url" content="https://sjchsjch66-coder.github.io/oshipasha/"><meta property="og:image" content="https://sjchsjch66-coder.github.io/oshipasha/images/lp/ogp.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="images/icon.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "MobileApplication", "name": "推しパシャ - 推しと一緒に撮れるカメラ", "operatingSystem": "iOS", "applicationCategory": "PhotographyApplication", "url": "https://sjchsjch66-coder.github.io/oshipasha/", "downloadUrl": "https://apps.apple.com/jp/app/id6830922828", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}}</script>
+<style>
+:root{--ink:#3b3552;--muted:#6f6787;--line:#ece2d6;--bg:#fbf6ee;--panel:#fff;--soft:#f5ede2;
+--accent:#d9466f;--accent-ink:#fff;--accent-soft:#fde4ec}
+@media (prefers-color-scheme:dark){:root{--ink:#f1ecfb;--muted:#b9b0cc;--line:#3d3756;--bg:#1f1b2b;--panel:#2a2540;--soft:#262139;
+--accent:#ff8fae;--accent-ink:#1f1b2b;--accent-soft:#332c4a}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;line-height:1.8;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--accent)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.top{padding-top:14px;padding-bottom:14px}.top a{font-weight:700;text-decoration:none;font-size:.9rem}
+h1,h2,h3{line-height:1.4;word-break:keep-all;overflow-wrap:anywhere}
+h2{font-size:1.45rem;margin:0 0 .3em}
+.eyebrow{color:var(--accent);font-weight:800;letter-spacing:.18em;font-size:.78rem;margin:0}
+section{padding:44px 0}
+section.alt{background:var(--soft)}
+.lead{color:var(--muted);margin:.2em 0 1.2em}
+
+/* ヒーロー */
+.hero{display:grid;gap:22px;align-items:center;padding-top:4px;padding-bottom:36px}
+.hero .art{border-radius:22px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/5;background:var(--soft)}
+.hero .art img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+.hero h1{font-size:2rem;margin:.15em 0 .3em}
+.hero .one{font-size:1.08rem;margin:0 0 1.1em}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);font-weight:800;text-decoration:none;border-radius:99px;padding:13px 26px;font-size:1.02rem}
+.btn small{font-weight:700;opacity:.9;font-size:.8rem}
+.btn.wait{background:var(--panel);color:var(--accent);border:2px solid var(--accent)}
+.banner{position:relative;overflow:hidden;width:100vw;max-width:100%;background:linear-gradient(100deg,#e2557a,#f08a5d 55%,#f6b94a);color:#fff;text-align:center;padding:12px 16px;font-weight:800;letter-spacing:.04em;box-shadow:0 2px 10px rgba(207,69,102,.25)}
+.banner .bd{display:inline-block;background:#fff;color:#cf4566;border-radius:99px;padding:1px 10px;margin-right:8px;font-size:.85rem;vertical-align:middle}
+.banner .bt{display:block;font-size:1.02rem;word-break:keep-all;overflow-wrap:anywhere;animation:bpop .7s cubic-bezier(.2,1.6,.4,1) both}
+.banner::after{content:"";position:absolute;top:0;left:-40%;width:30%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:bshine 3.2s ease-in-out 1s infinite}
+.banner .sp{position:absolute;color:#fff8d6;font-size:.9rem;animation:btw 1.8s ease-in-out infinite}
+.banner .sp:nth-of-type(1){left:6%;top:18%}.banner .sp:nth-of-type(2){right:7%;top:22%;animation-delay:.6s}.banner .sp:nth-of-type(3){left:14%;bottom:12%;animation-delay:1.1s;font-size:.7rem}.banner .sp:nth-of-type(4){right:15%;bottom:14%;animation-delay:.3s;font-size:.7rem}
+@keyframes bshine{0%{left:-40%}60%,100%{left:120%}}
+@keyframes btw{0%,100%{opacity:.2;transform:scale(.7) rotate(0)}50%{opacity:1;transform:scale(1.15) rotate(20deg)}}
+@keyframes bpop{0%{opacity:0;transform:scale(.8)}100%{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.banner::after,.banner .sp,.banner .bt{animation:none}}
+.news{margin:12px 0 0;display:inline-block;background:var(--panel);border:1px dashed var(--accent);border-radius:12px;padding:6px 12px;font-size:.88rem;color:var(--ink);word-break:keep-all;overflow-wrap:anywhere}
+.facts{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-wrap:wrap;gap:6px 8px}
+.facts li{background:var(--panel);border:1px solid var(--line);border-radius:99px;padding:2px 12px;font-size:.82rem;color:var(--muted)}
+.icon{width:64px;height:64px;border-radius:15px;border:1px solid var(--line)}
+.titlerow{display:flex;gap:14px;align-items:center}
+
+/* こんなゲーム */
+.story{display:grid;gap:22px;align-items:center}
+.story .scene{border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+.story p{margin:0 0 .8em}
+.shots{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 16px 14px;margin:18px -16px 0;-webkit-overflow-scrolling:touch}
+.shots figure{margin:0;flex:none;width:62%;max-width:240px;scroll-snap-align:center}
+.shots img{width:100%;height:auto;border-radius:18px;border:1px solid var(--line);background:var(--panel)}
+.shots figcaption{font-size:.85rem;color:var(--muted);text-align:center;margin-top:8px;line-height:1.5;word-break:keep-all;overflow-wrap:anywhere}
+
+/* 特長・遊び方 */
+.cards{display:grid;gap:12px;grid-template-columns:1fr;margin:0;padding:0;list-style:none}
+.cards li{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.cards b{display:block;font-size:1.02rem;margin-bottom:2px}
+.cards span{color:var(--muted);font-size:.93rem}
+.steps{counter-reset:s}
+.steps li{position:relative;padding-left:62px}
+.steps li::before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:800;display:grid;place-items:center}
+
+/* ヒントと広告 */
+.money{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:6px 18px;margin:0}
+.money div{display:grid;grid-template-columns:4.5em 1fr;gap:10px;padding:12px 0;border-top:1px dashed var(--line)}
+.money div:first-child{border-top:0}
+.money dt{font-weight:800}.money dd{margin:0;color:var(--muted)}
+
+/* よくある質問 */
+.faq details{background:var(--panel);border:1px solid var(--line);border-radius:14px;margin:0 0 10px;padding:0 18px}
+.faq summary{cursor:pointer;font-weight:800;padding:14px 0;list-style:none;display:flex;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";color:var(--accent);font-weight:900;flex:none}
+.faq details p{margin:0 0 14px;color:var(--muted)}
+/* ご要望箱(よくある質問のすぐ下・Google フォームを 新しいタブで) */
+.req{max-width:860px;margin:22px 0 0;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.req h3{margin:0 0 .2em;font-size:1.08rem}
+.req p{margin:0 0 .8em;color:var(--muted);font-size:.92rem}
+.req .btn{padding:10px 22px;font-size:.95rem}
+
+/* シリーズ */
+.video{max-width:860px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;word-break:keep-all;overflow-wrap:anywhere}
+.video h2{font-size:1.15rem;margin:0 0 .5em}
+.video p,.video li{color:var(--muted);font-size:.92rem;margin:0 0 .5em}
+.video ul{margin:0;padding-left:1.2em}
+.video .nw{white-space:nowrap}
+.video code{display:block;margin:.3em 0 .2em;padding:8px 10px;background:var(--bg,#fff);border:1px solid var(--line);border-radius:8px;font-size:.74rem;line-height:1.6;color:var(--ink);font-family:inherit}
+.series{display:grid;gap:12px;grid-template-columns:1fr;list-style:none;padding:0;margin:0}
+.series a{display:flex;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:12px 14px;text-decoration:none;color:var(--ink)}
+.series a.here{border:2px solid var(--accent)}
+.series img{width:64px;height:64px;border-radius:15px;flex:none}
+.series b{display:block;line-height:1.45}
+.series span{font-size:.85rem;color:var(--muted);line-height:1.5;display:block}
+.series em{font-style:normal;font-size:.75rem;font-weight:800;color:var(--accent)}
+
+/* 最後 */
+.end{text-align:center}
+.end .ea{max-width:520px;margin:0 auto 26px}.end .art{border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+footer{padding-top:28px;padding-bottom:40px;text-align:center;font-size:.88rem;color:var(--muted)}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;margin-bottom:8px}
+
+/* かざり(ゲームの絵から切りぬいた小物)。文字にかさならない所にだけ置く・押せない */
+.hs{position:relative}
+section{position:relative}
+.dm{position:absolute;--w:min(120px, calc((100% - 1080px) / 2 - 24px));--m:calc((100% - 1080px) / 2 - var(--w) * var(--s,1));width:calc(var(--w) * var(--s,1));height:auto;pointer-events:none;display:none;z-index:0}
+.db{position:absolute;top:-36px;height:68px;width:auto;max-width:86px;object-fit:contain;pointer-events:none;z-index:1}
+.db.l{left:12px}.db.r{right:12px}.db.sm{height:50px;top:-26px}
+.hd{display:flex;align-items:center;gap:12px}.hd>div{flex:1;min-width:0}
+.df{flex:none;width:76px;height:auto;pointer-events:none}.df.l{order:-1}.df.r{order:1}
+.cw{position:relative}
+.cn{position:absolute;width:86px;height:auto;pointer-events:none;z-index:1}
+.cn.c0{left:-4px;bottom:-20px}.cn.c1{right:-2px;top:-28px}.cn.c2{right:-2px;bottom:-22px}
+main{overflow-x:clip}
+.sway{transform:rotate(var(--r,0deg));transform-origin:50% 85%;animation:sway var(--t,4s) ease-in-out infinite;animation-delay:var(--d,0s)}
+@keyframes sway{0%,100%{transform:rotate(calc(var(--r,0deg) - 8deg)) translateY(0)}25%{transform:rotate(var(--r,0deg)) translateY(-7px)}50%{transform:rotate(calc(var(--r,0deg) + 8deg)) translateY(0)}75%{transform:rotate(var(--r,0deg)) translateY(-7px)}}
+@media (prefers-reduced-motion:reduce){.sway{animation:none}}
+@media (min-width:1240px){.dm{display:block}.df,.db{display:none}.cn{width:112px}
+ .dm{--g:calc(var(--w) * .18)}.dm.l{left:calc(var(--g) + max(0px, var(--m) - 2 * var(--g)) / 2 * (1 + var(--j,0)))}.dm.r{right:calc(var(--g) + max(0px, var(--m) - 2 * var(--g)) / 2 * (1 + var(--j,0)))}}
+
+@media (min-width:820px){
+ .hero{grid-template-columns:1.05fr .95fr;gap:48px;padding-top:16px;padding-bottom:56px}
+ .hero .ha{order:2}.hero .art{aspect-ratio:4/5;max-height:640px}
+ .hero h1{font-size:2.6rem}
+ section{padding:64px 0}
+ h2{font-size:1.75rem}
+ .story{grid-template-columns:1fr 1fr;gap:40px}
+ .shots{overflow:visible;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(var(--n),1fr)}
+ .shots figure{width:auto;max-width:none}
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .steps{grid-template-columns:repeat(3,1fr)}
+ .series{grid-template-columns:repeat(3,1fr)}
+ .faq details{max-width:860px}
+}
+
+/* 推しパシャ(11/7 アオ)。ことばは keep-all + <wbr> で 単語の途中で 改行しない */
+p,li,dd,dt,summary,figcaption,b,span,.lead{word-break:keep-all;overflow-wrap:anywhere}
+.hero{grid-template-areas:"t" "v" "c"}
+.hero .ht{grid-area:t}.hero .hv{grid-area:v}.hero .hc{grid-area:c}
+.hero h1{font-size:1.9rem;margin:.1em 0 0}
+.hero .name{font-weight:800;font-size:1rem;margin:0}
+.hero .name small{display:block;color:var(--muted);font-weight:600;font-size:.78rem}
+.flow{display:grid;grid-template-columns:30% 26px 1fr;gap:6px;align-items:center}
+.flow figure{margin:0}
+.flow img{width:100%;border-radius:12px;border:1px solid var(--line);background:var(--panel);aspect-ratio:3/4;object-fit:cover}
+.flow .once img{border:3px solid var(--accent)}
+.flow figcaption{font-size:.78rem;font-weight:800;text-align:center;line-height:1.35;margin-top:5px;color:var(--ink)}
+.flow .once figcaption{color:var(--accent)}
+.flow .arr{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--accent);font-weight:900}
+.flow .arr i{font-style:normal;font-size:1.4rem;line-height:1}
+.flow .arr span{writing-mode:vertical-rl;font-size:.72rem;letter-spacing:.1em}
+.places{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.places figcaption{font-weight:700;margin-top:2px;font-size:.74rem;color:var(--muted)}
+.hv .note{font-size:.76rem;color:var(--muted);margin:8px 0 0;text-align:center}
+.hero .one{margin:16px 0 0}
+.hero .hc .btn{margin-top:2px}
+.os{font-size:.8rem;color:var(--muted);margin:8px 0 0}
+.steps3{display:grid;gap:18px;list-style:none;padding:0;margin:0;counter-reset:s}
+.steps3 li{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;grid-template-columns:42% 1fr;gap:14px;align-items:center}
+.steps3 img,.feats img{width:100%;border-radius:12px;border:1px solid var(--line)}
+.steps3 b{display:block;font-size:1.02rem;line-height:1.45;margin-bottom:4px}
+.steps3 b::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-size:.85rem;margin-right:6px;vertical-align:2px}
+.steps3 span,.feats span{color:var(--muted);font-size:.92rem;display:block;line-height:1.7}
+.feats{display:grid;gap:14px;grid-template-columns:1fr 1fr;list-style:none;padding:0;margin:0}
+.feats li{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:12px}
+.feats b{display:block;font-size:.98rem;line-height:1.45;margin:10px 0 4px}
+.safe{background:var(--panel);border:2px dashed var(--accent);border-radius:18px;padding:16px 18px;max-width:860px}
+.safe h2{font-size:1.2rem}.safe p{margin:0;color:var(--muted)}
+.money{max-width:860px}
+.money div{grid-template-columns:5em 1fr}
+@media (max-width:420px){.feats{grid-template-columns:1fr 1fr;gap:10px}.feats li{padding:8px}.feats span{font-size:.84rem}.steps3 li{grid-template-columns:38% 1fr;padding:12px;gap:12px}}
+@media (min-width:820px){
+ .hero{grid-template-columns:1fr 1.05fr;grid-template-areas:"t v" "c v";align-items:start;column-gap:48px;row-gap:14px}
+ .hero .ht{align-self:end}.hero .hv{align-self:center}
+ .hero h1{font-size:2.5rem}
+ .flow{grid-template-columns:28% 30px 1fr;gap:10px}
+ .flow figcaption{font-size:.9rem}.places figcaption{font-size:.82rem}
+ .steps3{grid-template-columns:repeat(3,1fr)}
+ .steps3 li{grid-template-columns:1fr;align-content:start}
+ .steps3 img{max-width:240px;margin:0 auto}
+ .feats{grid-template-columns:repeat(4,1fr)}
+}
 </style></head>
-<body><main><header><a href="../">← 七色パレットゲームズ</a><span class="langs"><a class="lang" href="en/" hreflang="en">English</a></span></header><div class="hero"><img src="images/icon.png" alt="アプリアイコン"><p class="sub">写真/ビデオ</p><h1>推しパシャ</h1><span class="soon">iPhone版 近日公開</span></div>
-<ul class="feat"><li>ぬい・アクスタ・トレカの推しと、いっしょに写真が撮れる</li><li>推し色の飾りと自分だけのフレームで、かわいく仕上げられる</li><li>顔はスタンプでかくせて、写真はこの端末の中だけ</li></ul>
-<nav><ul>
-<li><a href="support.html">サポート・お問い合わせ</a></li>
-<li><a href="privacy.html">プライバシーポリシー</a></li>
-<li><a href="tokusho.html">特定商取引法に基づく表記</a></li>
-</ul></nav></main></body></html>
+<body><main>
+<div class="wrap top" style="display:flex;justify-content:space-between;gap:12px"><a href="../">← 七色パレットゲームズ</a><a href="en/" hreflang="en">English</a></div>
+<section class="wrap hero" style="padding-top:0">
+ <div class="ht"><p class="eyebrow">ぬい撮り・<wbr>アクスタ・<wbr>トレカも</p>
+  <div class="titlerow" style="margin:8px 0 6px"><img class="icon" src="images/icon.png" alt="推しパシャのアイコン" width="64" height="64" style="width:48px;height:48px;border-radius:12px"><p class="name">推しパシャ<small>推しと一緒に撮れるカメラ</small></p></div>
+  <h1>推しを<wbr>1回<wbr>撮れば、<wbr>いつでも<wbr>どこでも<wbr>一緒に<wbr>撮れる。</h1></div>
+ <div class="hv"><div class="flow">
+  <figure class="once"><img src="images/lp/once.webp" alt="白いうさぎのぬいぐるみの写真" width="360" height="480"><figcaption>1回<wbr>撮って<wbr>切りぬく</figcaption></figure>
+  <div class="arr" aria-hidden="true"><i>▶</i><span>呼び出す</span></div>
+  <div class="places"><figure><img src="images/lp/p_cafe.webp" alt="カフェのテーブルで、コーヒーのとなりにうさぎのぬいぐるみ。リボンのフレームつき" width="360" height="480"><figcaption>カフェでも</figcaption></figure><figure><img src="images/lp/p_sea.webp" alt="海の見える場所で、うさぎのぬいぐるみと撮った写真" width="360" height="480"><figcaption>海でも</figcaption></figure><figure><img src="images/lp/p_park.webp" alt="公園のベンチで、うさぎのぬいぐるみと撮った写真" width="360" height="480"><figcaption>公園でも</figcaption></figure><figure><img src="images/lp/p_night.webp" alt="夜景の前で、うさぎのぬいぐるみと撮った写真" width="360" height="480"><figcaption>夜景でも</figcaption></figure></div>
+ </div><p class="note">どれも<wbr>同じ<wbr>1回の<wbr>切りぬきから、<wbr>アプリで<wbr>撮った<wbr>見本です。</p></div>
+ <div class="hc"><a class="btn" href="https://apps.apple.com/jp/app/id6830922828">App Store で入手 <small>無料</small></a><ul class="facts"><li>iPhone(iOS 17 以上)</li><li>ログインいらず</li><li>写真は この端末の中だけ</li></ul><p class="one">ぬい・<wbr>アクスタ・<wbr>トレカを<wbr>1回<wbr>撮って<wbr>切りぬくだけ。<wbr>カフェでも<wbr>旅先でも、<wbr>カメラの<wbr>中に<wbr>推しを<wbr>呼び出して、<wbr>となりに<wbr>ならべて<wbr>撮れます。<wbr>推しを<wbr>持ち歩かなくても<wbr>大丈夫。</p></div>
+</section>
+<section class="alt"><div class="wrap"><p class="eyebrow">HOW TO</p><h2>撮り方は<wbr>3つだけ</h2><p class="lead">いちど<wbr>推しを<wbr>登録すれば、<wbr>次からは<wbr>「いつもの子と とる」を<wbr>押すだけです。</p><ol class="steps3"><li><img src="images/lp/s_cut.webp" alt="推しを切りぬく画面" loading="lazy"><div><b>推しを<wbr>1回<wbr>撮って、<wbr>切りぬく</b><span>ぬいぐるみ・<wbr>アクスタ・<wbr>トレカ・<wbr>フィギュア・<wbr>缶バッジ。<wbr>カメラで<wbr>撮るか、<wbr>写真から<wbr>選ぶと、<wbr>推しの<wbr>形に<wbr>切りぬけます。</span></div></li><li><img src="images/lp/s_home.webp" alt="わたしの推しの一覧と「いつもの子と とる」ボタン" loading="lazy"><div><b>「いつもの子と とる」で<wbr>呼び出す</b><span>切りぬいた<wbr>推しは<wbr>「わたしの推し」に<wbr>入ります。<wbr>カフェでも<wbr>旅先でも、<wbr>カメラを<wbr>開けば<wbr>推しが<wbr>となりに。</span></div></li><li><img src="images/lp/s_finish.webp" alt="撮ったあとの仕上げの画面" loading="lazy"><div><b>撮り方を<wbr>えらんで、<wbr>パシャ</b><span>となりに<wbr>ならぶ・<wbr>肩に<wbr>のせる・<wbr>手のひらに<wbr>のせる・<wbr>奥と<wbr>手前・<wbr>大きく。<wbr>撮ったあとに、<wbr>位置や<wbr>大きさを<wbr>直せます。</span></div></li></ol></div></section>
+<section><div class="wrap"><p class="eyebrow">POINT</p><h2>推しとの写真を、<wbr>もっと<wbr>かわいく</h2><p class="lead">推し色・<wbr>フレーム・<wbr>顔かくし。<wbr>撮る前も、<wbr>撮ったあとも<wbr>選べます。</p><ul class="feats"><li><img src="images/lp/f_outline.webp" alt="推しのまわりに推し色のふちをつけた画面" loading="lazy"><b>推し色の<wbr>ふち・<wbr>飾り</b><span>推し色は<wbr>55色。<wbr>頭・<wbr>耳・<wbr>首の<wbr>飾りや、<wbr>きらきら・<wbr>ハート・<wbr>花びら・<wbr>ペンライトの海<wbr>などの<wbr>エフェクトも、<wbr>推し色に<wbr>そまります。</span></li><li><img src="images/lp/f_frame.webp" alt="フレームを作る画面" loading="lazy"><b>自分だけの<wbr>フレーム</b><span>形・<wbr>色・<wbr>文字・<wbr>スタンプを<wbr>えらんで、<wbr>推しごとの<wbr>フレームを<wbr>作れます。<wbr>文字は<wbr>指で<wbr>動かせます。</span></li><li><img src="images/lp/f_face.webp" alt="顔かくしスタンプで顔をかくした見本" loading="lazy"><b>自撮りでも、<wbr>顔は<wbr>かくせる</b><span>かわいい<wbr>顔かくし<wbr>スタンプが<wbr>顔に<wbr>のって、<wbr>動いても<wbr>ついてきます。<wbr>保存の<wbr>前に<wbr>「ぜんぶ<wbr>かくれています」を<wbr>確かめられます。</span></li><li><img src="images/lp/f_finish.webp" alt="撮ったあとに飾りやフレームを直す画面" loading="lazy"><b>プリクラ<wbr>みたいに<wbr>仕上げ</b><span>推し・<wbr>飾り・<wbr>顔かくしの<wbr>位置や<wbr>大きさ、<wbr>フレームと<wbr>エフェクトを<wbr>あとから<wbr>直せます。<wbr>写真アプリに<wbr>保存して、<wbr>そのまま<wbr>シェア。</span></li></ul></div></section>
+<section class="alt"><div class="wrap"><div class="safe"><h2>写真は<wbr>この端末の<wbr>中だけ</h2><p>カメラの<wbr>映像と<wbr>写真は、<wbr>この端末の<wbr>外に<wbr>送りません。<wbr>ログインも<wbr>いりません。<wbr>写真が<wbr>外に<wbr>出るのは、<wbr>写真アプリへの<wbr>保存か、<wbr>X・<wbr>Instagram・<wbr>TikTok<wbr>などへの<wbr>シェアを<wbr>選んだ<wbr>ときだけです。</p></div></div></section>
+<section><div class="wrap"><h2>アプリ内課金と<wbr>広告のこと</h2><dl class="money"><div><dt>フレーム</dt><dd>自分で<wbr>作れる<wbr>フレームは<wbr>5こまで。<wbr>もっと<wbr>作りたい<wbr>方は、<wbr>+5こ・<wbr>「フレームたくさん(最大100こ)」を<wbr>追加できます。</dd></div><div><dt>飾り</dt><dd>飾りの<wbr>パックは<wbr>1回の<wbr>購入で<wbr>ずっと<wbr>使えます。<wbr>機種変更の<wbr>ときは<wbr>「購入を復元」で<wbr>もどせます。</dd></div><div><dt>広告</dt><dd>鍵の<wbr>スタンプは、<wbr>動画広告を<wbr>見ると<wbr>1つずつ<wbr>使えるように<wbr>なります。<wbr>写真を<wbr>保存した<wbr>あとに、<wbr>ときどき<wbr>広告が<wbr>出ます。<wbr>「広告なし」を<wbr>購入すると<wbr>出なくなります。</dd></div></dl></div></section>
+<section class="alt"><div class="wrap faq"><h2>よくある質問</h2><p class="lead">ほかに困ったことは<a href="support.html">サポート</a>へどうぞ。</p><details><summary>推しを<wbr>毎回<wbr>持って<wbr>行かないと<wbr>いけないの?</summary><p>いいえ。<wbr>1回<wbr>撮って<wbr>切りぬいた<wbr>推しは、<wbr>アプリの<wbr>中に<wbr>残ります。<wbr>次からは、<wbr>推しが<wbr>手元に<wbr>なくても、<wbr>カメラの<wbr>中に<wbr>呼び出して<wbr>一緒に<wbr>撮れます。</p></details><details><summary>アクスタや<wbr>トレカでも<wbr>撮れますか?</summary><p>はい。<wbr>ぬいぐるみ・<wbr>アクスタ・<wbr>トレカ・<wbr>フィギュア・<wbr>缶バッジ<wbr>などを、<wbr>推しの<wbr>形に<wbr>切りぬけます。<wbr>トレカは<wbr>「トレカ・カード」の<wbr>切りぬき方を<wbr>えらべます。</p></details><details><summary>撮った<wbr>写真は<wbr>どこに<wbr>保存されますか?</summary><p>「写真アプリにほぞん」を<wbr>押すと、<wbr>iPhone の<wbr>写真アプリに<wbr>保存されます。<wbr>カメラの<wbr>映像と<wbr>写真は、<wbr>この端末の<wbr>外に<wbr>送りません。</p></details><details><summary>前に<wbr>撮った<wbr>推しを、<wbr>すぐ<wbr>呼び出せますか?</summary><p>はい。<wbr>前回の<wbr>推しと<wbr>撮り方を<wbr>おぼえているので、<wbr>ひらいて<wbr>すぐ<wbr>撮れます。</p></details>
+<div class="req"><h3>ご意見・ご要望</h3><p>「こんな<wbr>飾りが<wbr>ほしい」<wbr>「ここが<wbr>使いにくい」<wbr>など、<wbr>なんでも<wbr>お寄せください。<wbr>アプリの<wbr>「せってい」の<wbr>「サポート」からも<wbr>送れます。</p><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfaiI7u2lbt9bwFeZUt-tbgXndUIYVX700rq2caZ3NdWFW9uA/viewform?usp=pp_url&entry.1550498070=%E6%8E%A8%E3%81%97%E3%83%91%E3%82%B7%E3%83%A3" target="_blank" rel="noopener">ご要望箱をひらく</a></div></div></section>
+<section class="end"><div class="wrap"><h2>推しと<wbr>いっしょに、<wbr>いい写真を。</h2><a class="btn" href="https://apps.apple.com/jp/app/id6830922828">App Store で入手 <small>無料</small></a><p class="os">iPhone(iOS 17.0 以上)</p></div></section>
+<footer class="wrap"><nav><a href="support.html">サポート・お問い合わせ</a><a href="privacy.html">プライバシーポリシー</a><a href="tokusho.html">特定商取引法に基づく表記</a><a href="../">七色パレットゲームズのトップ</a></nav>© 七色パレットゲームズ</footer>
+</main></body></html>
